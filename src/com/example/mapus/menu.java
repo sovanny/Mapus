@@ -3,6 +3,7 @@ package com.example.mapus;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,28 +14,33 @@ import android.widget.Toast;
 public class menu extends Activity{
 
 	private EditText usernameField,passwordField;
-	private TextView status,role,method;
+	private TextView role, register;
+	
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		getActionBar().hide();
 		
-		usernameField = (EditText)findViewById(R.id.editText1);
-        passwordField = (EditText)findViewById(R.id.editText2);
-        role = (TextView)findViewById(R.id.textView4);
-        
+		usernameField = (EditText)findViewById(R.id.username_edit_login);
+        passwordField = (EditText)findViewById(R.id.password_edit_login);
+        role = (TextView)findViewById(R.id.status);
+        register = (TextView)findViewById(R.id.sign_up);
+        register.setPaintFlags(register.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         
 		//----------MENU 1---------------------------------------
-		Button mn1 = (Button) findViewById(R.id.menu1);
-		mn1.setOnClickListener(new View.OnClickListener() {
+		Button signin = (Button) findViewById(R.id.sign_in_btn);
+		signin.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				String username = usernameField.getText().toString();
 		        String password = passwordField.getText().toString();
+		        
 		        //method.setText("Get Method");
 		        //status.setText(username);
 		        loginPost(v);
@@ -55,27 +61,37 @@ public class menu extends Activity{
 		        */
 				
 			}
+	
 		});
 		
 		
 		
-		
+		TextView reg = (TextView) findViewById(R.id.sign_up);
+		reg.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+	
+				startActivity(new Intent("com.example.mapus.SIGNUP"));
+			}
+	
+		});
 		
 		
 	}
-	
+	/*
 	public void login(View view){
 	      String username = usernameField.getText().toString();
 	      String password = passwordField.getText().toString();
-	      method.setText("Get Method");
-	      new SigninActivity(this,status,role,0).execute(username,password);
+	      role.setText("Get Method");
+	      new SigninActivity(this,role,0).execute(username,password);
 
-	   }
+	   }*/
 	   public void loginPost(View view){
 	      String username = usernameField.getText().toString();
 	      String password = passwordField.getText().toString();
-	      method.setText("Post Method");
-	      new SigninActivity(this,status,role,1).execute(username,password);
+	      role.setText("Loading...");
+	      new SigninActivity(this,role,1).execute(username,password);
 	   }
 	
 	

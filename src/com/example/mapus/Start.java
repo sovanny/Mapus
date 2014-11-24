@@ -13,6 +13,7 @@ public class Start extends Activity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.start);
+		getActionBar().hide();
 		
 		Button settingsbtn = (Button) findViewById(R.id.settingsbutton);
 		Button mapsbtn = (Button) findViewById(R.id.mapsbutton);

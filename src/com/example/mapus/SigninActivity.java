@@ -21,11 +21,10 @@ import android.widget.TextView;
 
 public class SigninActivity extends AsyncTask<String,Void,String> {
 
-   private TextView statusField,roleField;
+   private TextView roleField;
    private Context context;
    //flag 0 means get and 1 means post.(By default it is get.)
-   public SigninActivity(Context context,TextView statusField,
-   TextView roleField,int flag) {
+   public SigninActivity(Context context,TextView roleField,int flag) {
       this.context = context;
       //this.statusField = statusField;
       this.roleField = roleField;

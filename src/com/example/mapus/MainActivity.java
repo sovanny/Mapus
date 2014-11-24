@@ -13,26 +13,18 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 	
-	private EditText usernameField,passwordField;
-	private TextView status,role,method;
-	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        usernameField = (EditText)findViewById(R.id.editText1);
-        passwordField = (EditText)findViewById(R.id.editText2);
-        //status = (TextView)findViewById(R.id.textView3);
-        role = (TextView)findViewById(R.id.textView4);
-        //method = (TextView)findViewById(R.id.textView5);
-        
 		setContentView(R.layout.splash);
-        
+		getActionBar().hide();
+		
         Thread logoTimer = new Thread(){
         	public void run(){
         		try{
         			sleep(1000);
-        			Intent menuIntent = new Intent("com.example.mapus.WELCOME");
+        			Intent menuIntent = new Intent("com.example.mapus.MENU");
         			startActivity(menuIntent);
         			
         		}catch(InterruptedException e){

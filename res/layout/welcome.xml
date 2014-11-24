@@ -3,23 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/redwall" >
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="match_parent"
-        android:layout_height="210dp"
-        android:layout_weight="0.11"
-        android:background="@drawable/campus"
-        android:gravity="center_vertical|center_horizontal"
-        android:text=""
-        android:textColor="@color/white" />
+    android:background="@drawable/blomma" >
 
     <Button
         android:id="@+id/loginbutton"
-        android:layout_width="match_parent"
-        android:layout_height="91dp"
-        android:layout_weight="0.07"
+        android:layout_width="211dp"
+        android:layout_height="98dp"
         android:background="@drawable/green"
         android:text="LOG IN"
         android:textColor="@color/white"
@@ -27,9 +16,8 @@
 
     <Button
         android:id="@+id/signupbutton"
-        android:layout_width="match_parent"
-        android:layout_height="94dp"
-        android:layout_weight="0.07"
+        android:layout_width="168dp"
+        android:layout_height="120dp"
         android:background="@drawable/orange"
         android:text="SIGN UP"
         android:textColor="@color/white"

@@ -1,24 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bakgrund2"
     android:orientation="vertical" >
 
+    <EditText
+        android:id="@+id/username_edit"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBaseline="@+id/displayname"
+        android:layout_alignBottom="@+id/displayname"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/username"
+
+        android:layout_marginRight="25dip"
+        android:alpha="0.7"
+        android:background="@color/white"
+        android:ems="10"
+        android:hint="Username"/>
+
     <TextView
-        android:id="@+id/textView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.06"
-        android:gravity="center_vertical|center_horizontal"
-        android:text="Create a new user." />
+        android:id="@+id/confirm_password"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_above="@+id/password"
+        android:layout_alignLeft="@+id/displayname"
+        android:layout_toLeftOf="@+id/username_edit"
+        android:background="@drawable/lock_white"
+        android:layout_marginTop="20dp"
+         
+        android:gravity="center_vertical"
+        android:padding="5dip"
+        android:text=""
+        android:textColor="@color/gray1"
+        android:textSize="18dp"
+        android:alpha="0.7" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/displayname"
+        android:layout_alignLeft="@+id/displayname"
+        android:layout_alignRight="@+id/displayname"
+        android:background="@drawable/id"
+        android:gravity="center_vertical"
+        android:padding="5dip"
+        android:text=""
+        android:textColor="@color/gray1"
+        android:textSize="18dp"
+        android:alpha="0.7" />
+
+    <EditText
+        android:id="@+id/password_edit"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBaseline="@+id/confirm_password"
+        android:layout_alignBottom="@+id/confirm_password"
+        android:layout_alignLeft="@+id/username_edit"
+        android:layout_alignRight="@+id/username_edit"
+        android:layout_marginTop="20dp"
+        android:alpha="0.7"
+        android:background="@color/white"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/password__confirm_edit"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBaseline="@+id/password"
+        android:layout_alignBottom="@+id/password"
+        android:layout_alignLeft="@+id/password_edit"
+        android:layout_alignRight="@+id/password_edit"
+        android:alpha="0.7"
+        android:background="@color/white"
+        android:ems="10" 
+        android:hint="Confirm password"
+        android:inputType="textPassword"/>
+
+    <EditText
+        android:id="@+id/id_edit"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignRight="@+id/username_edit"
+        android:layout_alignTop="@+id/username"
+        android:layout_toRightOf="@+id/username"
+        android:alpha="0.7"
+        android:background="@color/white"
+        android:ems="10"
+        android:hint="Student-id" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_above="@+id/createuserbutton"
+        android:layout_alignLeft="@+id/confirm_password"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="15dp"
+        android:layout_toLeftOf="@+id/password__confirm_edit"
+        android:background="@drawable/lock_white"
+        android:gravity="center_vertical"
+        android:padding="5dip"
+        android:textColor="@color/gray1"
+        android:textSize="18dp"
+        android:alpha="0.7" />
+
+    <TextView
+        android:id="@+id/displayname"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/confirm_password"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="1dp"
+        android:alpha="0.7"
+        android:background="@drawable/user_white"
+        android:gravity="center_vertical"
+        android:padding="5dip"
+        android:textColor="@color/gray1"
+        android:textSize="18dp" />
 
     <Button
         android:id="@+id/createuserbutton"
-        android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:background="@drawable/green"
-        android:text="CREATE USER"
+        style="@style/AppBaseTheme"
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/password__confirm_edit"
+        android:layout_marginBottom="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="0dp"
+        android:alpha="1"
+        android:text="Create user"
+        android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="40dp" />
+        android:textSize="30dp" />
 
-</LinearLayout>
+</RelativeLayout>

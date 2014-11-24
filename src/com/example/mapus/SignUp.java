@@ -13,6 +13,7 @@ public class SignUp extends Activity{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.sign_up);
+		getActionBar().hide();
 		Button createbtn = (Button) findViewById(R.id.createuserbutton);
 		createbtn.setOnClickListener(new View.OnClickListener() {
 		

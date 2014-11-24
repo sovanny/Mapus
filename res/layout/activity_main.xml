@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/darkpurple"
+    android:background="@drawable/bakgrund"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -10,86 +10,107 @@
     tools:context="com.example.mapus.MainActivity" >
 
     <TextView
-        android:id="@+id/editText3"
-        android:layout_width="wrap_content"
-        android:layout_height="8dp"
-        android:layout_alignBottom="@+id/editText1"
-        android:layout_alignLeft="@+id/menu1"
-        android:layout_alignTop="@+id/editText1"
-        android:layout_toLeftOf="@+id/editText1"
-        android:ems="10"
-        android:gravity="center_vertical"
-        android:text="Username: "
-        android:background="@color/white"
-        android:textSize="18dp"
-        android:padding="5dip"
-        android:textColor="@color/gray1" />
-
-    <TextView
-        android:id="@+id/editText4"
+        android:id="@+id/password_label_login"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_above="@+id/menu1"
         android:layout_alignParentLeft="true"
-        android:layout_alignRight="@+id/editText3"
-        android:layout_alignTop="@+id/editText2"
-        android:background="@color/white"
+        android:layout_alignRight="@+id/username_label_login"
+        android:layout_alignTop="@+id/password_edit_login"
+        android:layout_marginLeft="5dip"
+        android:background="@drawable/lock_white"
         android:ems="10"
         android:gravity="center_vertical"
         android:padding="5dip"
-        android:text="Password: "
+        android:text=""
+        android:textColor="@color/gray1"
         android:textSize="18dp" 
-        android:textColor="@color/gray1"/>
-
-    <Button
-        android:id="@+id/menu1"
-        android:layout_width="fill_parent"
-        android:layout_height="70dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/editText2"
-        android:layout_marginTop="14dp"
-        android:text="Sign in"
-        android:textAllCaps="false"
-        android:textSize="30dp" 
-        android:textColor="@color/white"
-        />
+        android:alpha="0.7"/>
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/editText1"
         android:text=""
-        android:textSize="24dp"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:textSize="24dp" />
+
+    <TextView
+        android:id="@+id/username_label_login"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/username_edit_login"
+        android:layout_alignLeft="@+id/menu1"
+        android:layout_alignTop="@+id/username_edit_login"
+        android:layout_marginLeft="5dip"
+        android:background="@drawable/user_white"
+        android:gravity="center_vertical"
+        android:text=""
+        android:textColor="@color/gray1"
+        android:textSize="18dp"
+        android:alpha="0.7" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/username_edit_login"
         android:layout_width="180dp"
-        android:layout_height="45dp"
+        android:layout_height="50dp"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/editText1"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/username_label_login"
+        android:layout_marginRight="5dip"
+        android:alpha="0.7"
         android:background="@color/white"
         android:ems="10"
-        android:inputType="textPassword" 
-        android:layout_marginTop="1dp"
-        android:alpha="0.8">
+        android:hint=" Username" >
 
         <requestFocus />
     </EditText>
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/password_edit_login"
         android:layout_width="180dp"
-        android:layout_height="45dp"
-        android:layout_alignLeft="@+id/editText2"
-        android:layout_below="@+id/textView4"
-        android:layout_marginTop="88dp"
-        android:alpha="0.8"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/username_edit_login"
+        android:layout_alignRight="@+id/username_edit_login"
+        android:layout_below="@+id/username_edit_login"
+        android:layout_marginTop="1dp"
+        android:alpha="0.7"
         android:background="@color/white"
-        android:ems="10" />
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/sign_in_btn"
+        style="@style/AppBaseTheme"
+        android:layout_width="fill_parent"
+        android:layout_height="70dp"
+        android:layout_above="@+id/sign_up"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/password_label_login"
+        android:layout_marginTop="10dp"
+        android:alpha="1"
+        android:text="Sign in"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:clickable="true"
+        android:gravity="center_horizontal"
+        android:onClick="linkOnClick"
+        android:text="@string/register"
+        android:textColor="@color/blue"
+        android:textSize="15dp" />
 
 </RelativeLayout>
