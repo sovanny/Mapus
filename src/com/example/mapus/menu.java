@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 public class menu extends Activity{
 
-	private EditText usernameField,passwordField;
+	private EditText studentIDField,passwordField;
 	private TextView role, register;
 	
 	
@@ -25,47 +25,28 @@ public class menu extends Activity{
 		setContentView(R.layout.activity_main);
 		getActionBar().hide();
 		
-		usernameField = (EditText)findViewById(R.id.username_edit_login);
+		studentIDField = (EditText)findViewById(R.id.username_edit_login);
         passwordField = (EditText)findViewById(R.id.password_edit_login);
         role = (TextView)findViewById(R.id.status);
         register = (TextView)findViewById(R.id.sign_up);
         register.setPaintFlags(register.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         
-		//----------MENU 1---------------------------------------
+		//BUTTON TO LOG IN
 		Button signin = (Button) findViewById(R.id.sign_in_btn);
 		signin.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				String username = usernameField.getText().toString();
-		        String password = passwordField.getText().toString();
-		        
+
 		        //method.setText("Get Method");
 		        //status.setText(username);
 		        loginPost(v);
 		        //login(v);
-		        
-		        
-		        /*
-		        
-		        if(username.equals("Aida") && password.equals("Nordman")){
-		        	
-		        	//startActivity(new Intent("com.example.mapus.MENUONE"));
-		        }else{
-		        	Toast.makeText(
-	                        getApplicationContext(),
-	                         "Wrong Username or Password!",Toast.LENGTH_SHORT)
-	                        .show();
-		        }
-		        */
-				
 			}
-	
 		});
 		
 		
-		
+		//LINK TO REGISTER
 		TextView reg = (TextView) findViewById(R.id.sign_up);
 		reg.setOnClickListener(new View.OnClickListener() {
 			
@@ -88,14 +69,11 @@ public class menu extends Activity{
 
 	   }*/
 	   public void loginPost(View view){
-	      String username = usernameField.getText().toString();
+	      String studentID = studentIDField.getText().toString();
 	      String password = passwordField.getText().toString();
 	      role.setText("Loading...");
-	      new SigninActivity(this,role,1).execute(username,password);
+	      new SigninActivity(this,role,1).execute(studentID,password);
 	   }
-	
-	
-	
 
 	@Override
 	protected void onPause() {

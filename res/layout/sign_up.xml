@@ -68,7 +68,7 @@
         android:inputType="textPassword" />
 
     <EditText
-        android:id="@+id/password__confirm_edit"
+        android:id="@+id/password_confirm_edit"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_alignBaseline="@+id/password"
@@ -102,15 +102,15 @@
         android:layout_height="50dp"
         android:layout_above="@+id/createuserbutton"
         android:layout_alignLeft="@+id/confirm_password"
-        android:layout_marginTop="1dp"
+        android:layout_alignRight="@+id/confirm_password"
         android:layout_marginBottom="15dp"
-        android:layout_toLeftOf="@+id/password__confirm_edit"
+        android:layout_marginTop="1dp"
+        android:alpha="0.7"
         android:background="@drawable/lock_white"
         android:gravity="center_vertical"
         android:padding="5dip"
         android:textColor="@color/gray1"
-        android:textSize="18dp"
-        android:alpha="0.7" />
+        android:textSize="18dp" />
 
     <TextView
         android:id="@+id/displayname"

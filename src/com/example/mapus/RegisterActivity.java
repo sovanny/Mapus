@@ -18,13 +18,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class SigninActivity extends AsyncTask<String,Void,String> {
+public class RegisterActivity extends AsyncTask<String,Void,String> {
 
    private TextView roleField;
    private Context context;
    //flag 0 means get and 1 means post.(By default it is get.)
-   public SigninActivity(Context context,TextView roleField,int flag) {
+   public RegisterActivity(Context context,TextView roleField,int flag) {
       this.context = context;
       //this.statusField = statusField;
       this.roleField = roleField;
@@ -37,12 +38,18 @@ public class SigninActivity extends AsyncTask<String,Void,String> {
    protected String doInBackground(String... arg0) {
       
          try{
-            String studentID = (String)arg0[0];
-            String password = (String)arg0[1];
-            String link ="http://sermon.se/koma/loginpost.php";
+        	
+        	String studentID = (String)arg0[0];
+        	String username = (String)arg0[1];
+        	String password = (String)arg0[2];
+        	
+            String link ="http://sermon.se/koma/add2.php";
             
+            //DATA FROM USER INPUT
             String data  = URLEncoder.encode("studentID", "UTF-8") 
             + "=" + URLEncoder.encode(studentID, "UTF-8");
+            data += "&" + URLEncoder.encode("username", "UTF-8") 
+            + "=" + URLEncoder.encode(username, "UTF-8");
             data += "&" + URLEncoder.encode("password", "UTF-8") 
             + "=" + URLEncoder.encode(password, "UTF-8");
             
@@ -71,13 +78,15 @@ public class SigninActivity extends AsyncTask<String,Void,String> {
    }
    @Override
    protected void onPostExecute(String result){
-      //this.statusField.setText("Login Successful");
-      if (!result.equals("Incorrect username or password!")){
-    	  this.roleField.setText(result);
-    	  //this.statusField.setText("Reached onPostexe.");
-    	  context.startActivity(new Intent("com.example.mapus.START"));
-      }
+	   //this.statusField.setText("Login Successful");
+	   context.startActivity(new Intent("com.example.mapus.START"));
       
+	   Toast.makeText(
+               context.getApplicationContext(),
+                "Successfully created new account!",Toast.LENGTH_SHORT)
+               .show();
+	   
+	   
       this.roleField.setText(result);
       //this.roleField.setText(result);
    }
