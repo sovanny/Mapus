@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.widget.ImageView;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -63,7 +64,8 @@ public class Start extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_direct_settings) {	//settings-knappen vald
-            return true;
+        	Log.d("MapLog", "tja");
+        	return true;
         }
         return super.onOptionsItemSelected(item);
     }

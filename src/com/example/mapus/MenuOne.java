@@ -203,6 +203,10 @@ public class MenuOne extends Activity{
         case android.R.id.home:
           NavUtils.navigateUpFromSameTask(this);
           return true;
+        case R.id.action_direct_settings:		//SETTINGS-KNAPPEN
+        	Log.d("MapLog", "Hejhej");
+        	break;
+        	
       }
    
       return super.onOptionsItemSelected(item);
