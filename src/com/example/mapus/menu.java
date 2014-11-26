@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,7 +33,7 @@ public class menu extends Activity{
         register.setPaintFlags(register.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         
 		//BUTTON TO LOG IN
-		Button signin = (Button) findViewById(R.id.sign_in_btn);
+		ImageView signin = (ImageView) findViewById(R.id.sign_in_btn);
 		signin.setOnClickListener(new View.OnClickListener() {
 			
 			@Override

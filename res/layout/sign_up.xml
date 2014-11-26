@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bakgrund2"
+    android:background="@drawable/bakgrund8"
     android:orientation="vertical" >
 
     <EditText
@@ -27,7 +27,7 @@
         android:layout_above="@+id/password"
         android:layout_alignLeft="@+id/displayname"
         android:layout_toLeftOf="@+id/username_edit"
-        android:background="@drawable/lock_white"
+        android:background="@drawable/lock4"
         android:layout_marginTop="20dp"
          
         android:gravity="center_vertical"
@@ -44,7 +44,7 @@
         android:layout_above="@+id/displayname"
         android:layout_alignLeft="@+id/displayname"
         android:layout_alignRight="@+id/displayname"
-        android:background="@drawable/id"
+        android:background="@drawable/id4"
         android:gravity="center_vertical"
         android:padding="5dip"
         android:text=""
@@ -106,7 +106,7 @@
         android:layout_marginBottom="15dp"
         android:layout_marginTop="1dp"
         android:alpha="0.7"
-        android:background="@drawable/lock_white"
+        android:background="@drawable/lock4"
         android:gravity="center_vertical"
         android:padding="5dip"
         android:textColor="@color/gray1"
@@ -121,26 +121,42 @@
         android:layout_marginLeft="25dp"
         android:layout_marginTop="1dp"
         android:alpha="0.7"
-        android:background="@drawable/user_white"
+        android:background="@drawable/user4"
         android:gravity="center_vertical"
         android:padding="5dip"
         android:textColor="@color/gray1"
         android:textSize="18dp" />
 
-    <Button
+    <ImageView
         android:id="@+id/createuserbutton"
         style="@style/AppBaseTheme"
         android:layout_width="fill_parent"
         android:layout_height="80dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/password__confirm_edit"
+        android:layout_alignRight="@+id/password_confirm_edit"
         android:layout_marginBottom="25dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="0dp"
         android:alpha="1"
-        android:text="Create user"
+        android:background="@drawable/buttonshape"
+
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="30dp" />
+        android:textSize="30dp" 
+        android:paddingLeft="200dp"/>
+    <TextView
+            android:id="@+id/myImageViewText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/createuserbutton"
+            android:layout_alignLeft="@+id/createuserbutton"
+            android:layout_alignRight="@+id/createuserbutton"
+            android:layout_alignTop="@+id/createuserbutton"
+            android:layout_margin="1dp"
+            android:gravity="center"
+
+            android:text="Create User"
+            android:textColor="@color/gray1"
+            android:textSize="30sp" />
 
 </RelativeLayout>

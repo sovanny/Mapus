@@ -8,60 +8,121 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.07"
-        android:background="@drawable/blomma" >
+        android:background="@color/white" >
 
         <TextView
             android:id="@+id/dispnametextview"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_alignBottom="@+id/settingsbutton"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_toLeftOf="@+id/settingsbutton"
-            android:background="@color/darkblue"
-            android:gravity="center_vertical|center_horizontal"
-            android:text="Tantan Granen" />
+            android:background="@color/orange"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="Tantan Granen"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
 
-        <Button
+        <ImageView
             android:id="@+id/settingsbutton"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            android:background="@drawable/gear_gray" />
+            android:background="@color/orange"
+            android:clickable="true"
+            android:src="@drawable/settingsbtn" />
 
-        <Button
+        <ImageView
+            android:id="@+id/mapsbutton"
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/dispnametextview"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="47dp"
+            android:background="@drawable/buttonshape"
+            android:paddingBottom="10dp"
+            android:paddingRight="110dp"
+            android:paddingTop="10dp"
+            android:src="@drawable/map2"
+            android:textColor="@color/gray1" />
+
+        <ImageView
             android:id="@+id/contactsbutton"
             android:layout_width="wrap_content"
-            android:layout_height="80dp"
+            android:layout_height="60dp"
             android:layout_alignLeft="@+id/mapsbutton"
             android:layout_alignRight="@+id/mapsbutton"
             android:layout_below="@+id/mapsbutton"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/orange"
-            android:text="Contacts" />
+            android:layout_marginTop="15dp"
+            android:background="@drawable/buttonshape"
+            android:paddingBottom="10dp"
+            android:paddingRight="110dp"
+            android:paddingTop="10dp"
+            android:src="@drawable/contacts2"
+            android:textColor="@color/gray1" />
 
-        <Button
-            android:id="@+id/mapsbutton"
-            android:layout_width="160dp"
-            android:layout_height="120dp"
-            android:layout_below="@+id/dispnametextview"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="46dp"
-            android:background="@drawable/green"
-            android:text="Maps" />
-
-        <Button
+        <ImageView
             android:id="@+id/checkoutbutton"
             android:layout_width="wrap_content"
-            android:layout_height="80dp"
+            android:layout_height="60dp"
             android:layout_alignLeft="@+id/contactsbutton"
             android:layout_alignRight="@+id/contactsbutton"
             android:layout_below="@+id/contactsbutton"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/green"
-            android:text="Check Out" />
+            android:layout_marginTop="61dp"
+            android:background="@drawable/buttonshape"
+            android:paddingBottom="10dp"
+            android:paddingRight="110dp"
+            android:paddingTop="10dp"
+            android:src="@drawable/checkout2"
+            android:textColor="@color/gray1" />
 
+        <TextView
+            android:id="@+id/myImageViewText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/checkoutbutton"
+            android:layout_alignLeft="@+id/checkoutbutton"
+            android:layout_alignRight="@+id/checkoutbutton"
+            android:layout_alignTop="@+id/checkoutbutton"
+            android:layout_margin="1dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="50dp"
+            android:text="| Check Out"
+            android:textColor="@color/gray1"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/myImageViewText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/mapsbutton"
+            android:layout_alignLeft="@+id/mapsbutton"
+            android:layout_alignRight="@+id/mapsbutton"
+            android:layout_alignTop="@+id/mapsbutton"
+            android:layout_margin="1dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="50dp"
+            android:text="|   Maps"
+            android:textColor="@color/gray1"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/myImageViewText3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/contactsbutton"
+            android:layout_alignLeft="@+id/contactsbutton"
+            android:layout_alignRight="@+id/contactsbutton"
+            android:layout_alignTop="@+id/contactsbutton"
+            android:layout_margin="1dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="50dp"
+            android:text="|  Contacts"
+            android:textColor="@color/gray1"
+            android:textSize="18sp" />
     </RelativeLayout>
 
 </LinearLayout>

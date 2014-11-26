@@ -10,7 +10,7 @@
         android:layout_height="70dp"
         android:paddingLeft="?android:attr/expandableListPreferredItemPaddingLeft"
         android:textSize="17dp"
-        android:textColor="@color/darkblue"
+        android:textColor="@color/blue"
         android:gravity="center_vertical" />
 
 </LinearLayout>

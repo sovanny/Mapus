@@ -8,5 +8,6 @@
     <string name="send">Dela</string>
     <string name="cancel">Avbryt</string>
     <string name="register"><u><b><i>Create Account</i></b></u></string>
+    <string name="alpha">0.7</string>
 
 </resources>

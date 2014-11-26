@@ -53,15 +53,24 @@ public class SignUp extends Activity{
 			String passwordConfirm = passwordConfirm_signupField.getText().toString();
 			
 	      //role.setText("Loading...");
-			if(password.equals(passwordConfirm)){
-				new RegisterActivity(this,role,1).execute(id,username,password);
+			if(id.equals("") || username.equals("") || 
+					password.equals("") || passwordConfirm.equals("")){
+				
+				Toast.makeText(
+			               getApplicationContext(),
+			                "Please fill all fields!",Toast.LENGTH_SHORT)
+			               .show();
 			}
 			
-			else{
+			else if(!password.equals(passwordConfirm)){
 				Toast.makeText(
 			               getApplicationContext(),
 			                "Different passwords!",Toast.LENGTH_SHORT)
 			               .show();
+			}
+			
+			else{
+				new RegisterActivity(this,role,1).execute(id,username,password);
 			}
 	      
 	   }

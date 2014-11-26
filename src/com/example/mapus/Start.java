@@ -1,6 +1,7 @@
 package com.example.mapus;
 
 import android.app.Activity;
+import android.widget.ImageView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,10 +16,10 @@ public class Start extends Activity {
 		setContentView(R.layout.start);
 		getActionBar().hide();
 		
-		Button settingsbtn = (Button) findViewById(R.id.settingsbutton);
-		Button mapsbtn = (Button) findViewById(R.id.mapsbutton);
-		Button contactsbtn = (Button) findViewById(R.id.contactsbutton);
-		Button checkoutbtn = (Button) findViewById(R.id.checkoutbutton);
+		ImageView settingsbtn = (ImageView) findViewById(R.id.settingsbutton);
+		ImageView mapsbtn = (ImageView) findViewById(R.id.mapsbutton);
+		ImageView contactsbtn = (ImageView) findViewById(R.id.contactsbutton);
+		ImageView checkoutbtn = (ImageView) findViewById(R.id.checkoutbutton);
 		
 		settingsbtn.setOnClickListener(new View.OnClickListener() {	
 		@Override
