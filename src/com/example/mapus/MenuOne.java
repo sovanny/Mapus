@@ -58,10 +58,10 @@ public class MenuOne extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu1);
+        		
+        getActionBar().setDisplayHomeAsUpEnabled(true);		//action bar back button
+        getActionBar().setDisplayShowHomeEnabled(false);	//hide app icon in action bar
         
-        //getActionBar().setDisplayHomeAsUpEnabled(true);		//action bar back button
-        getActionBar().setDisplayHomeAsUpEnabled(true);		//hide app icon in action bar
- 
         // get the listview
         expListView = (ExpandableListView) findViewById(R.id.lvExp);
  
