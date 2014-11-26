@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.widget.ImageView;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -16,7 +19,7 @@ public class Start extends Activity {
 		setContentView(R.layout.start);
 		getActionBar().setDisplayShowHomeEnabled(false);
 		
-		//ImageView settingsbtn = (ImageView) findViewById(R.id.settingsbutton);
+		//ImageView settingsbtn = (ImageView) findViewById(R.id.settingsbutton);  //gamla knappen i vår hemgjorda actionbar, behövs nog göras i onOptionsItemSelected()
 		ImageView mapsbtn = (ImageView) findViewById(R.id.mapsbutton);
 		ImageView contactsbtn = (ImageView) findViewById(R.id.contactsbutton);
 		ImageView checkoutbtn = (ImageView) findViewById(R.id.checkoutbutton);
@@ -44,6 +47,26 @@ public class Start extends Activity {
 				}
 			});
 	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+	  MenuInflater inflater = getMenuInflater();
+	 
+	  inflater.inflate(R.menu.main, menu);
+	  return super.onCreateOptionsMenu(menu);
+	}
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.action_direct_settings) {	//settings-knappen vald
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 	
 	
 }
