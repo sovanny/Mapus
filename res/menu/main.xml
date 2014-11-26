@@ -3,10 +3,9 @@
     tools:context="com.example.mapus.MainActivity" >
 
     <item
-        android:id="@+id/action_settings"
-  
-        android:orderInCategory="100"
-        android:showAsAction="never"
+        android:id="@+id/action_direct_settings"
+        android:icon="@drawable/custom_settings"
+        android:showAsAction="ifRoom"
         android:title="@string/action_settings"/>
 
 </menu>
