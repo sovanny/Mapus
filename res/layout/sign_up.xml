@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bakgrund8"
+    android:background="@drawable/bakgrund9"
     android:orientation="vertical" >
 
     <EditText
@@ -144,6 +144,7 @@
         android:textColor="@color/white"
         android:textSize="30dp" 
         android:paddingLeft="200dp"/>
+    
     <TextView
             android:id="@+id/myImageViewText1"
             android:layout_width="wrap_content"
@@ -158,5 +159,15 @@
             android:text="Create User"
             android:textColor="@color/gray1"
             android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/CreateUserIcon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_above="@+id/id_edit"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/createuser3"
+        android:layout_marginBottom="0dp" 
+        android:alpha="0.8"/>
 
 </RelativeLayout>

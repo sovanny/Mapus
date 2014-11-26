@@ -29,8 +29,6 @@ public class menu extends Activity{
 		studentIDField = (EditText)findViewById(R.id.username_edit_login);
         passwordField = (EditText)findViewById(R.id.password_edit_login);
         role = (TextView)findViewById(R.id.status);
-        register = (TextView)findViewById(R.id.sign_up);
-        register.setPaintFlags(register.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         
 		//BUTTON TO LOG IN
 		ImageView signin = (ImageView) findViewById(R.id.sign_in_btn);
@@ -48,7 +46,7 @@ public class menu extends Activity{
 		
 		
 		//LINK TO REGISTER
-		TextView reg = (TextView) findViewById(R.id.sign_up);
+		ImageView reg = (ImageView) findViewById(R.id.register_btn);
 		reg.setOnClickListener(new View.OnClickListener() {
 			
 			@Override

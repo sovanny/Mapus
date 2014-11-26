@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,7 +32,7 @@ public class SignUp extends Activity{
 		role = (TextView)findViewById(R.id.username);
 		
 		//BUTTON TO CREATE USER
-		Button createbtn = (Button) findViewById(R.id.createuserbutton);
+		ImageView createbtn = (ImageView) findViewById(R.id.createuserbutton);
 		createbtn.setOnClickListener(new View.OnClickListener() {
 			
 		

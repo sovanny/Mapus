@@ -18,6 +18,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SigninActivity extends AsyncTask<String,Void,String> {
 
@@ -67,18 +68,28 @@ public class SigninActivity extends AsyncTask<String,Void,String> {
          }catch(Exception e){
         	 //return new String("Exception: " + e.getMessage());
         	 return new String("Check network connection!");
+        	 
       }
    }
    @Override
    protected void onPostExecute(String result){
       //this.statusField.setText("Login Successful");
       if (!result.equals("Incorrect username or password!")){
-    	  this.roleField.setText(result);
+    	  //this.roleField.setText(result);
     	  //this.statusField.setText("Reached onPostexe.");
+    	  
+    	  Toast.makeText(
+                  context.getApplicationContext(),
+                   "Welcome " + result + "!",Toast.LENGTH_SHORT)
+                  .show();
+    	  
     	  context.startActivity(new Intent("com.example.mapus.START"));
       }
       
-      this.roleField.setText(result);
-      //this.roleField.setText(result);
+      Toast.makeText(
+              context.getApplicationContext(),
+               result,Toast.LENGTH_SHORT)
+              .show();
+      this.roleField.setText("");
    }
 }
