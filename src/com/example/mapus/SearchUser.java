@@ -5,6 +5,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,6 +27,9 @@ public class SearchUser extends Activity{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.searchuser);
+		
+		getActionBar().setDisplayHomeAsUpEnabled(true);		//action bar back button
+        getActionBar().setDisplayShowHomeEnabled(false);	//hide app icon in action bar
 		
 		studentIDField = (EditText)findViewById(R.id.search_field);
 	
@@ -60,6 +68,30 @@ public class SearchUser extends Activity{
 		super.onPause();
 	}
 	
-	
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+      // Inflate the menu items for use in the action bar
+      MenuInflater inflater = getMenuInflater();
+   
+      inflater.inflate(R.menu.main, menu);
+      return super.onCreateOptionsMenu(menu);
+    }
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+      switch (item.getItemId()) {
+        // Respond to the action bar's Up/Home button
+        case android.R.id.home:
+          NavUtils.navigateUpFromSameTask(this);
+          return true;
+        case R.id.action_direct_settings:		//SETTINGS-KNAPPEN
+        	Log.d("MapLog", "Hejhej");
+        	startActivity(new Intent("com.example.mapus.SETTINGS"));
+        	break;
+        	
+      }
+   
+      return super.onOptionsItemSelected(item);
+    }
 
 }
