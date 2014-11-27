@@ -205,6 +205,7 @@ public class MenuOne extends Activity{
           return true;
         case R.id.action_direct_settings:		//SETTINGS-KNAPPEN
         	Log.d("MapLog", "Hejhej");
+        	startActivity(new Intent("com.example.mapus.SETTINGS"));
         	break;
         	
       }

@@ -27,6 +27,8 @@ import android.widget.ImageView;
 //import android.widget.RelativeLayout;
 //import android.widget.Toast;
 import android.app.FragmentManager;
+import android.content.Intent;
+
 import com.example.mapus.MyDialogFragment;
 
 
@@ -290,6 +292,7 @@ public class MapActivity extends FragmentActivity implements OnTouchListener{
           return true;
         case R.id.action_direct_settings:		//SETTINGS-KNAPPEN
         	Log.d("MapLog", "tjaba");
+        	startActivity(new Intent("com.example.mapus.SETTINGS"));
         	break;
         	
       }

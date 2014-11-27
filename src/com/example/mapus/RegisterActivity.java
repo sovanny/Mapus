@@ -79,6 +79,11 @@ public class RegisterActivity extends AsyncTask<String,Void,String> {
    @Override
    protected void onPostExecute(String result){
 	   //this.statusField.setText("Login Successful");
+	   
+	   this.roleField.setText("");
+ 	  Intent intent = new Intent("com.example.mapus.START");
+ 	  intent.putExtra("the_result", result);
+ 	  context.startActivity(intent);
 	   context.startActivity(new Intent("com.example.mapus.START"));
       
 	   Toast.makeText(

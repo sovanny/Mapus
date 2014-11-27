@@ -1,34 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:layout_weight="1.03" >
 
-    <RelativeLayout
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/edit_conf_pass_field"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1.03" >
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/confirm_pass_label"
+        android:ems="10" />
 
-        <Button
-            android:id="@+id/signoutbutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/changebutton"
-            android:layout_marginTop="143dp"
-            android:text="Sign Out" />
+    <EditText
+        android:id="@+id/edit_new_pass_field"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/new_pass_label"
+        android:ems="10" />
 
-        <Button
-            android:id="@+id/changebutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="163dp"
-            android:text="Change User Data" />
+    <EditText
+        android:id="@+id/edit_current_pass_field"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/current_pass_label"
+        android:ems="10" >
 
-    </RelativeLayout>
+        <requestFocus />
+    </EditText>
 
-</LinearLayout>
+    <EditText
+        android:id="@+id/edit_disp_name_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/change_disp_name_label"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/change_disp_name_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/current_pass_label"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/change_name" />
+
+    <TextView
+        android:id="@+id/current_pass_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_disp_name_label"
+        android:layout_marginTop="28dp"
+        android:layout_toLeftOf="@+id/save_btn"
+        android:text="@string/current_pass" />
+
+    <TextView
+        android:id="@+id/new_pass_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/current_pass_label"
+        android:layout_below="@+id/edit_current_pass_field"
+        android:layout_marginTop="26dp"
+        android:text="@string/new_pass" />
+
+    <TextView
+        android:id="@+id/confirm_pass_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/new_pass_label"
+        android:layout_below="@+id/edit_new_pass_field"
+        android:layout_marginTop="25dp"
+        android:text="@string/conf_pass" />
+
+    <Button
+        android:id="@+id/save_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_conf_pass_field"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:text="Save" />
+
+    <Button
+        android:id="@+id/log_out_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="16dp"
+        android:text="Log out" />
+
+</RelativeLayout>
