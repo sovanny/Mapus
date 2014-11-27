@@ -24,8 +24,8 @@ public class Start extends Activity {
 		getActionBar().setDisplayShowHomeEnabled(false);
 		
 		String Result = getIntent().getStringExtra("the_result");
-		DispName = (TextView)findViewById(R.id.dispnametextview);
-		//DispName.setText(Result);
+		DispName = (TextView)findViewById(R.id.nameTest);
+		DispName.setText(Result);
 		
 		//ImageView settingsbtn = (ImageView) findViewById(R.id.settingsbutton);  //gamla knappen i vår hemgjorda actionbar, ska göras i onOptionsItemSelected()
 		ImageView mapsbtn = (ImageView) findViewById(R.id.mapsbutton);

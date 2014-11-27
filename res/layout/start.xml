@@ -97,6 +97,16 @@
             android:text="|  Contacts"
             android:textColor="@color/gray1"
             android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/nameTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="16dp"
+            android:layout_toLeftOf="@+id/checkoutbutton"
+            android:text="TextView" />
+
     </RelativeLayout>
 
 </LinearLayout>
