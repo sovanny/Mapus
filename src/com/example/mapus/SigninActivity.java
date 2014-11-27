@@ -26,7 +26,7 @@ public class SigninActivity extends AsyncTask<String,Void,String> {
    private Context context;
    //flag 0 means get and 1 means post.(By default it is get.)
    public SigninActivity(Context context,TextView roleField,int flag) {
-      this.context = context;
+	   this.context = context;
       //this.statusField = statusField;
       this.roleField = roleField;
    }
@@ -83,13 +83,19 @@ public class SigninActivity extends AsyncTask<String,Void,String> {
                    "Welcome " + result + "!",Toast.LENGTH_SHORT)
                   .show();
     	  
-    	  context.startActivity(new Intent("com.example.mapus.START"));
+    	  this.roleField.setText("");
+    	  Intent intent = new Intent("com.example.mapus.START");
+    	  intent.putExtra("the_result", result);
+    	  context.startActivity(intent);
+    	  
+      }
+      else{
+    	  Toast.makeText(
+                  context.getApplicationContext(),
+                   result,Toast.LENGTH_SHORT)
+                  .show();
+    	  this.roleField.setText("");  
       }
       
-      Toast.makeText(
-              context.getApplicationContext(),
-               result,Toast.LENGTH_SHORT)
-              .show();
-      this.roleField.setText("");
    }
 }

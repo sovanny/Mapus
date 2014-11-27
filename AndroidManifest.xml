@@ -107,6 +107,17 @@
             </intent-filter>
         </activity>
         
+        <activity
+            android:name=".Settings"
+            android:label="@string/app_name"
+            android:hardwareAccelerated="false" >
+            <intent-filter>
+                <action android:name="com.example.mapus.SETTINGS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
     </application>
 
 </manifest>
