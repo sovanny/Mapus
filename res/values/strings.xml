@@ -9,5 +9,8 @@
     <string name="cancel">Avbryt</string>
     <string name="register"><u><b><i>Create Account</i></b></u></string>
     <string name="alpha">0.7</string>
+    <string name="Start_activity_title">Main Menu</string>
+    <string name="MenuOne_activity_title">Maps</string>
+    <string name="MapActivity_title">Täppan plan 5</string> <!-- Hur ska vi göra det här? -->
 
 </resources>

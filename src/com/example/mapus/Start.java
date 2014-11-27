@@ -20,7 +20,7 @@ public class Start extends Activity {
 		setContentView(R.layout.start);
 		getActionBar().setDisplayShowHomeEnabled(false);
 		
-		//ImageView settingsbtn = (ImageView) findViewById(R.id.settingsbutton);  //gamla knappen i vår hemgjorda actionbar, behövs nog göras i onOptionsItemSelected()
+		//ImageView settingsbtn = (ImageView) findViewById(R.id.settingsbutton);  //gamla knappen i vår hemgjorda actionbar, ska göras i onOptionsItemSelected()
 		ImageView mapsbtn = (ImageView) findViewById(R.id.mapsbutton);
 		ImageView contactsbtn = (ImageView) findViewById(R.id.contactsbutton);
 		ImageView checkoutbtn = (ImageView) findViewById(R.id.checkoutbutton);
