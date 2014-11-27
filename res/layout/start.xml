@@ -10,36 +10,10 @@
         android:layout_weight="0.07"
         android:background="@color/white" >
 
-        <TextView
-            android:id="@+id/dispnametextview"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_alignBottom="@+id/settingsbutton"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_toLeftOf="@+id/settingsbutton"
-            android:background="@color/orange"
-            android:gravity="center_vertical"
-            android:paddingLeft="10dp"
-            android:text="Tantan Granen"
-            android:textColor="@color/white"
-            android:textSize="20dp" />
-
-        <ImageView
-            android:id="@+id/settingsbutton"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:background="@color/orange"
-            android:clickable="true"
-            android:src="@drawable/settingsbtn" />
-
         <ImageView
             android:id="@+id/mapsbutton"
             android:layout_width="160dp"
             android:layout_height="60dp"
-            android:layout_below="@+id/dispnametextview"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="47dp"
             android:background="@drawable/buttonshape"

@@ -3,11 +3,17 @@ package com.example.mapus;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -52,7 +58,10 @@ public class MenuOne extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu1);
- 
+        		
+        getActionBar().setDisplayHomeAsUpEnabled(true);		//action bar back button
+        getActionBar().setDisplayShowHomeEnabled(false);	//hide app icon in action bar
+        
         // get the listview
         expListView = (ExpandableListView) findViewById(R.id.lvExp);
  
@@ -146,9 +155,9 @@ public class MenuOne extends Activity{
         listDataChild = new HashMap<String, List<String>>();
  
         // Adding child data
-        listDataHeader.add("Täppan");
+        listDataHeader.add("Tï¿½ppan");
         listDataHeader.add("Spetsen");
-        listDataHeader.add("Kåken");
+        listDataHeader.add("Kï¿½ken");
  
         // Adding child data
         List<String> tappan = new ArrayList<String>();
@@ -176,6 +185,31 @@ public class MenuOne extends Activity{
         listDataChild.put(listDataHeader.get(0), tappan); // Header, Child data
         listDataChild.put(listDataHeader.get(1), spetsen);
         listDataChild.put(listDataHeader.get(2), kaken);
+    }
+    
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+      // Inflate the menu items for use in the action bar
+      MenuInflater inflater = getMenuInflater();
+   
+      inflater.inflate(R.menu.second, menu);
+      return super.onCreateOptionsMenu(menu);
+    }
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+      switch (item.getItemId()) {
+        // Respond to the action bar's Up/Home button
+        case android.R.id.home:
+          NavUtils.navigateUpFromSameTask(this);
+          return true;
+        case R.id.action_direct_settings:		//SETTINGS-KNAPPEN
+        	Log.d("MapLog", "Hejhej");
+        	break;
+        	
+      }
+   
+      return super.onOptionsItemSelected(item);
     }
 
 }

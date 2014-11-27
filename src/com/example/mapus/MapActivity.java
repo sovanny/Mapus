@@ -11,10 +11,12 @@ import android.graphics.Matrix;
 import android.graphics.PointF;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.NavUtils;
 import android.util.FloatMath;
 import android.util.Log;
 //import android.view.Gravity;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -67,6 +69,9 @@ public class MapActivity extends FragmentActivity implements OnTouchListener{
 
         ImageView view = (ImageView) findViewById(R.id.background1);
         view.setOnTouchListener(this);
+        
+        getActionBar().setDisplayHomeAsUpEnabled(true);		//action bar back button
+        getActionBar().setDisplayShowHomeEnabled(false);	//hide app icon in action bar
         
     }
 
@@ -197,7 +202,7 @@ public class MapActivity extends FragmentActivity implements OnTouchListener{
         }
         
         view.setImageMatrix(matrix1);
-        /** sätta förändring applicerad på view på plupp?**/
+        /** sï¿½tta fï¿½rï¿½ndring applicerad pï¿½ view pï¿½ plupp?**/
         
         
 
@@ -267,23 +272,28 @@ public class MapActivity extends FragmentActivity implements OnTouchListener{
 
     }
     
-    /*
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
+      // Inflate the menu items for use in the action bar
+      MenuInflater inflater = getMenuInflater();
+   
+      inflater.inflate(R.menu.second, menu);
+      return super.onCreateOptionsMenu(menu);
     }
-
+    
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }*/
+      switch (item.getItemId()) {
+        // Respond to the action bar's Up/Home button
+        case android.R.id.home:
+          NavUtils.navigateUpFromSameTask(this);
+          return true;
+        case R.id.action_direct_settings:		//SETTINGS-KNAPPEN
+        	Log.d("MapLog", "tjaba");
+        	break;
+        	
+      }
+   
+      return super.onOptionsItemSelected(item);
+    }
 }

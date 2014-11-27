@@ -13,7 +13,6 @@
         android:id="@+id/password_label_login"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_above="@+id/menu1"
         android:layout_alignParentLeft="true"
         android:layout_alignRight="@+id/username_label_login"
         android:layout_alignTop="@+id/password_edit_login"
@@ -43,7 +42,6 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_alignBottom="@+id/username_edit_login"
-        android:layout_alignLeft="@+id/menu1"
         android:layout_alignTop="@+id/username_edit_login"
         android:layout_marginLeft="5dip"
         android:alpha="@dimen/alpha"
@@ -117,7 +115,8 @@
         android:alpha="@dimen/alpha"
         android:background="@color/white"
         android:ems="10"
-        android:hint="Student id" >
+        android:hint="Student id"
+        android:inputType="textNoSuggestions" >
 
         <requestFocus />
     </EditText>
