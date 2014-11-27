@@ -279,7 +279,7 @@ public class MapActivity extends FragmentActivity implements OnTouchListener{
       // Inflate the menu items for use in the action bar
       MenuInflater inflater = getMenuInflater();
    
-      inflater.inflate(R.menu.second, menu);
+      inflater.inflate(R.menu.main, menu);
       return super.onCreateOptionsMenu(menu);
     }
     
