@@ -9,6 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:layout_below="@+id/confirm_pass_label"
         android:ems="10" />
 
@@ -17,6 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:layout_below="@+id/new_pass_label"
         android:ems="10" />
 
@@ -25,6 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:layout_below="@+id/current_pass_label"
         android:ems="10" >
 
@@ -36,6 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:layout_below="@+id/change_disp_name_label"
         android:ems="10" />
 
@@ -46,7 +50,7 @@
         android:layout_alignLeft="@+id/current_pass_label"
         android:layout_alignParentTop="true"
         android:layout_marginTop="20dp"
-        android:text="Change display name:" />
+        android:text="@string/change_name" />
 
     <TextView
         android:id="@+id/current_pass_label"
@@ -55,7 +59,7 @@
         android:layout_below="@+id/edit_disp_name_label"
         android:layout_marginTop="28dp"
         android:layout_toLeftOf="@+id/save_btn"
-        android:text="Current password:" />
+        android:text="@string/current_pass" />
 
     <TextView
         android:id="@+id/new_pass_label"
@@ -64,7 +68,7 @@
         android:layout_alignLeft="@+id/current_pass_label"
         android:layout_below="@+id/edit_current_pass_field"
         android:layout_marginTop="26dp"
-        android:text="New password:" />
+        android:text="@string/new_pass" />
 
     <TextView
         android:id="@+id/confirm_pass_label"
@@ -73,7 +77,7 @@
         android:layout_alignLeft="@+id/new_pass_label"
         android:layout_below="@+id/edit_new_pass_field"
         android:layout_marginTop="25dp"
-        android:text="Confirm new password:" />
+        android:text="@string/conf_pass" />
 
     <Button
         android:id="@+id/save_btn"
