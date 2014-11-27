@@ -25,7 +25,7 @@ public class MainActivity extends Activity {
         Thread logoTimer = new Thread(){
         	public void run(){
         		try{
-        			sleep(1000);
+        			sleep(2000);
         			Intent menuIntent = new Intent("com.example.mapus.MENU");
         			startActivity(menuIntent);
         			
