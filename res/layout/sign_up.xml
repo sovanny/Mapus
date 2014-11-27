@@ -17,7 +17,7 @@
         android:alpha="0.7"
         android:background="@color/white"
         android:ems="10"
-        android:hint="Username" />
+        android:hint="Display-name" />
 
     <TextView
         android:id="@+id/confirm_password"
@@ -25,7 +25,7 @@
         android:layout_height="50dp"
         android:layout_above="@+id/password"
         android:layout_alignLeft="@+id/displayname"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:layout_toLeftOf="@+id/username_edit"
         android:alpha="0.7"
         android:background="@drawable/lock4"
@@ -42,7 +42,7 @@
         android:layout_alignLeft="@+id/displayname"
         android:layout_alignRight="@+id/displayname"
         android:alpha="0.7"
-        android:background="@drawable/id4"
+        android:background="@drawable/id6"
         android:gravity="center_vertical"
         android:text=""
         android:textColor="@color/gray1"
@@ -107,16 +107,28 @@
         android:textColor="@color/gray1"
         android:textSize="18dp" />
 
+    <EditText
+        android:id="@+id/password_confirm_edit"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignRight="@+id/password_edit"
+        android:layout_alignTop="@+id/password"
+        android:layout_toRightOf="@+id/password"
+        android:alpha="0.7"
+        android:background="@color/white"
+        android:ems="10"
+        android:hint="Confirm password"
+        android:inputType="textPassword" />
+
     <ImageView
         android:id="@+id/createuserbutton"
         style="@style/AppBaseTheme"
         android:layout_width="fill_parent"
         android:layout_height="80dp"
+        android:layout_alignLeft="@+id/password"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/password_confirm_edit"
-        android:layout_marginBottom="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginBottom="40dp"
         android:alpha="1"
         android:background="@drawable/buttonshape"
         android:paddingLeft="200dp"
@@ -125,7 +137,7 @@
         android:textSize="30dp" />
 
     <TextView
-        android:id="@+id/myImageViewText1"
+        android:id="@+id/createuser_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/createuserbutton"
@@ -144,21 +156,7 @@
         android:layout_height="80dp"
         android:layout_above="@+id/id_edit"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="0dp"
         android:alpha="0.8"
         android:background="@drawable/createuser3" />
-
-    <EditText
-        android:id="@+id/password_confirm_edit"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignRight="@+id/password_edit"
-        android:layout_alignTop="@+id/password"
-        android:layout_toRightOf="@+id/password"
-        android:alpha="0.7"
-        android:background="@color/white"
-        android:ems="10"
-        android:hint="Confirm password"
-        android:inputType="textPassword" />
 
 </RelativeLayout>

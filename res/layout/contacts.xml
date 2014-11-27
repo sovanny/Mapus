@@ -5,44 +5,29 @@
     android:orientation="vertical" >
 
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent" >
-        
-	<TextView
-        android:id="@+id/dispnametextview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/settingsbutton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/settingsbutton"
-        android:gravity="center_vertical|center_horizontal"
-        android:text="Tantan Granen" />
 
-  	<Button
-        android:id="@+id/settingsbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:text="Settings" />
+        <ImageView
+            android:id="@+id/adduser_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/btncircleorange"
+            android:padding="4dp"
+            android:src="@drawable/adduser" />
 
-  	<Button
-  	    android:id="@+id/addcontactbutton"
-  	    android:layout_width="wrap_content"
-  	    android:layout_height="wrap_content"
-  	    android:layout_alignParentLeft="true"
-  	    android:layout_alignParentRight="true"
-  	    android:layout_below="@+id/dispnametextview"
-  	    android:text="ADD +" />
+        <ListView
+            android:id="@+id/listView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/adduser_btn" >
 
-  	<ListView
-  	    android:id="@+id/listView1"
-  	    android:layout_width="match_parent"
-  	    android:layout_height="wrap_content"
-  	    android:layout_alignParentLeft="true"
-  	    android:layout_below="@+id/addcontactbutton" >
-  	</ListView>
+        </ListView>
 
     </RelativeLayout>
 
