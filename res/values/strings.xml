@@ -12,5 +12,7 @@
     <string name="Start_activity_title">Main Menu</string>
     <string name="MenuOne_activity_title">Maps</string>
     <string name="MapActivity_title">Täppan plan 5</string> <!-- Hur ska vi göra det här? -->
-
+    <string name="contacts_activity_title">Contacts</string>
+    <string name="settings_activity_title">Settings</string>
+    
 </resources>
