@@ -96,7 +96,7 @@
         android:textSize="30sp" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/logo_icon"
         android:layout_width="90dp"
         android:layout_height="90dp"
         android:layout_above="@+id/username_label_login"

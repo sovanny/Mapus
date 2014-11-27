@@ -57,6 +57,17 @@ public class menu extends Activity{
 	
 		});
 		
+		//cheaty shortcut
+		TextView cheat = (TextView) findViewById(R.id.logo_icon);
+		cheat.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+	
+				startActivity(new Intent("com.example.mapus.START"));
+			}
+	
+		});
 		
 	}
 	/*
