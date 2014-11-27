@@ -1,34 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:layout_weight="1.03" >
 
-    <RelativeLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/change_disp_name_label"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1.03" >
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="25dp"
+        android:text="Change display name:" />
 
-        <Button
-            android:id="@+id/signoutbutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/changebutton"
-            android:layout_marginTop="143dp"
-            android:text="Sign Out" />
+    <EditText
+        android:id="@+id/edit_disp_name_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/change_disp_name_label"
+        android:layout_marginTop="14dp"
+        android:ems="10" >
 
-        <Button
-            android:id="@+id/changebutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="163dp"
-            android:text="Change User Data" />
+        <requestFocus />
+    </EditText>
 
-    </RelativeLayout>
+    <TextView
+        android:id="@+id/current_pass_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/edit_disp_name_label"
+        android:layout_marginTop="21dp"
+        android:text="Current password:" />
 
-</LinearLayout>
+    <EditText
+        android:id="@+id/edit_current_pass_field"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/current_pass_label"
+        android:layout_marginTop="14dp"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/new_pass_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/edit_current_pass_field"
+        android:layout_marginTop="26dp"
+        android:text="New password:" />
+
+    <EditText
+        android:id="@+id/edit_new_pass_field"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/new_pass_label"
+        android:layout_marginTop="18dp"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/confirm_pass_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/edit_new_pass_field"
+        android:layout_marginTop="24dp"
+        android:text="Confirm new password:" />
+
+    <EditText
+        android:id="@+id/edit_conf_pass_field"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/confirm_pass_label"
+        android:layout_marginTop="18dp"
+        android:ems="10" />
+
+</RelativeLayout>
