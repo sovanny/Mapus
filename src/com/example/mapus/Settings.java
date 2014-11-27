@@ -27,7 +27,7 @@ public class Settings extends Activity{
       // Inflate the menu items for use in the action bar
       MenuInflater inflater = getMenuInflater();
    
-      inflater.inflate(R.menu.second, menu);
+      inflater.inflate(R.menu.settings_activity_bar, menu);
       return super.onCreateOptionsMenu(menu);
     }
     
@@ -38,10 +38,6 @@ public class Settings extends Activity{
         case android.R.id.home:
           NavUtils.navigateUpFromSameTask(this);
           return true;
-        case R.id.action_direct_settings:		//SETTINGS-KNAPPEN
-        	Log.d("MapLog", "Hejhej");
-        	startActivity(new Intent("com.example.mapus.SETTINGS"));
-        	break;
         	
       }
    
