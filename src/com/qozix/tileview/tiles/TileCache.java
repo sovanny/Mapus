@@ -16,7 +16,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Bitmap.CompressFormat;
 import android.support.v4.util.LruCache;
 
-import com.jakewharton.disklrucache.DiskLruCache;;
+import com.jakewharton.disklrucache.DiskLruCache;
 
 public class TileCache {
 	
