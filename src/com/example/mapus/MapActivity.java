@@ -83,6 +83,7 @@ public class MapActivity extends FragmentActivity implements OnTouchListener{
     	ImageView plupp = (ImageView) findViewById(R.id.plupp);
         ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams)plupp.getLayoutParams();
     	ImageView view = (ImageView) v;
+    	ViewGroup.MarginLayoutParams viewLp = (ViewGroup.MarginLayoutParams)view.getLayoutParams();	//koordinat-test
         float scale;
     	
     	view.setScaleType(ImageView.ScaleType.MATRIX);
@@ -122,6 +123,8 @@ public class MapActivity extends FragmentActivity implements OnTouchListener{
 					//Control message to show activation
 					lp.leftMargin = (int)event.getX();
 				    lp.topMargin = (int)event.getY();
+//				    viewLp.leftMargin = (int)event.getX();	//koordinat-test
+//				    viewLp.topMargin = (int)event.getY();	//koordinat-test
 				    plupp.setLayoutParams(lp);
 					plupp.setVisibility(View.VISIBLE);
 					
@@ -132,9 +135,13 @@ public class MapActivity extends FragmentActivity implements OnTouchListener{
 //					Log.d("MapLog", "Hejhej");
 					
 					/**coordinates**/
-					pluppX = plupp.getLeft() - view.getLeft();
-					pluppY = plupp.getTop() - view.getTop();
-					Log.d("MapLog", "X:Y = " + pluppX + ":" + pluppY);
+					pluppX = plupp.getLeft() + view.getLeft();
+					pluppY = plupp.getTop() + view.getTop();
+//					Log.d("MapLog", "X:Y = " + pluppX + ":" + pluppY);
+//					Log.d("MapLog", "bakgrundens/layouten X:Y " + view.getLeft() + ":" + view.getTop());
+//					Log.d("MapLog", "pluppens/layouten X:Y " + plupp.getLeft() + ":" + plupp.getTop());
+					Log.d("MapLog", "PLUPP MARGINS left:top " + lp.leftMargin + ":" + lp.topMargin);
+					Log.d("MapLog", "BAKGRUND MARGINS left:top " + viewLp.leftMargin + ":" + viewLp.topMargin);
 					
 					dialog.show(getSupportFragmentManager(), "test");
 					//getSupportFragmentManager(), "test"
