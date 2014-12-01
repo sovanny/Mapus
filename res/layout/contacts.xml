@@ -5,8 +5,21 @@
     android:orientation="vertical" >
 
     <RelativeLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/adduser_btn"
+            android:layout_alignTop="@+id/adduser_btn"
+            android:layout_toLeftOf="@+id/adduser_btn"
+            android:gravity="center_vertical|center_horizontal"
+            android:paddingRight="10dp"
+            android:text="Add fellow student..."
+            android:textColor="@color/gray1"
+            android:textSize="20dp" />
 
         <ImageView
             android:id="@+id/adduser_btn"
@@ -14,20 +27,20 @@
             android:layout_height="50dp"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="14dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="17dp"
             android:background="@drawable/btncircleorange"
             android:padding="4dp"
             android:src="@drawable/adduser" />
 
-        <ListView
-            android:id="@+id/listView1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/adduser_btn" >
-
-        </ListView>
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:alpha="0.5"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/nofriends" />
 
     </RelativeLayout>
 

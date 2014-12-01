@@ -3,6 +3,7 @@ package com.example.mapus;
 import android.app.Activity;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -54,6 +55,16 @@ public class Start extends Activity {
 				startActivity(new Intent("com.example.mapus.CONTACTS"));	
 				}
 			});
+		
+		checkoutbtn.setOnClickListener(new View.OnClickListener() {	
+			@Override
+			public void onClick(View v) {
+				Toast.makeText(
+		                  getApplicationContext(),
+		                   "Your position is not set!",Toast.LENGTH_SHORT)
+		                  .show();	
+				}
+			});
 	}
 	
 	@Override
@@ -71,7 +82,7 @@ public class Start extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_direct_settings) {	//settings-knappen vald
-        	Log.d("MapLog", "GÃ¥r in i settings");
+        	Log.d("MapLog", "Går in i settings");
         	startActivity(new Intent("com.example.mapus.SETTINGS"));
         	return true;
         }
