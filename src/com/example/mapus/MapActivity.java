@@ -132,8 +132,8 @@ public class MapActivity extends FragmentActivity implements OnTouchListener{
 //					Log.d("MapLog", "Hejhej");
 					
 					/**coordinates**/
-					pluppX = plupp.getX() - view.getX();
-					pluppY = plupp.getY() - view.getX();
+					pluppX = plupp.getLeft() - view.getLeft();
+					pluppY = plupp.getTop() - view.getTop();
 					Log.d("MapLog", "X:Y = " + pluppX + ":" + pluppY);
 					
 					dialog.show(getSupportFragmentManager(), "test");
