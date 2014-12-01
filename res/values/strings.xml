@@ -17,8 +17,8 @@
     
     <!-- settings.xml -->
     <string name="change_name">Change display-name:</string>
-    <string name="current_pass">Current password:</string>
-    <string name="new_pass">New password:</string>
-    <string name="conf_pass">Confirm password:</string>
+    <string name="current_pass">Enter current password to save:</string>
+    <string name="new_pass">Change password:</string>
+    <string name="conf_pass">Confirm new password:</string>
 
 </resources>
