@@ -1,7 +1,7 @@
 package com.example.mapus;
 
 
-import android.app.Activity;
+//import android.app.Activity;
 //import android.content.Context;
 //import android.graphics.Bitmap;
 //import android.graphics.BitmapFactory;
@@ -26,7 +26,7 @@ import android.widget.ImageView;
 //import android.widget.LinearLayout;
 //import android.widget.RelativeLayout;
 //import android.widget.Toast;
-import android.app.FragmentManager;
+//import android.app.FragmentManager;
 import android.content.Intent;
 
 import com.example.mapus.MyDialogFragment;
@@ -83,10 +83,14 @@ public class MapActivity extends FragmentActivity implements OnTouchListener{
     	ImageView plupp = (ImageView) findViewById(R.id.plupp);
         ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams)plupp.getLayoutParams();
     	ImageView view = (ImageView) v;
+    	ViewGroup.MarginLayoutParams viewLp = (ViewGroup.MarginLayoutParams)view.getLayoutParams();	//koordinat-test
         float scale;
     	
     	view.setScaleType(ImageView.ScaleType.MATRIX);
         plupp.setScaleType(ImageView.ScaleType.MATRIX);
+        
+        float pluppX = 0;
+        float pluppY = 0;
         
         dumpEvent(event);
 
@@ -104,13 +108,13 @@ public class MapActivity extends FragmentActivity implements OnTouchListener{
         
         	//first finger down only
             case MotionEvent.ACTION_DOWN:  
-            									savedMatrix1.set(matrix1);
-            									savedMatrix2.set(matrix2);
-                                                start.set(event.getX(), event.getY());
-                                                isOnClick = true;
-                                                Log.d(TAG, "mode=DRAG"); // write to LogCat
-                                                mode = DRAG;
-                                                break;
+				savedMatrix1.set(matrix1);
+				savedMatrix2.set(matrix2);
+                start.set(event.getX(), event.getY());
+                isOnClick = true;
+                Log.d(TAG, "mode=DRAG"); // write to LogCat
+                mode = DRAG;
+                break;
                                                 
             //first finger lifted
             //note that movement happens in between
@@ -119,6 +123,8 @@ public class MapActivity extends FragmentActivity implements OnTouchListener{
 					//Control message to show activation
 					lp.leftMargin = (int)event.getX();
 				    lp.topMargin = (int)event.getY();
+//				    viewLp.leftMargin = (int)event.getX();	//koordinat-test
+//				    viewLp.topMargin = (int)event.getY();	//koordinat-test
 				    plupp.setLayoutParams(lp);
 					plupp.setVisibility(View.VISIBLE);
 					
@@ -126,7 +132,16 @@ public class MapActivity extends FragmentActivity implements OnTouchListener{
 					
 					//if yes, save coordinates relative to background view
 					//how? getTop(), getRight()?
-					Log.d("MapLog", "Hejhej");
+//					Log.d("MapLog", "Hejhej");
+					
+					/**coordinates**/
+					pluppX = plupp.getLeft() + view.getLeft();
+					pluppY = plupp.getTop() + view.getTop();
+//					Log.d("MapLog", "X:Y = " + pluppX + ":" + pluppY);
+//					Log.d("MapLog", "bakgrundens/layouten X:Y " + view.getLeft() + ":" + view.getTop());
+//					Log.d("MapLog", "pluppens/layouten X:Y " + plupp.getLeft() + ":" + plupp.getTop());
+					Log.d("MapLog", "PLUPP MARGINS left:top " + lp.leftMargin + ":" + lp.topMargin);
+					Log.d("MapLog", "BAKGRUND MARGINS left:top " + viewLp.leftMargin + ":" + viewLp.topMargin);
 					
 					dialog.show(getSupportFragmentManager(), "test");
 					//getSupportFragmentManager(), "test"
@@ -204,7 +219,7 @@ public class MapActivity extends FragmentActivity implements OnTouchListener{
         }
         
         view.setImageMatrix(matrix1);
-        /** s�tta f�r�ndring applicerad p� view p� plupp?**/
+        /** sätta förändring applicerad på view på plupp?**/
         
         
 
