@@ -1,7 +1,7 @@
 package com.example.mapus;
 
 
-import android.app.Activity;
+//import android.app.Activity;
 //import android.content.Context;
 //import android.graphics.Bitmap;
 //import android.graphics.BitmapFactory;
@@ -26,7 +26,7 @@ import android.widget.ImageView;
 //import android.widget.LinearLayout;
 //import android.widget.RelativeLayout;
 //import android.widget.Toast;
-import android.app.FragmentManager;
+//import android.app.FragmentManager;
 import android.content.Intent;
 
 import com.example.mapus.MyDialogFragment;
@@ -88,6 +88,9 @@ public class MapActivity extends FragmentActivity implements OnTouchListener{
     	view.setScaleType(ImageView.ScaleType.MATRIX);
         plupp.setScaleType(ImageView.ScaleType.MATRIX);
         
+        float pluppX = 0;
+        float pluppY = 0;
+        
         dumpEvent(event);
 
         //dialog box popping up on marker set
@@ -104,13 +107,13 @@ public class MapActivity extends FragmentActivity implements OnTouchListener{
         
         	//first finger down only
             case MotionEvent.ACTION_DOWN:  
-            									savedMatrix1.set(matrix1);
-            									savedMatrix2.set(matrix2);
-                                                start.set(event.getX(), event.getY());
-                                                isOnClick = true;
-                                                Log.d(TAG, "mode=DRAG"); // write to LogCat
-                                                mode = DRAG;
-                                                break;
+				savedMatrix1.set(matrix1);
+				savedMatrix2.set(matrix2);
+                start.set(event.getX(), event.getY());
+                isOnClick = true;
+                Log.d(TAG, "mode=DRAG"); // write to LogCat
+                mode = DRAG;
+                break;
                                                 
             //first finger lifted
             //note that movement happens in between
@@ -126,7 +129,12 @@ public class MapActivity extends FragmentActivity implements OnTouchListener{
 					
 					//if yes, save coordinates relative to background view
 					//how? getTop(), getRight()?
-					Log.d("MapLog", "Hejhej");
+//					Log.d("MapLog", "Hejhej");
+					
+					/**coordinates**/
+					pluppX = plupp.getX() - view.getX();
+					pluppY = plupp.getY() - view.getX();
+					Log.d("MapLog", "X:Y = " + pluppX + ":" + pluppY);
 					
 					dialog.show(getSupportFragmentManager(), "test");
 					//getSupportFragmentManager(), "test"
@@ -204,7 +212,7 @@ public class MapActivity extends FragmentActivity implements OnTouchListener{
         }
         
         view.setImageMatrix(matrix1);
-        /** s�tta f�r�ndring applicerad p� view p� plupp?**/
+        /** sätta förändring applicerad på view på plupp?**/
         
         
 
