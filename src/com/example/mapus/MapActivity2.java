@@ -20,8 +20,14 @@ public class MapActivity2 extends Activity{
 
         // Set the minimum parameters
         tileView.setSize(2550,1970);
-        tileView.addDetailLevel(0.5f, "tiles/500_%col%_%row%.png", "@sample/tp5.png");
+        tileView.addDetailLevel(1f, "tiles/1000_%col%_%row%.png", "samples/tp5.png");
+        tileView.addDetailLevel(0.5f, "tiles/500_%col%_%row%.png", "samples/tp5.png");
+        tileView.addDetailLevel(0.25f, "tiles/250_%col%_%row%.png", "samples/tp5.png");
+        tileView.addDetailLevel(0.125f, "tiles/125_%col%_%row%.png", "samples/tp5.png");
 
+     // Add the view to display it
+        setContentView(tileView);
+        
         ImageView markerA = new ImageView(this);
         markerA.setImageResource(R.drawable.map_marker_blue);
         markerA.setTag("Nice");
@@ -34,10 +40,9 @@ public class MapActivity2 extends Activity{
         tileView.addMarker(markerB, 300, 500);
         
         //activate cache?
-        tileView.setCacheEnabled(true);
+//        tileView.setCacheEnabled(true);
         
-        // Add the view to display it
-        setContentView(tileView);
+        
     }
     
     
