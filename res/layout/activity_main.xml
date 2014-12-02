@@ -122,7 +122,10 @@
         android:background="@color/white"
         android:ems="10"
         android:hint="Student id"
-        android:inputType="textNoSuggestions" />
+        android:inputType="textNoSuggestions"  >
+
+        <requestFocus />
+    </EditText>
 
     <TextView
         android:id="@+id/logo_icon"

@@ -13,6 +13,7 @@
         android:layout_below="@+id/confirm_pass_label"
         android:background="@drawable/squareshape"
         android:ems="10"
+        android:inputType="textPassword"
         android:paddingLeft="50dp" />
 
     <EditText
@@ -24,62 +25,8 @@
         android:layout_below="@+id/new_pass_label"
         android:background="@drawable/squareshape"
         android:ems="10"
+        android:inputType="textPassword"
         android:paddingLeft="50dp" />
-
-    <ImageView
-        android:id="@+id/log_out_btn"
-        style="@style/AppBaseTheme"
-        android:layout_width="160dp"
-        android:layout_height="35dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="35dp"
-        android:alpha="0.7"
-        android:background="@drawable/buttonshape"
-        android:gravity="center_horizontal"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="30dp" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/log_out_btn"
-        android:layout_alignLeft="@+id/log_out_btn"
-        android:layout_alignRight="@+id/log_out_btn"
-        android:layout_alignTop="@+id/log_out_btn"
-        android:gravity="center_vertical|center_horizontal"
-        android:text="Log Out"
-        android:textColor="@color/gray1" />
-
-    <ImageView
-        android:id="@+id/save_btn"
-        style="@style/AppBaseTheme"
-        android:layout_width="160dp"
-        android:layout_height="40dp"
-        android:layout_above="@+id/log_out_btn"
-        android:layout_alignLeft="@+id/log_out_btn"
-        android:layout_marginTop="10dp"
-        android:alpha="0.7"
-        android:background="@drawable/buttonshape"
-        android:gravity="center_horizontal"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="30dp" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/save_btn"
-        android:layout_alignLeft="@+id/save_btn"
-        android:layout_alignRight="@+id/save_btn"
-        android:layout_alignTop="@+id/save_btn"
-        android:gravity="center_vertical|center_horizontal"
-        android:text="Save"
-        android:textColor="@color/gray1" />
 
     <EditText
         android:id="@+id/edit_disp_name_label"
@@ -92,19 +39,11 @@
         android:layout_marginRight="20dp"
         android:background="@drawable/squareshape"
         android:ems="10"
-        android:hint="här skriver man"
-        android:paddingLeft="50dp" />
+        android:hint=""
+        android:paddingLeft="45dp" >
 
-    <EditText
-        android:id="@+id/edit_current_pass_field"
-        android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:layout_above="@+id/save_btn"
-        android:layout_alignLeft="@+id/view1"
-        android:layout_alignRight="@+id/edit_disp_name_label"
-        android:background="@drawable/squareshape"
-        android:ems="10"
-        android:paddingLeft="50dp" />
+        <requestFocus />
+    </EditText>
 
     <TextView
         android:id="@+id/new_pass_label"
@@ -114,6 +53,7 @@
         android:layout_below="@+id/edit_disp_name_label"
         android:layout_marginBottom="3dp"
         android:layout_marginTop="15dp"
+        android:alpha="0.7"
         android:paddingLeft="5dp"
         android:text="@string/new_pass"
         android:textColor="@color/gray1" />
@@ -126,6 +66,7 @@
         android:layout_below="@+id/edit_new_pass_field"
         android:layout_marginBottom="3dp"
         android:layout_marginTop="20dp"
+        android:alpha="0.7"
         android:paddingLeft="5dp"
         android:text="@string/conf_pass"
         android:textColor="@color/gray1" />
@@ -148,6 +89,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginBottom="3dp"
         android:layout_marginTop="19dp"
+        android:alpha="0.7"
         android:paddingLeft="5dp"
         android:text="@string/change_name"
         android:textColor="@color/gray1" />
@@ -173,16 +115,48 @@
         android:alpha="@dimen/alpha"
         android:src="@drawable/lock5" />
 
+    <View
+        android:id="@+id/view2"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/edit_conf_pass_field"
+        android:layout_marginTop="25dp"
+        android:alpha="0.4"
+        android:background="@color/orange"
+        android:gravity="center_vertical" />
+
+    <EditText
+        android:id="@+id/edit_current_pass_field"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_above="@+id/save_btn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="14dp"
+        android:background="@drawable/squareshape"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:paddingLeft="50dp" />
+
     <ImageView
         android:id="@+id/imageView_password"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_alignBottom="@+id/edit_current_pass_field"
-        android:layout_alignLeft="@+id/edit_current_pass_field"
-        android:layout_alignRight="@+id/imageView_confnewpassword"
-        android:layout_alignTop="@+id/edit_current_pass_field"
+        android:layout_alignLeft="@+id/current_pass_label"
+        android:layout_below="@+id/current_pass_label"
         android:alpha="@dimen/alpha"
         android:src="@drawable/lock5" />
+    
+    <View
+        android:id="@+id/view4"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/view2"
+        android:background="@color/orange" 
+        android:alpha="0.8"/>
 
     <TextView
         android:id="@+id/current_pass_label"
@@ -190,20 +164,83 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/edit_current_pass_field"
         android:layout_alignLeft="@+id/edit_current_pass_field"
+        android:alpha="1"
         android:paddingLeft="5dp"
         android:text="@string/current_pass"
         android:textColor="@color/gray1" />
 
     <View
-        android:id="@+id/view1"
+        android:id="@+id/View01"
         android:layout_width="wrap_content"
         android:layout_height="1dp"
-        android:layout_above="@+id/current_pass_label"
-        android:layout_alignLeft="@+id/edit_conf_pass_field"
-        android:layout_alignRight="@+id/edit_conf_pass_field"
-        android:layout_b="@+id/current_pass_label"
-        android:layout_marginBottom="17dp"
-        android:background="@color/gray2"
-        android:gravity="center_vertical" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:alpha="0.8"
+        android:background="@color/orange" />
+
+    <ImageView
+        android:id="@+id/log_out_btn"
+        style="@style/AppBaseTheme"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
+        android:alpha="0.9"
+        android:background="@drawable/buttonshape"
+        android:gravity="center_horizontal"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="30dp" />
+
+    <ImageView
+        android:id="@+id/save_btn"
+        style="@style/AppBaseTheme"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/log_out_btn"
+        android:layout_alignLeft="@+id/edit_current_pass_field"
+        android:layout_alignRight="@+id/edit_current_pass_field"
+        android:layout_marginBottom="36dp"
+        android:alpha="1"
+        android:background="@drawable/buttonshape"
+        android:gravity="center_horizontal"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/log_out_btn"
+        android:layout_alignLeft="@+id/log_out_btn"
+        android:layout_alignRight="@+id/log_out_btn"
+        android:layout_alignTop="@+id/log_out_btn"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Log Out"
+        android:textColor="@color/gray1" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="18dp"
+        android:alpha="0.8"
+        android:background="@color/orange" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/save_btn"
+        android:layout_alignLeft="@+id/save_btn"
+        android:layout_alignRight="@+id/save_btn"
+        android:layout_alignTop="@+id/save_btn"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Save"
+        android:textColor="@color/gray1" />
 
 </RelativeLayout>

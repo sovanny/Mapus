@@ -20,15 +20,13 @@ import android.os.AsyncTask;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class SigninActivity extends AsyncTask<String,Void,String> {
+public class SaveDisplayname extends AsyncTask<String,Void,String> {
 
-   private TextView roleField;
    private Context context;
    //flag 0 means get and 1 means post.(By default it is get.)
-   public SigninActivity(Context context,TextView roleField,int flag) {
+   public SaveDisplayname(Context context,int flag) {
 	   this.context = context;
       //this.statusField = statusField;
-      this.roleField = roleField;
    }
 
    protected void onPreExecute(){
@@ -38,14 +36,12 @@ public class SigninActivity extends AsyncTask<String,Void,String> {
    protected String doInBackground(String... arg0) {
       
          try{
-            String studentID = (String)arg0[0];
-            String password = (String)arg0[1];
-            String link ="http://sermon.se/koma/loginpost.php";
+            String username = (String)arg0[0];
+            String link ="http://sermon.se/koma/saveusername.php";
             
-            String data  = URLEncoder.encode("studentID", "UTF-8") 
-            + "=" + URLEncoder.encode(studentID, "UTF-8");
-            data += "&" + URLEncoder.encode("password", "UTF-8") 
-            + "=" + URLEncoder.encode(password, "UTF-8");
+            String data  = URLEncoder.encode("username", "UTF-8") 
+            + "=" + URLEncoder.encode(username, "UTF-8");
+
             
             URL url = new URL(link);
             URLConnection conn = url.openConnection(); 
@@ -80,22 +76,16 @@ public class SigninActivity extends AsyncTask<String,Void,String> {
     	  
     	  Toast.makeText(
                   context.getApplicationContext(),
-                   "Welcome " + result + "!",Toast.LENGTH_SHORT)
+                   result,Toast.LENGTH_SHORT)
                   .show();
-    	  
-    	  this.roleField.setText("");
-    	  
-    	  Intent intent = new Intent("com.example.mapus.START");
-    	  intent.putExtra("the_result", result);
-    	  context.startActivity(intent);
+
     	  
       }
       else{
     	  Toast.makeText(
                   context.getApplicationContext(),
                    result,Toast.LENGTH_SHORT)
-                  .show();
-    	  this.roleField.setText("");  
+                  .show();  
       }
       
    }
