@@ -20,7 +20,7 @@ public class MapActivity2 extends Activity{
 
         // Set the minimum parameters
         tileView.setSize(2550,1970);
-        tileView.addDetailLevel(1f, "tiles/1000_%col%_%row%.png", "@drawable/tp5.png");
+        tileView.addDetailLevel(0.5f, "tiles/500_%col%_%row%.png", "@sample/tp5.png");
 
         ImageView markerA = new ImageView(this);
         markerA.setImageResource(R.drawable.map_marker_blue);
