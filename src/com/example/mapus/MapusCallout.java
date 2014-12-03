@@ -67,17 +67,18 @@ public class MapusCallout extends RelativeLayout {
 		TextView titleView = new TextView( getContext() );
 		titleView.setTextColor( 0xFFFFFFFF );
 		titleView.setTextSize( 15 );
-		titleView.setMaxWidth( 250 );
+		//titleView.setMaxWidth( 250 );
 		titleView.setTypeface( Typeface.SANS_SERIF, Typeface.BOLD );
-		titleView.setText( "Position" );
+		titleView.setText( "Your position" );
 		titleView.setId(1337);
-		labels.addView( titleView );
+		RelativeLayout.LayoutParams titleLayout = new RelativeLayout.LayoutParams( LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT );
+		labels.addView( titleView, titleLayout );
 
 		TextView subTitleView = new TextView( getContext() );
 		subTitleView.setTextColor( 0xFFFFFFFF );
 		subTitleView.setTextSize( 12 );
 		subTitleView.setTypeface( Typeface.SANS_SERIF );
-		subTitleView.setText( "Somebody is studying here..." );
+		subTitleView.setText( "This is where you're studying" );
 		subTitleView.setId(1338);
 		RelativeLayout.LayoutParams subTitleLayout = new RelativeLayout.LayoutParams( LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT );
 		subTitleLayout.addRule(RelativeLayout.BELOW, 1337);
@@ -87,6 +88,7 @@ public class MapusCallout extends RelativeLayout {
 		//button test
 		Button cancelBtn = new Button(context); 
 	    cancelBtn.setText("Remove"); 
+	    cancelBtn.setId(1339);
 	    
 	    Button sendBtn = new Button(context); 
 	    sendBtn.setText("Share");
@@ -94,12 +96,13 @@ public class MapusCallout extends RelativeLayout {
 	    //param test: position buttons at bottom
 	    //RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)cancelBtn.getLayoutParams();
 	    RelativeLayout.LayoutParams cancelBtnParams = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-	    cancelBtnParams.addRule(RelativeLayout.BELOW, 1337);
+	    cancelBtnParams.addRule(RelativeLayout.BELOW, 1338);
 	    cancelBtnParams.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
 	    
 	    RelativeLayout.LayoutParams sendBtnParams = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-	    sendBtnParams.addRule(RelativeLayout.BELOW, 1337);
-	    sendBtnParams.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
+	    sendBtnParams.addRule(RelativeLayout.BELOW, 1338);
+	    //sendBtnParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+	    sendBtnParams.addRule(RelativeLayout.RIGHT_OF, 1339);
 	    
 	    labels.addView(cancelBtn, cancelBtnParams);
 	    labels.addView(sendBtn, sendBtnParams);
