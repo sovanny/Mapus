@@ -50,38 +50,6 @@ public class MapusCallout extends RelativeLayout {
 		LayoutParams bubbleLayout = new LayoutParams( LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT );
 		addView( bubble, bubbleLayout );
 		
-		//button test
-		Button cancelBtn = new Button(context); 
-	    cancelBtn.setText("Remove"); 
-	    
-	    /*
-	    //param test: position buttons at bottom
-	    RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)cancelBtn.getLayoutParams();
-	    params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
-	    cancelBtn.setLayoutParams(params);
-	    
-	    bubble.addView(cancelBtn, params);
-	    									*/
-	    
-	    //original params
-	    bubble.addView(cancelBtn, new LayoutParams(
-								                   LayoutParams.WRAP_CONTENT, 
-								                   LayoutParams.WRAP_CONTENT)
-								                  );
-	    
-
-	    
-		Button sendBtn = new Button(context); 
-	    sendBtn.setText("Share"); 
-	    bubble.addView(sendBtn, new LayoutParams(
-							                     LayoutParams.WRAP_CONTENT, 
-							                     LayoutParams.WRAP_CONTENT)
-							                	);
-	  
-	    /*LinearLayout.LayoutParams layoutParams = new  LinearLayout.LayoutParams(70, 70);
-	    layoutParams.setMargins(5, 3, 0, 0); // left, top, right, bottom
-	    btn.setLayoutParams(layoutParams);*/
-	    
 
 		Nub nub = new Nub( context );
 		LayoutParams nubLayout = new LayoutParams( LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT );
@@ -89,10 +57,10 @@ public class MapusCallout extends RelativeLayout {
 		nubLayout.addRule( RelativeLayout.CENTER_IN_PARENT );
 		addView( nub, nubLayout );
 
-		LinearLayout labels = new LinearLayout( context );
+		RelativeLayout labels = new RelativeLayout( context );
 		labels.setGravity( Gravity.CENTER_VERTICAL );
-		labels.setOrientation( LinearLayout.VERTICAL );
-		LinearLayout.LayoutParams labelLayout = new LinearLayout.LayoutParams( LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT );
+		//labels.setOrientation( LinearLayout.VERTICAL );
+		RelativeLayout.LayoutParams labelLayout = new RelativeLayout.LayoutParams( LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT );
 		labelLayout.setMargins( 12, 0, 12, 0 );
 		bubble.addView( labels, labelLayout );
 
@@ -102,6 +70,7 @@ public class MapusCallout extends RelativeLayout {
 		titleView.setMaxWidth( 250 );
 		titleView.setTypeface( Typeface.SANS_SERIF, Typeface.BOLD );
 		titleView.setText( "Position" );
+		titleView.setId(1337);	//for the buttons
 		labels.addView( titleView );
 
 		TextView subTitleView = new TextView( getContext() );
@@ -109,8 +78,47 @@ public class MapusCallout extends RelativeLayout {
 		subTitleView.setTextSize( 12 );
 		subTitleView.setTypeface( Typeface.SANS_SERIF );
 		subTitleView.setText( "Somebody is studying here..." );
+		subTitleView.setId(1338);	//for the buttons
 		labels.addView( subTitleView );
 
+		
+		//button test
+		Button cancelBtn = new Button(context); 
+	    cancelBtn.setText("Remove"); 
+	    
+	    Button sendBtn = new Button(context); 
+	    sendBtn.setText("Share");
+	    
+	    //param test: position buttons at bottom
+	    //RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)cancelBtn.getLayoutParams();
+	    RelativeLayout.LayoutParams cancelBtnParams = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+	    cancelBtnParams.addRule(RelativeLayout.BELOW, 1337);
+	    cancelBtnParams.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
+	    
+	    RelativeLayout.LayoutParams sendBtnParams = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+	    sendBtnParams.addRule(RelativeLayout.BELOW, 1337);
+	    sendBtnParams.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
+	    
+	    labels.addView(cancelBtn, cancelBtnParams);
+	    labels.addView(sendBtn, sendBtnParams);
+	    
+	    /*original params
+	    bubble.addView(cancelBtn, new LayoutParams(
+								                   LayoutParams.WRAP_CONTENT, 
+								                   LayoutParams.WRAP_CONTENT)
+								                  );						*/
+	    
+	    /* original params
+	    bubble.addView(sendBtn, new LayoutParams(
+							                     LayoutParams.WRAP_CONTENT, 
+							                     LayoutParams.WRAP_CONTENT)
+							                	);							*/
+	  
+	    /*LinearLayout.LayoutParams layoutParams = new  LinearLayout.LayoutParams(70, 70);
+	    layoutParams.setMargins(5, 3, 0, 0); // left, top, right, bottom
+	    btn.setLayoutParams(layoutParams);*/
+			    
+		
 	}
 
 	public void transitionIn() {
