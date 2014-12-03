@@ -38,7 +38,7 @@ public class MapusCallout extends RelativeLayout {
 
 		LinearLayout bubble = new LinearLayout( context );
 		bubble.setOrientation( LinearLayout.HORIZONTAL );
-		int[] colors = { 0xE6888888, 0xFF000000 };
+		int[] colors = { 0xBBfd6624, 0xFFfd6624 };	//gradient alpha orig: E6
 		GradientDrawable drawable = new GradientDrawable( GradientDrawable.Orientation.TOP_BOTTOM, colors );
 		drawable.setCornerRadius( 6 );
 		drawable.setStroke( 2, 0xDD000000 );
@@ -67,14 +67,14 @@ public class MapusCallout extends RelativeLayout {
 		titleView.setTextSize( 15 );
 		titleView.setMaxWidth( 250 );
 		titleView.setTypeface( Typeface.SANS_SERIF, Typeface.BOLD );
-		titleView.setText( "I'm the Title" );
+		titleView.setText( "Position" );
 		labels.addView( titleView );
 
 		TextView subTitleView = new TextView( getContext() );
 		subTitleView.setTextColor( 0xFFFFFFFF );
 		subTitleView.setTextSize( 12 );
 		subTitleView.setTypeface( Typeface.SANS_SERIF );
-		subTitleView.setText( "This is a Sub Title" );
+		subTitleView.setText( "Somebody is studying here..." );
 		labels.addView( subTitleView );
 
 	}
@@ -107,7 +107,7 @@ public class MapusCallout extends RelativeLayout {
 			super( context );
 
 			paint.setStyle( Paint.Style.FILL );
-			paint.setColor( 0xFF000000 );
+			paint.setColor( 0xFFFD6624 );
 			paint.setAntiAlias( true );
 
 			path.lineTo( 20, 0 );
