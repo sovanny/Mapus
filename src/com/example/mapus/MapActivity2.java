@@ -2,6 +2,7 @@ package com.example.mapus;
 
 import com.qozix.TileViewDemo.SampleCallout;
 import com.qozix.tileview.TileView;
+import com.qozix.tileview.TileView.TileViewEventListenerImplementation;
 import com.qozix.tileview.markers.CalloutManager;
 import com.qozix.tileview.markers.MarkerEventListener;
 //import com.qozix.tileview.markers.MarkerEventListener;
@@ -15,9 +16,21 @@ import android.widget.ImageView;
 public class MapActivity2 extends Activity{
 
 	TileView tileView;
-	protected Object mContext;
+	ImageView testMarker;
 
-    @Override
+	private TileViewEventListenerImplementation listener = new TileViewEventListenerImplementation(){
+        public void onTap( int x, int y ) {
+            Log.d( "DEBUG", "tapped" );
+            
+            //create marker
+            testMarker = new ImageView(getBaseContext());
+            testMarker.setImageResource(R.drawable.map_marker_blue);
+            testMarker.setTag("Test3");
+            tileView.addMarker(testMarker, x, y);
+        }
+    };
+	
+	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -59,6 +72,9 @@ public class MapActivity2 extends Activity{
         	  }
         	});
         
+        tileView.addTileViewEventListener( listener );
+        	
+        
         // use pixel coordinates to roughly center it
         // they are calculated against the "full" size of the mapView 
         // i.e., the largest zoom level as it would be rendered at a scale of 1.0f
@@ -75,8 +91,10 @@ public class MapActivity2 extends Activity{
         // Add the view to display it
         setContentView(tileView);
     }
+
     
-    @Override
+    
+	@Override
 	public void onPause() {
 		super.onPause();
 		tileView.clear();
