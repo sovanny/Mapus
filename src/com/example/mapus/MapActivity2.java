@@ -76,4 +76,27 @@ public class MapActivity2 extends Activity{
         setContentView(tileView);
     }
     
+    @Override
+	public void onPause() {
+		super.onPause();
+		tileView.clear();
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+		tileView.resume();
+	}
+
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+		tileView.destroy();
+		tileView = null;
+	}
+	
+	public TileView getTileView(){
+		return tileView;
+	}
+    
 }
