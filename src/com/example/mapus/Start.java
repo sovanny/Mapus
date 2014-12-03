@@ -61,7 +61,7 @@ public class Start extends Activity {
 			public void onClick(View v) {
 				Toast.makeText(
 		                  getApplicationContext(),
-		                   "Your position is not set!",Toast.LENGTH_SHORT)
+		                   "You have left your position!",Toast.LENGTH_SHORT)
 		                  .show();	
 				}
 			});
