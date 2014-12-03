@@ -70,7 +70,7 @@ public class MapusCallout extends RelativeLayout {
 		titleView.setMaxWidth( 250 );
 		titleView.setTypeface( Typeface.SANS_SERIF, Typeface.BOLD );
 		titleView.setText( "Position" );
-		titleView.setId(1337);	//for the buttons
+		titleView.setId(1337);
 		labels.addView( titleView );
 
 		TextView subTitleView = new TextView( getContext() );
@@ -78,8 +78,10 @@ public class MapusCallout extends RelativeLayout {
 		subTitleView.setTextSize( 12 );
 		subTitleView.setTypeface( Typeface.SANS_SERIF );
 		subTitleView.setText( "Somebody is studying here..." );
-		subTitleView.setId(1338);	//for the buttons
-		labels.addView( subTitleView );
+		subTitleView.setId(1338);
+		RelativeLayout.LayoutParams subTitleLayout = new RelativeLayout.LayoutParams( LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT );
+		subTitleLayout.addRule(RelativeLayout.BELOW, 1337);
+		labels.addView( subTitleView, subTitleLayout );
 
 		
 		//button test
