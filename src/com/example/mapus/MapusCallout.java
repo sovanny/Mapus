@@ -53,17 +53,34 @@ public class MapusCallout extends RelativeLayout {
 		//button test
 		Button cancelBtn = new Button(context); 
 	    cancelBtn.setText("Remove"); 
+	    
+	    /*
+	    //param test: position buttons at bottom
+	    RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)cancelBtn.getLayoutParams();
+	    params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+	    cancelBtn.setLayoutParams(params);
+	    
+	    bubble.addView(cancelBtn, params);
+	    									*/
+	    
+	    //original params
 	    bubble.addView(cancelBtn, new LayoutParams(
 								                   LayoutParams.WRAP_CONTENT, 
 								                   LayoutParams.WRAP_CONTENT)
 								                  );
+	    
+
+	    
 		Button sendBtn = new Button(context); 
 	    sendBtn.setText("Share"); 
 	    bubble.addView(sendBtn, new LayoutParams(
 							                     LayoutParams.WRAP_CONTENT, 
 							                     LayoutParams.WRAP_CONTENT)
 							                	);
-	    
+	  
+	    /*LinearLayout.LayoutParams layoutParams = new  LinearLayout.LayoutParams(70, 70);
+	    layoutParams.setMargins(5, 3, 0, 0); // left, top, right, bottom
+	    btn.setLayoutParams(layoutParams);*/
 	    
 
 		Nub nub = new Nub( context );
