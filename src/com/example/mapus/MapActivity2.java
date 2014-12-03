@@ -1,9 +1,7 @@
 package com.example.mapus;
 
-import com.qozix.TileViewDemo.SampleCallout;
 import com.qozix.tileview.TileView;
 import com.qozix.tileview.TileView.TileViewEventListenerImplementation;
-import com.qozix.tileview.markers.CalloutManager;
 import com.qozix.tileview.markers.MarkerEventListener;
 //import com.qozix.tileview.markers.MarkerEventListener;
 
@@ -39,10 +37,10 @@ public class MapActivity2 extends Activity{
 
         // Set the minimum parameters
         tileView.setSize(2550,1970);
-        tileView.addDetailLevel(1f, "tiles/1000_%col%_%row%.png", "samples/tp5.png");
-        tileView.addDetailLevel(0.5f, "tiles/500_%col%_%row%.png", "samples/tp5.png");
-        tileView.addDetailLevel(0.25f, "tiles/250_%col%_%row%.png", "samples/tp5.png");
-        tileView.addDetailLevel(0.125f, "tiles/125_%col%_%row%.png", "samples/tp5.png");
+        tileView.addDetailLevel(1f, "tiles/tp5/1000/%col%_%row%.png", "samples/tp5-500.png");
+        tileView.addDetailLevel(0.5f, "tiles/tp5/500/%col%_%row%.png", "samples/tp5-500.png");
+        //tileView.addDetailLevel(0.25f, "tiles/tp5/250/%col%_%row%.png", "samples/tp5-500.png");
+        //tileView.addDetailLevel(0.125f, "tiles/tp5/125/%col%_%row%.png", "samples/tp5-500.png");
 
         //marker test
         ImageView markerA = new ImageView(this);
@@ -79,11 +77,11 @@ public class MapActivity2 extends Activity{
         // use pixel coordinates to roughly center it
         // they are calculated against the "full" size of the mapView 
         // i.e., the largest zoom level as it would be rendered at a scale of 1.0f
-        tileView.moveToAndCenter(2550,1970);
-        tileView.slideToAndCenter(2550,1970);
+        //tileView.moveToAndCenter(1275,1970);
+        //tileView.slideToAndCenter(900,500);
 
         // Set the default zoom (zoom out by 4 => 1/4 = 0.25)
-         tileView.setScale( 0.25 );
+         tileView.setScale( 0.5 );
         
         
         //You can activate the cache if you are using remote pictures with the following code

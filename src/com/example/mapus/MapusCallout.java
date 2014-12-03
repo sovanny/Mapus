@@ -39,7 +39,7 @@ public class MapusCallout extends RelativeLayout {
 
 		LinearLayout bubble = new LinearLayout( context );
 		bubble.setOrientation( LinearLayout.HORIZONTAL );
-		int[] colors = { 0xBBfd6624, 0xFFfd6624 };	//gradient alpha orig: E6
+		int[] colors = { 0xCCfd6624, 0xCCfd6624 };	//gradient alpha orig: E6
 		GradientDrawable drawable = new GradientDrawable( GradientDrawable.Orientation.TOP_BOTTOM, colors );
 		drawable.setCornerRadius( 6 );
 		drawable.setStroke( 2, 0xDD000000 );
