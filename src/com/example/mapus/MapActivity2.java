@@ -63,7 +63,7 @@ public class MapActivity2 extends Activity{
 //        	    CalloutManager callout = new CalloutManager(mContext, null);
         	    
         	    // create a simple callout
-    			SampleCallout callout = new SampleCallout( view.getContext() );
+    			MapusCallout callout = new MapusCallout( view.getContext() );
     			// add it to the view tree at the same position and offset as the marker that invoked it
     			tileView.addCallout( callout, x, y, -0.5f, -1.0f );
     			// a little sugar
