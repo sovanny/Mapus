@@ -1,6 +1,8 @@
 package com.example.mapus;
 
+import com.qozix.TileViewDemo.SampleCallout;
 import com.qozix.tileview.TileView;
+import com.qozix.tileview.markers.CalloutManager;
 import com.qozix.tileview.markers.MarkerEventListener;
 //import com.qozix.tileview.markers.MarkerEventListener;
 
@@ -13,6 +15,7 @@ import android.widget.ImageView;
 public class MapActivity2 extends Activity{
 
 	TileView tileView;
+	protected Object mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,10 +42,20 @@ public class MapActivity2 extends Activity{
         tileView.addMarker(markerA, 300, 300);
         tileView.addMarker(markerB, 300, 500);
         
+        //marker listener
         tileView.addMarkerEventListener(new MarkerEventListener(){
         	  @Override
         	  public void onMarkerTap( View view, int x, int y ){
         	    Log.d("Marker Event", "marker tag = " + view.getTag() + ", coordinates (X:Y) = " + x + ":" + y );
+//        	    CalloutManager callout = new CalloutManager(mContext, null);
+        	    
+        	    // create a simple callout
+    			SampleCallout callout = new SampleCallout( view.getContext() );
+    			// add it to the view tree at the same position and offset as the marker that invoked it
+    			tileView.addCallout( callout, x, y, -0.5f, -1.0f );
+    			// a little sugar
+    			callout.transitionIn();
+        	    
         	  }
         	});
         
