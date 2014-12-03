@@ -13,6 +13,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.OvershootInterpolator;
 import android.view.animation.ScaleAnimation;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -48,6 +49,22 @@ public class MapusCallout extends RelativeLayout {
 		bubble.setPadding( 10, 10, 10, 10 );
 		LayoutParams bubbleLayout = new LayoutParams( LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT );
 		addView( bubble, bubbleLayout );
+		
+		//button test
+		Button cancelBtn = new Button(context); 
+	    cancelBtn.setText("Remove"); 
+	    bubble.addView(cancelBtn, new LayoutParams(
+								                   LayoutParams.WRAP_CONTENT, 
+								                   LayoutParams.WRAP_CONTENT)
+								                  );
+		Button sendBtn = new Button(context); 
+	    sendBtn.setText("Share"); 
+	    bubble.addView(sendBtn, new LayoutParams(
+							                     LayoutParams.WRAP_CONTENT, 
+							                     LayoutParams.WRAP_CONTENT)
+							                	);
+	    
+	    
 
 		Nub nub = new Nub( context );
 		LayoutParams nubLayout = new LayoutParams( LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT );
