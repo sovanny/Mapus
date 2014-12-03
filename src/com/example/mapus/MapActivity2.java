@@ -44,6 +44,7 @@ public class MapActivity2 extends Activity{
         tileView.addDetailLevel(0.25f, "tiles/250_%col%_%row%.png", "samples/tp5.png");
         tileView.addDetailLevel(0.125f, "tiles/125_%col%_%row%.png", "samples/tp5.png");
 
+        //marker test
         ImageView markerA = new ImageView(this);
         markerA.setImageResource(R.drawable.map_marker_blue);
         markerA.setTag("Test1");
@@ -78,11 +79,11 @@ public class MapActivity2 extends Activity{
         // use pixel coordinates to roughly center it
         // they are calculated against the "full" size of the mapView 
         // i.e., the largest zoom level as it would be rendered at a scale of 1.0f
-        // tileView.moveToAndCenter(2550,1970);
-        // tileView.slideToAndCenter(2550,1970);
+        tileView.moveToAndCenter(2550,1970);
+        tileView.slideToAndCenter(2550,1970);
 
         // Set the default zoom (zoom out by 4 => 1/4 = 0.25)
-        // tileView.setScale( 0.25 );
+         tileView.setScale( 0.25 );
         
         
         //You can activate the cache if you are using remote pictures with the following code
