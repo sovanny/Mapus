@@ -137,7 +137,7 @@ public class MenuOne extends Activity{
                         .show();
                 
                 if(groupPosition == 0 && childPosition == 2){
-                	startActivity(new Intent("com.example.mapus.MAPACTIVITY"));
+                	startActivity(new Intent("com.example.mapus.MAPACTIVITY2"));
                 }
                 
                 

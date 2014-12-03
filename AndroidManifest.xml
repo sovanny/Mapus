@@ -101,7 +101,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MapActivity"
+            android:name=".MapActivity2"
             android:hardwareAccelerated="false"
             android:label="@string/MapActivity_title"
             android:parentActivityName="com.example.mapus.MenuOne" >
@@ -112,7 +112,7 @@
                 android:value="com.example.mapus.MENUONE" />
 
             <intent-filter>
-                <action android:name="com.example.mapus.MAPACTIVITY" />
+                <action android:name="com.example.mapus.MAPACTIVITY2" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
