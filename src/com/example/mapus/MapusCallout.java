@@ -6,8 +6,10 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
@@ -24,8 +26,11 @@ import android.widget.TextView;
  * bad-practice, but was handy and looks decent.
  */
 
-public class MapusCallout extends RelativeLayout {
+public class MapusCallout extends RelativeLayout implements OnClickListener{
 
+	Button cancelBtn;
+	Button sendBtn;
+	
 	// they deprecated setBackgroundDrawable just so they could rename it
 	// the new method (setBackground) doesn't work with older SDKs, and the
 	// old method (setBackgroundDrawable) gives a deprecation warning.
@@ -86,12 +91,14 @@ public class MapusCallout extends RelativeLayout {
 
 		
 		//button test
-		Button cancelBtn = new Button(context); 
+		cancelBtn = new Button(context); 
 	    cancelBtn.setText("Remove"); 
+	    cancelBtn.setOnClickListener(this);
 	    cancelBtn.setId(1339);
 	    
-	    Button sendBtn = new Button(context); 
+	    sendBtn = new Button(context); 
 	    sendBtn.setText("Share");
+	    sendBtn.setOnClickListener(this);
 	    
 	    //param test: position buttons at bottom
 	    //RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)cancelBtn.getLayoutParams();
@@ -124,6 +131,17 @@ public class MapusCallout extends RelativeLayout {
 	    btn.setLayoutParams(layoutParams);*/
 			    
 		
+	}
+	
+	@Override
+	public void onClick(View v) {
+	    int b1 = cancelBtn.getId();
+	    int b2 = sendBtn.getId();
+	    
+	    if(v.getId() == b1)
+	    	Log.d("Marker Event","Cancel btn pressed");
+	    else if(v.getId() == b2)
+	    	Log.d("Marker Event","Send btn pressed");
 	}
 
 	public void transitionIn() {
