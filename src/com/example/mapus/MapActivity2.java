@@ -60,7 +60,7 @@ public class MapActivity2 extends Activity{
         tileView.addMarkerEventListener(new MarkerEventListener(){
         	  @Override
         	  public void onMarkerTap( View view, int x, int y ){
-        		  
+        		  tileView.slideToAndCenter( x, y);
         		  setCoord(x, y);
 					
         		  Log.d("Marker Event", "marker tag = " + view.getTag() + ", coordinates (X:Y) = " + x + ":" + y );
