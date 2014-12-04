@@ -30,6 +30,7 @@ public class MapusCallout extends RelativeLayout implements OnClickListener{
 
 	Button cancelBtn;
 	Button sendBtn;
+	MapActivity2 map = new MapActivity2();
 	
 	// they deprecated setBackgroundDrawable just so they could rename it
 	// the new method (setBackground) doesn't work with older SDKs, and the
@@ -90,7 +91,7 @@ public class MapusCallout extends RelativeLayout implements OnClickListener{
 		labels.addView( subTitleView, subTitleLayout );
 
 		
-		//button test
+		//buttons
 		cancelBtn = new Button(context); 
 	    cancelBtn.setText("Remove"); 
 	    cancelBtn.setOnClickListener(this);
@@ -100,8 +101,7 @@ public class MapusCallout extends RelativeLayout implements OnClickListener{
 	    sendBtn.setText("Share");
 	    sendBtn.setOnClickListener(this);
 	    
-	    //param test: position buttons at bottom
-	    //RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)cancelBtn.getLayoutParams();
+	    //params: position buttons at bottom
 	    RelativeLayout.LayoutParams cancelBtnParams = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 	    cancelBtnParams.addRule(RelativeLayout.BELOW, 1338);
 	    cancelBtnParams.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
@@ -113,23 +113,6 @@ public class MapusCallout extends RelativeLayout implements OnClickListener{
 	    
 	    labels.addView(cancelBtn, cancelBtnParams);
 	    labels.addView(sendBtn, sendBtnParams);
-	    
-	    /*original params
-	    bubble.addView(cancelBtn, new LayoutParams(
-								                   LayoutParams.WRAP_CONTENT, 
-								                   LayoutParams.WRAP_CONTENT)
-								                  );						*/
-	    
-	    /* original params
-	    bubble.addView(sendBtn, new LayoutParams(
-							                     LayoutParams.WRAP_CONTENT, 
-							                     LayoutParams.WRAP_CONTENT)
-							                	);							*/
-	  
-	    /*LinearLayout.LayoutParams layoutParams = new  LinearLayout.LayoutParams(70, 70);
-	    layoutParams.setMargins(5, 3, 0, 0); // left, top, right, bottom
-	    btn.setLayoutParams(layoutParams);*/
-			    
 		
 	}
 	
@@ -138,10 +121,14 @@ public class MapusCallout extends RelativeLayout implements OnClickListener{
 	    int b1 = cancelBtn.getId();
 	    int b2 = sendBtn.getId();
 	    
-	    if(v.getId() == b1)
+	    if(v.getId() == b1){
 	    	Log.d("Marker Event","Cancel btn pressed");
-	    else if(v.getId() == b2)
-	    	Log.d("Marker Event","Send btn pressed");
+	    }
+	    else if(v.getId() == b2){
+	    	Log.d("Marker Event","Send btn coord: " + map.getCoordX() + ":" + map.getCoordY());
+	    }
+	    else
+	    	Log.d("Marker Event","error");
 	}
 
 	public void transitionIn() {
