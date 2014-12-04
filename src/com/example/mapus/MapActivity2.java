@@ -14,17 +14,22 @@ public class MapActivity2 extends Activity{
 
 	static TileView tileView;
 	static ImageView userMarker;
+	static boolean markerIsSet = false;
 	MapusCallout callout;
 
 	private TileViewEventListenerImplementation listener = new TileViewEventListenerImplementation(){
         public void onTap( int x, int y ) {
-            Log.d( "DEBUG", "tapped" );
+            //Log.d( "DEBUG", "tapped" );
             
             //create marker
-            userMarker = new ImageView(getBaseContext());
-            userMarker.setImageResource(R.drawable.map_marker_blue);
-            userMarker.setTag("Test3");
-            tileView.addMarker(userMarker, x, y);
+        	if(!markerIsSet){
+	            userMarker = new ImageView(getBaseContext());
+	            userMarker.setImageResource(R.drawable.map_marker_blue);
+	            userMarker.setTag("Test3");
+	            tileView.addMarker(userMarker, x, y);
+	            
+	            markerIsSet = true;
+        	}
         }
     };
 	
@@ -37,22 +42,22 @@ public class MapActivity2 extends Activity{
 
         // Set the minimum parameters
         tileView.setSize(2550,1970);
-        tileView.addDetailLevel(1f, "tiles/tp5/1000/%col%_%row%.png", "samples/tp5-500.png");
-        tileView.addDetailLevel(0.5f, "tiles/tp5/500/%col%_%row%.png", "samples/tp5-500.png");
+        tileView.addDetailLevel(1f, "tiles/tp5/1000/%col%_%row%.png", "samples/tp5-1000.png");
+        tileView.addDetailLevel(0.5f, "tiles/tp5/500/%col%_%row%.png", "samples/tp5-1000.png");
         //tileView.addDetailLevel(0.25f, "tiles/tp5/250/%col%_%row%.png", "samples/tp5-500.png");
         //tileView.addDetailLevel(0.125f, "tiles/tp5/125/%col%_%row%.png", "samples/tp5-500.png");
 
         //marker test
-        ImageView markerA = new ImageView(this);
-        markerA.setImageResource(R.drawable.map_marker_blue);
-        markerA.setTag("Test1");
-
-        ImageView markerB = new ImageView(this);
-        markerB.setImageResource(R.drawable.map_marker_blue);
-        markerB.setTag("Test2");
-
-        tileView.addMarker(markerA, 300, 300);
-        tileView.addMarker(markerB, 300, 500);
+//        ImageView markerA = new ImageView(this);
+//        markerA.setImageResource(R.drawable.map_marker_blue);
+//        markerA.setTag("Test1");
+//
+//        ImageView markerB = new ImageView(this);
+//        markerB.setImageResource(R.drawable.map_marker_blue);
+//        markerB.setTag("Test2");
+//
+//        tileView.addMarker(markerA, 300, 300);
+//        tileView.addMarker(markerB, 300, 500);
         //tileView.removeMarker(markerB);
         
         //marker listener

@@ -47,6 +47,7 @@ public class MapusCallout extends RelativeLayout implements OnClickListener{
 		super( context );
 
 		LinearLayout bubble = new LinearLayout( context );
+		bubble.setId(123);
 		bubble.setOrientation( LinearLayout.HORIZONTAL );
 		int[] colors = { 0xCCfd6624, 0xCCfd6624 };	//gradient alpha orig: E6
 		GradientDrawable drawable = new GradientDrawable( GradientDrawable.Orientation.TOP_BOTTOM, colors );
@@ -127,6 +128,8 @@ public class MapusCallout extends RelativeLayout implements OnClickListener{
 	    if(v.getId() == canc){
 	    	Log.d("Marker Event","Cancel btn pressed");
 	    	MapActivity2.removeUserMarker();
+	    	MapActivity2.markerIsSet = false;
+	    	this.setVisibility(View.GONE);
 	    }
 	    else if(v.getId() == send){
 	    	Log.d("Marker Event","Send btn coord: " + coordX + ":" + coordY);
