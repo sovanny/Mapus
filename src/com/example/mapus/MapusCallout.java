@@ -121,13 +121,14 @@ public class MapusCallout extends RelativeLayout implements OnClickListener{
 	
 	@Override
 	public void onClick(View v) {
-	    int b1 = cancelBtn.getId();
-	    int b2 = sendBtn.getId();
+	    int canc = cancelBtn.getId();
+	    int send = sendBtn.getId();
 	    
-	    if(v.getId() == b1){
+	    if(v.getId() == canc){
 	    	Log.d("Marker Event","Cancel btn pressed");
+	    	MapActivity2.removeUserMarker();
 	    }
-	    else if(v.getId() == b2){
+	    else if(v.getId() == send){
 	    	Log.d("Marker Event","Send btn coord: " + coordX + ":" + coordY);
 	    }
 	    else
@@ -195,4 +196,5 @@ public class MapusCallout extends RelativeLayout implements OnClickListener{
 	public int getCoordY(){
 		return coordY;
 	}
+	
 }

@@ -1,20 +1,19 @@
 package com.example.mapus;
 
-import com.qozix.tileview.TileView;
-import com.qozix.tileview.TileView.TileViewEventListenerImplementation;
-import com.qozix.tileview.markers.MarkerEventListener;
-//import com.qozix.tileview.markers.MarkerEventListener;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.qozix.tileview.TileView;
+import com.qozix.tileview.TileView.TileViewEventListenerImplementation;
+import com.qozix.tileview.markers.MarkerEventListener;
+
 public class MapActivity2 extends Activity{
 
-	TileView tileView;
-	ImageView testMarker;
+	static TileView tileView;
+	static ImageView userMarker;
 	MapusCallout callout;
 
 	private TileViewEventListenerImplementation listener = new TileViewEventListenerImplementation(){
@@ -22,10 +21,10 @@ public class MapActivity2 extends Activity{
             Log.d( "DEBUG", "tapped" );
             
             //create marker
-            testMarker = new ImageView(getBaseContext());
-            testMarker.setImageResource(R.drawable.map_marker_blue);
-            testMarker.setTag("Test3");
-            tileView.addMarker(testMarker, x, y);
+            userMarker = new ImageView(getBaseContext());
+            userMarker.setImageResource(R.drawable.map_marker_blue);
+            userMarker.setTag("Test3");
+            tileView.addMarker(userMarker, x, y);
         }
     };
 	
@@ -54,6 +53,7 @@ public class MapActivity2 extends Activity{
 
         tileView.addMarker(markerA, 300, 300);
         tileView.addMarker(markerB, 300, 500);
+        //tileView.removeMarker(markerB);
         
         //marker listener
         tileView.addMarkerEventListener(new MarkerEventListener(){
@@ -66,6 +66,7 @@ public class MapActivity2 extends Activity{
         		  // create a simple callout
         		  callout = new MapusCallout( view.getContext() );
         		  callout.setCoord(x, y);
+
         		  // add it to the view tree at the same position and offset as the marker that invoked it
         		  tileView.addCallout( callout, x, y, -0.5f, -1.0f );
         		  // a little sugar
@@ -117,6 +118,12 @@ public class MapActivity2 extends Activity{
 	
 	public TileView getTileView(){
 		return tileView;
+	}
+	
+	public static void removeUserMarker(){
+		Log.d("DEBUG","gick in i map-funktionen");
+		//Log.d("DEBUG","marker tag = " + markerA.getTag());
+		tileView.removeMarker(userMarker);
 	}
     
 }
