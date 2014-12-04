@@ -15,8 +15,7 @@ public class MapActivity2 extends Activity{
 
 	TileView tileView;
 	ImageView testMarker;
-	private int marker_x;
-	private int marker_y;
+	MapusCallout callout;
 
 	private TileViewEventListenerImplementation listener = new TileViewEventListenerImplementation(){
         public void onTap( int x, int y ) {
@@ -61,12 +60,12 @@ public class MapActivity2 extends Activity{
         	  @Override
         	  public void onMarkerTap( View view, int x, int y ){
         		  tileView.slideToAndCenter( x, y);
-        		  setCoord(x, y);
 					
         		  Log.d("Marker Event", "marker tag = " + view.getTag() + ", coordinates (X:Y) = " + x + ":" + y );
 					
         		  // create a simple callout
-        		  MapusCallout callout = new MapusCallout( view.getContext() );
+        		  callout = new MapusCallout( view.getContext() );
+        		  callout.setCoord(x, y);
         		  // add it to the view tree at the same position and offset as the marker that invoked it
         		  tileView.addCallout( callout, x, y, -0.5f, -1.0f );
         		  // a little sugar
@@ -118,19 +117,6 @@ public class MapActivity2 extends Activity{
 	
 	public TileView getTileView(){
 		return tileView;
-	}
-	
-	public void setCoord(int x, int y){
-		marker_x = x;
-		marker_y = y;
-	}
-	
-	public int getCoordX(){
-		return marker_x;
-	}
-	
-	public int getCoordY(){
-		return marker_y;
 	}
     
 }

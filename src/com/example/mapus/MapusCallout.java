@@ -30,7 +30,10 @@ public class MapusCallout extends RelativeLayout implements OnClickListener{
 
 	Button cancelBtn;
 	Button sendBtn;
-	MapActivity2 map = new MapActivity2();
+	
+	//coordinates of marker calling this callout
+	private int coordX;
+	private int coordY;
 	
 	// they deprecated setBackgroundDrawable just so they could rename it
 	// the new method (setBackground) doesn't work with older SDKs, and the
@@ -125,7 +128,7 @@ public class MapusCallout extends RelativeLayout implements OnClickListener{
 	    	Log.d("Marker Event","Cancel btn pressed");
 	    }
 	    else if(v.getId() == b2){
-	    	Log.d("Marker Event","Send btn coord: " + map.getCoordX() + ":" + map.getCoordY());
+	    	Log.d("Marker Event","Send btn coord: " + coordX + ":" + coordY);
 	    }
 	    else
 	    	Log.d("Marker Event","error");
@@ -180,4 +183,16 @@ public class MapusCallout extends RelativeLayout implements OnClickListener{
 		}
 	}
 
+	public void setCoord(int x, int y){
+		coordX = x;
+		coordY = y;
+	}
+	
+	public int getCoordX(){
+		return coordX;
+	}
+	
+	public int getCoordY(){
+		return coordY;
+	}
 }
