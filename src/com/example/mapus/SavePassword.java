@@ -20,73 +20,69 @@ import android.os.AsyncTask;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class SavePassword extends AsyncTask<String,Void,String> {
+public class SavePassword extends AsyncTask<String, Void, String> {
 
-   private Context context;
-   //flag 0 means get and 1 means post.(By default it is get.)
-   public SavePassword(Context context,int flag) {
-	   this.context = context;
-      //this.statusField = statusField;
-   }
+	private Context context;
 
-   protected void onPreExecute(){
+	// flag 0 means get and 1 means post.(By default it is get.)
+	public SavePassword(Context context, int flag) {
+		this.context = context;
+		// this.statusField = statusField;
+	}
 
-   }
-   @Override
-   protected String doInBackground(String... arg0) {
-      
-         try{
-            String password = (String)arg0[0];
-            String link ="http://sermon.se/koma/savepassword.php";
-            
-            String data  = URLEncoder.encode("password", "UTF-8") 
-            + "=" + URLEncoder.encode(password, "UTF-8");
+	protected void onPreExecute() {
 
-            
-            URL url = new URL(link);
-            URLConnection conn = url.openConnection(); 
-            conn.setDoOutput(true); 
-            OutputStreamWriter wr = new OutputStreamWriter
-            (conn.getOutputStream()); 
-            wr.write( data ); 
-            wr.flush(); 
-            BufferedReader reader = new BufferedReader
-            (new InputStreamReader(conn.getInputStream()));
-            StringBuilder sb = new StringBuilder();
-            String line = null;
-            // Read Server Response
-            while((line = reader.readLine()) != null)
-            {
-               sb.append(line);
-               break;
-            }
-            return sb.toString();
-         }catch(Exception e){
-        	 //return new String("Exception: " + e.getMessage());
-        	 return new String("Check network connection!");
-        	 
-      }
-   }
-   @Override
-   protected void onPostExecute(String result){
-      //this.statusField.setText("Login Successful");
-      if (!result.equals("Incorrect username or password!")){
-    	  //this.roleField.setText(result);
-    	  //this.statusField.setText("Reached onPostexe.");
-    	  
-    	  Toast.makeText(
-                  context.getApplicationContext(),
-                   result,Toast.LENGTH_SHORT)
-                  .show();
+	}
 
-    	  
-      }
-      else{
-    	  Toast.makeText(
-                  context.getApplicationContext(),
-                   result,Toast.LENGTH_SHORT)
-                  .show();  
-      }
-      
-   }
+	@Override
+	protected String doInBackground(String... arg0) {
+
+		try {
+			String newpassword = (String) arg0[0];
+			String currentpassword = (String) arg0[1];
+
+			String link = "http://sermon.se/koma/savepassword.php";
+
+			String currentDispName = SigninActivity.Displayname;
+
+			String data = URLEncoder.encode("currentDispName", "UTF-8") + "="
+					+ URLEncoder.encode(currentDispName, "UTF-8");
+			data += "&" + URLEncoder.encode("newpassword", "UTF-8") + "="
+					+ URLEncoder.encode(newpassword, "UTF-8");
+			data += "&" + URLEncoder.encode("currentpassword", "UTF-8") + "="
+					+ URLEncoder.encode(currentpassword, "UTF-8");
+
+			URL url = new URL(link);
+			URLConnection conn = url.openConnection();
+			conn.setDoOutput(true);
+			OutputStreamWriter wr = new OutputStreamWriter(
+					conn.getOutputStream());
+			wr.write(data);
+			wr.flush();
+			BufferedReader reader = new BufferedReader(new InputStreamReader(
+					conn.getInputStream()));
+			StringBuilder sb = new StringBuilder();
+			String line = null;
+			// Read Server Response
+			while ((line = reader.readLine()) != null) {
+				sb.append(line);
+				break;
+			}
+			return sb.toString();
+		} catch (Exception e) {
+			// return new String("Exception: " + e.getMessage());
+			return new String("Check network connection!");
+
+		}
+	}
+
+	@Override
+	protected void onPostExecute(String result) {
+		// this.statusField.setText("Login Successful");
+		Toast.makeText(context.getApplicationContext(), "Password saved!",
+				Toast.LENGTH_SHORT).show();
+		
+		SigninActivity.changePassword(result);
+
+	}
 }

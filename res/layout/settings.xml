@@ -253,4 +253,15 @@
         android:alpha="0.5"
         android:background="@color/orange" />
 
+    <TextView
+        android:id="@+id/pw_check"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/edit_current_pass_field"
+        android:layout_below="@+id/current_pass_label"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="-"
+        android:textColor="@color/red"
+        android:textSize="30dp" />
+
 </RelativeLayout>

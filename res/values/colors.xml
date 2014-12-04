@@ -4,9 +4,11 @@
 
     <color name="white">#ffffff</color>
     <color name="gray1">#636363</color>
+    <color name="gray2">#bcbcbc</color>
     <color name="orange">#fd6624</color>
     <color name="blue">#2591fc</color>
-    <color name="gray2">#bcbcbc</color>
+    <color name="green">#0ace00</color>
+    <color name="red">#e50000</color>
 
  
 </resources> 

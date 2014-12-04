@@ -21,6 +21,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class SigninActivity extends AsyncTask<String,Void,String> {
+	
+	public static String Displayname, Password;
 
    private TextView roleField;
    private Context context;
@@ -40,6 +42,7 @@ public class SigninActivity extends AsyncTask<String,Void,String> {
          try{
             String studentID = (String)arg0[0];
             String password = (String)arg0[1];
+            Password = password;
             String link ="http://sermon.se/koma/loginpost.php";
             
             String data  = URLEncoder.encode("studentID", "UTF-8") 
@@ -85,6 +88,10 @@ public class SigninActivity extends AsyncTask<String,Void,String> {
     	  
     	  this.roleField.setText("");
     	  
+    	  Displayname = result;
+    	  
+    	  
+    	  
     	  Intent intent = new Intent("com.example.mapus.START");
     	  intent.putExtra("the_result", result);
     	  context.startActivity(intent);
@@ -98,5 +105,20 @@ public class SigninActivity extends AsyncTask<String,Void,String> {
     	  this.roleField.setText("");  
       }
       
+   }
+   
+   public static void changeDisplayname(String dn){
+	   Displayname = dn;
+   }
+   
+   public static String getDisplayname(){
+	   return Displayname;
+   }
+   public static void changePassword(String pw){
+	   Password = pw;
+   }
+   
+   public static String getPassword(){
+	   return Password;
    }
 }
