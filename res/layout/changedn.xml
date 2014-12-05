@@ -5,12 +5,12 @@
     android:layout_weight="1.03" >
 
     <EditText
-        android:id="@+id/edit_disp_name_label"
+        android:id="@+id/edit_newDispName"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/change_disp_name_label"
+        android:layout_below="@+id/new_pw"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/squareshape"
@@ -25,9 +25,9 @@
         android:id="@+id/imageView_displayName"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_alignBottom="@+id/edit_disp_name_label"
-        android:layout_alignLeft="@+id/edit_disp_name_label"
-        android:layout_below="@+id/change_disp_name_label"
+        android:layout_alignBottom="@+id/edit_newDispName"
+        android:layout_alignLeft="@+id/edit_newDispName"
+        android:layout_below="@+id/new_pw"
         android:alpha="@dimen/alpha"
         android:src="@drawable/user5" />
 
@@ -37,7 +37,7 @@
         android:layout_height="1dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/edit_disp_name_label"
+        android:layout_below="@+id/edit_newDispName"
         android:alpha="0.4"
         android:background="@color/orange"
         android:gravity="center_vertical" 
@@ -56,8 +56,8 @@
         android:id="@+id/current_pass_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/edit_current_pass_field"
-        android:layout_alignLeft="@+id/edit_current_pass_field"
+        android:layout_above="@+id/edit_current_pass_field2"
+        android:layout_alignLeft="@+id/edit_current_pass_field2"
         android:alpha="1"
         android:paddingLeft="5dp"
         android:text="@string/current_pass"
@@ -73,7 +73,7 @@
         android:background="@color/orange" />
 
     <ImageView
-        android:id="@+id/save_btn"
+        android:id="@+id/save_btn2"
         style="@style/AppBaseTheme"
         android:layout_width="160dp"
         android:layout_height="40dp"
@@ -88,10 +88,10 @@
         android:textSize="30dp" />
 
     <EditText
-        android:id="@+id/edit_current_pass_field"
+        android:id="@+id/edit_current_pass_field2"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
-        android:layout_above="@+id/save_btn"
+        android:layout_above="@+id/save_btn2"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="23dp"
         android:background="@drawable/squareshape"
@@ -103,7 +103,7 @@
         android:id="@+id/imageView_password"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_alignBottom="@+id/edit_current_pass_field"
+        android:layout_alignBottom="@+id/edit_current_pass_field2"
         android:layout_alignLeft="@+id/current_pass_label"
         android:layout_below="@+id/current_pass_label"
         android:alpha="@dimen/alpha"
@@ -113,19 +113,19 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/save_btn"
-        android:layout_alignLeft="@+id/save_btn"
-        android:layout_alignRight="@+id/save_btn"
-        android:layout_alignTop="@+id/save_btn"
+        android:layout_alignBottom="@+id/save_btn2"
+        android:layout_alignLeft="@+id/save_btn2"
+        android:layout_alignRight="@+id/save_btn2"
+        android:layout_alignTop="@+id/save_btn2"
         android:gravity="center_vertical|center_horizontal"
         android:text="Save"
         android:textColor="@color/gray1" />
 
     <TextView
-        android:id="@+id/change_disp_name_label"
+        android:id="@+id/new_pw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/edit_disp_name_label"
+        android:layout_alignLeft="@+id/edit_newDispName"
         android:layout_below="@+id/View01"
         android:layout_marginTop="113dp"
         android:alpha="0.7"

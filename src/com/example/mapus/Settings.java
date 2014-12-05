@@ -43,10 +43,7 @@ public class Settings extends Activity {
 		dnbtn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				 Toast.makeText(
-		                  getApplicationContext(),
-		                   "Good Bye!",Toast.LENGTH_SHORT)
-		                  .show();
+				 
 				startActivity(new Intent("com.example.mapus.CHANGEDN"));
 			}
 		});

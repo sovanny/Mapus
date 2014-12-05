@@ -82,6 +82,8 @@ public class SavePassword extends AsyncTask<String, Void, String> {
 		Toast.makeText(context.getApplicationContext(), "Password saved!",
 				Toast.LENGTH_SHORT).show();
 		
+		context.startActivity(new Intent("com.example.mapus.SETTINGS"));
+		
 		SigninActivity.changePassword(result);
 
 	}

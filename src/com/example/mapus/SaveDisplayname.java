@@ -84,6 +84,8 @@ public class SaveDisplayname extends AsyncTask<String, Void, String> {
 			Toast.makeText(context.getApplicationContext(), "Displayname saved!",
 					Toast.LENGTH_SHORT).show();
 			
+			context.startActivity(new Intent("com.example.mapus.SETTINGS"));
+			
 			SigninActivity.changeDisplayname(result);
 		
 			

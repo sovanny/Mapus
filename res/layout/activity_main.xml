@@ -27,17 +27,6 @@
         android:textSize="18dp" />
 
     <TextView
-        android:id="@+id/status"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:text=""
-        android:textColor="@color/white"
-        android:textSize="24dp" />
-
-    <TextView
         android:id="@+id/username_label_login"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -72,7 +61,6 @@
         android:layout_width="fill_parent"
         android:layout_height="80dp"
         android:layout_alignLeft="@+id/password_label_login"
-        android:layout_alignRight="@+id/status"
         android:layout_below="@+id/password_edit_login"
         android:layout_marginTop="5dp"
         android:alpha="0.7"
@@ -115,14 +103,13 @@
         android:layout_width="180dp"
         android:layout_height="50dp"
         android:layout_alignRight="@+id/sign_in_btn"
-        android:layout_below="@+id/status"
         android:layout_marginTop="126dp"
         android:layout_toRightOf="@+id/username_label_login"
         android:alpha="@dimen/alpha"
         android:background="@color/white"
         android:ems="10"
         android:hint="Student id"
-        android:inputType="textNoSuggestions"  >
+        android:inputType="textNoSuggestions" >
 
         <requestFocus />
     </EditText>
@@ -131,7 +118,6 @@
         android:id="@+id/logo_icon"
         android:layout_width="90dp"
         android:layout_height="90dp"
-        android:layout_below="@+id/status"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="17dp"
         android:background="@drawable/mapicon" />
@@ -149,5 +135,15 @@
         android:text="Register"
         android:textColor="@color/gray1"
         android:textSize="15sp" />
+
+    <ProgressBar
+        android:id="@+id/loading"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/sign_in_btn"
+        android:layout_alignLeft="@+id/sign_in_btn"
+        android:layout_alignTop="@+id/signinText"
+        android:padding="12dp" />
 
 </RelativeLayout>
