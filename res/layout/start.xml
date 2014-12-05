@@ -67,6 +67,8 @@
             android:text="|  Contacts"
             android:textColor="@color/gray1"
             android:textSize="18sp" />
+        
+        
 
         <TextView
             android:id="@+id/nameTest"
