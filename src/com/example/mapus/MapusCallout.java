@@ -6,8 +6,10 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
@@ -24,8 +26,15 @@ import android.widget.TextView;
  * bad-practice, but was handy and looks decent.
  */
 
-public class MapusCallout extends RelativeLayout {
+public class MapusCallout extends RelativeLayout implements OnClickListener{
 
+	Button cancelBtn;
+	Button sendBtn;
+	
+	//coordinates of marker calling this callout
+	private int coordX;
+	private int coordY;
+	
 	// they deprecated setBackgroundDrawable just so they could rename it
 	// the new method (setBackground) doesn't work with older SDKs, and the
 	// old method (setBackgroundDrawable) gives a deprecation warning.
@@ -39,7 +48,7 @@ public class MapusCallout extends RelativeLayout {
 
 		LinearLayout bubble = new LinearLayout( context );
 		bubble.setOrientation( LinearLayout.HORIZONTAL );
-		int[] colors = { 0xBBfd6624, 0xFFfd6624 };	//gradient alpha orig: E6
+		int[] colors = { 0xCCfd6624, 0xCCfd6624 };	//gradient alpha orig: E6
 		GradientDrawable drawable = new GradientDrawable( GradientDrawable.Orientation.TOP_BOTTOM, colors );
 		drawable.setCornerRadius( 6 );
 		drawable.setStroke( 2, 0xDD000000 );
@@ -85,16 +94,17 @@ public class MapusCallout extends RelativeLayout {
 		labels.addView( subTitleView, subTitleLayout );
 
 		
-		//button test
-		Button cancelBtn = new Button(context); 
+		//buttons
+		cancelBtn = new Button(context); 
 	    cancelBtn.setText("Remove"); 
+	    cancelBtn.setOnClickListener(this);
 	    cancelBtn.setId(1339);
 	    
-	    Button sendBtn = new Button(context); 
+	    sendBtn = new Button(context); 
 	    sendBtn.setText("Share");
+	    sendBtn.setOnClickListener(this);
 	    
-	    //param test: position buttons at bottom
-	    //RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)cancelBtn.getLayoutParams();
+	    //params: position buttons at bottom
 	    RelativeLayout.LayoutParams cancelBtnParams = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 	    cancelBtnParams.addRule(RelativeLayout.BELOW, 1338);
 	    cancelBtnParams.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
@@ -106,24 +116,25 @@ public class MapusCallout extends RelativeLayout {
 	    
 	    labels.addView(cancelBtn, cancelBtnParams);
 	    labels.addView(sendBtn, sendBtnParams);
-	    
-	    /*original params
-	    bubble.addView(cancelBtn, new LayoutParams(
-								                   LayoutParams.WRAP_CONTENT, 
-								                   LayoutParams.WRAP_CONTENT)
-								                  );						*/
-	    
-	    /* original params
-	    bubble.addView(sendBtn, new LayoutParams(
-							                     LayoutParams.WRAP_CONTENT, 
-							                     LayoutParams.WRAP_CONTENT)
-							                	);							*/
-	  
-	    /*LinearLayout.LayoutParams layoutParams = new  LinearLayout.LayoutParams(70, 70);
-	    layoutParams.setMargins(5, 3, 0, 0); // left, top, right, bottom
-	    btn.setLayoutParams(layoutParams);*/
-			    
 		
+	}
+	
+	@Override
+	public void onClick(View v) {
+	    int canc = cancelBtn.getId();
+	    int send = sendBtn.getId();
+	    
+	    if(v.getId() == canc){
+//	    	Log.d("Marker Event","Cancel btn pressed");
+	    	MapActivity2.removeUserMarker();
+	    	MapActivity2.markerIsSet = false;
+	    	this.setVisibility(View.GONE);
+	    }
+	    else if(v.getId() == send){
+	    	Log.d("Marker Event","Send btn coord: " + coordX + ":" + coordY);
+	    }
+	    else
+	    	Log.d("Marker Event","error");
 	}
 
 	public void transitionIn() {
@@ -175,4 +186,17 @@ public class MapusCallout extends RelativeLayout {
 		}
 	}
 
+	public void setCoord(int x, int y){
+		coordX = x;
+		coordY = y;
+	}
+	
+	public int getCoordX(){
+		return coordX;
+	}
+	
+	public int getCoordY(){
+		return coordY;
+	}
+	
 }

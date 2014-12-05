@@ -1,32 +1,46 @@
 package com.example.mapus;
 
-import com.qozix.TileViewDemo.SampleCallout;
-import com.qozix.tileview.TileView;
-import com.qozix.tileview.TileView.TileViewEventListenerImplementation;
-import com.qozix.tileview.markers.CalloutManager;
-import com.qozix.tileview.markers.MarkerEventListener;
-//import com.qozix.tileview.markers.MarkerEventListener;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.qozix.tileview.TileView;
+import com.qozix.tileview.TileView.TileViewEventListenerImplementation;
+import com.qozix.tileview.markers.MarkerEventListener;
+
 public class MapActivity2 extends Activity{
 
-	TileView tileView;
-	ImageView testMarker;
+	static TileView tileView;
+	static ImageView userMarker;
+	static boolean markerIsSet = false;
+	MapusCallout callout;
 
 	private TileViewEventListenerImplementation listener = new TileViewEventListenerImplementation(){
         public void onTap( int x, int y ) {
-            Log.d( "DEBUG", "tapped" );
+//            Log.d( "DEBUG", "scale = " + tileView.getScale() );
             
             //create marker
-            testMarker = new ImageView(getBaseContext());
-            testMarker.setImageResource(R.drawable.map_marker_blue);
-            testMarker.setTag("Test3");
-            tileView.addMarker(testMarker, x, y);
+        	if(!markerIsSet){
+	            userMarker = new ImageView(getBaseContext());
+	            userMarker.setImageResource(R.drawable.map_marker_blue);
+	            userMarker.setTag("Test3");
+	            
+	            //getScale test
+	            if(tileView.getScale() > 0.9){
+	            	tileView.addMarker(userMarker, x - 50, y - 135);
+//	            	Log.d( "DEBUG", "is zoomed IN");
+	            }
+	            
+	            else{
+	            	//tileView.setScale(1.0);
+	            	//tileView.moveToAndCenter(x,y);
+	            	tileView.addMarker(userMarker, x + 250, y + 100);
+//	            	Log.d( "DEBUG", "is zoomed OUT");
+	            }
+	            markerIsSet = true;
+        	}
         }
     };
 	
@@ -39,50 +53,54 @@ public class MapActivity2 extends Activity{
 
         // Set the minimum parameters
         tileView.setSize(2550,1970);
-        tileView.addDetailLevel(1f, "tiles/1000_%col%_%row%.png", "samples/tp5.png");
-        tileView.addDetailLevel(0.5f, "tiles/500_%col%_%row%.png", "samples/tp5.png");
-        tileView.addDetailLevel(0.25f, "tiles/250_%col%_%row%.png", "samples/tp5.png");
-        tileView.addDetailLevel(0.125f, "tiles/125_%col%_%row%.png", "samples/tp5.png");
+        tileView.addDetailLevel(1f, "tiles/tp5/1000/%col%_%row%.png", "samples/tp5-1000.png");
+        tileView.addDetailLevel(0.5f, "tiles/tp5/500/%col%_%row%.png", "samples/tp5-1000.png");
+        //tileView.addDetailLevel(0.25f, "tiles/tp5/250/%col%_%row%.png", "samples/tp5-500.png");
+        //tileView.addDetailLevel(0.125f, "tiles/tp5/125/%col%_%row%.png", "samples/tp5-500.png");
 
-        ImageView markerA = new ImageView(this);
-        markerA.setImageResource(R.drawable.map_marker_blue);
-        markerA.setTag("Test1");
-
-        ImageView markerB = new ImageView(this);
-        markerB.setImageResource(R.drawable.map_marker_blue);
-        markerB.setTag("Test2");
-
-        tileView.addMarker(markerA, 300, 300);
-        tileView.addMarker(markerB, 300, 500);
+        //marker test
+//        ImageView markerA = new ImageView(this);
+//        markerA.setImageResource(R.drawable.map_marker_blue);
+//        markerA.setTag("Test1");
+//
+//        ImageView markerB = new ImageView(this);
+//        markerB.setImageResource(R.drawable.map_marker_blue);
+//        markerB.setTag("Test2");
+//
+//        tileView.addMarker(markerA, 300, 300);
+//        tileView.addMarker(markerB, 300, 500);
+        //tileView.removeMarker(markerB);
         
         //marker listener
         tileView.addMarkerEventListener(new MarkerEventListener(){
         	  @Override
         	  public void onMarkerTap( View view, int x, int y ){
-        	    Log.d("Marker Event", "marker tag = " + view.getTag() + ", coordinates (X:Y) = " + x + ":" + y );
-//        	    CalloutManager callout = new CalloutManager(mContext, null);
-        	    
-        	    // create a simple callout
-    			MapusCallout callout = new MapusCallout( view.getContext() );
-    			// add it to the view tree at the same position and offset as the marker that invoked it
-    			tileView.addCallout( callout, x, y, -0.5f, -1.0f );
-    			// a little sugar
-    			callout.transitionIn();
+        		  tileView.slideToAndCenter( x, y);
+					
+        		  Log.d("Marker Event", "marker tag = " + view.getTag() + ", coordinates (X:Y) = " + x + ":" + y );
+					
+        		  // create a simple callout
+        		  callout = new MapusCallout( view.getContext() );
+        		  callout.setCoord(x, y);
+
+        		  // add it to the view tree at the same position and offset as the marker that invoked it
+        		  tileView.addCallout( callout, x, y, -0.5f, -1.0f );
+        		  // a little sugar
+        		  callout.transitionIn();
         	    
         	  }
         	});
         
         tileView.addTileViewEventListener( listener );
-        	
         
         // use pixel coordinates to roughly center it
         // they are calculated against the "full" size of the mapView 
         // i.e., the largest zoom level as it would be rendered at a scale of 1.0f
-        // tileView.moveToAndCenter(2550,1970);
-        // tileView.slideToAndCenter(2550,1970);
+        //tileView.moveToAndCenter(1275,1970);
+        //tileView.slideToAndCenter(900,500);
 
         // Set the default zoom (zoom out by 4 => 1/4 = 0.25)
-        // tileView.setScale( 0.25 );
+        //tileView.setScale( 0.5 );
         
         
         //You can activate the cache if you are using remote pictures with the following code
@@ -115,6 +133,12 @@ public class MapActivity2 extends Activity{
 	
 	public TileView getTileView(){
 		return tileView;
+	}
+	
+	public static void removeUserMarker(){
+//		Log.d("DEBUG","gick in i map-funktionen");
+		//Log.d("DEBUG","marker tag = " + markerA.getTag());
+		tileView.removeMarker(userMarker);
 	}
     
 }
