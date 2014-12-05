@@ -18,6 +18,7 @@ public class Settings extends Activity {
 
 	private EditText editDispName, editPassword, editConfirmPassword,
 			CurrentPassword;
+	private TextView check;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -34,14 +35,55 @@ public class Settings extends Activity {
 		editPassword = (EditText) findViewById(R.id.edit_new_pass_field);
 		editConfirmPassword = (EditText) findViewById(R.id.edit_conf_pass_field);
 		CurrentPassword = (EditText) findViewById(R.id.edit_current_pass_field);
+		
+		check = (TextView) findViewById(R.id.pw_check);
+		check.setText("");
+		
+		editDispName.setText(SigninActivity.Displayname);
 
 		// Save button
 		ImageView savebtn = (ImageView) findViewById(R.id.save_btn);
 		savebtn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				saveDisplaynamePost(v);
-				savePasswordPost(v);
+				
+				//Turn all users input into strings 
+				String editdispname = editDispName.getText().toString();
+				String editpassword = editPassword.getText().toString();
+				String editconfirmpassword = editConfirmPassword.getText().toString();
+				String currentpassword = CurrentPassword.getText().toString();
+	
+				if(SigninActivity.getPassword().equals(currentpassword))
+				{
+					check.setText("");
+					if(editpassword.equals(editconfirmpassword) && !editpassword.equals(""))
+					{
+						savePasswordPost(v);
+					}
+					
+					if(!editpassword.equals(editconfirmpassword)){
+						Toast.makeText(
+				                  getApplicationContext(),
+				                   "Different passwords!",Toast.LENGTH_SHORT)
+				                  .show();
+					}
+					
+					else if(!editdispname.equals(""))
+					{
+						saveDisplaynamePost(v);
+					}
+					
+					
+				}else{
+					Toast.makeText(
+			                  getApplicationContext(),
+			                   "Wrong password!",Toast.LENGTH_SHORT)
+			                  .show();
+					check.setText("-");
+					
+				}
+				
+				
 			}
 		});
 
@@ -85,13 +127,17 @@ public class Settings extends Activity {
 
 		// SEND VARIABLES
 		String username = editDispName.getText().toString();
-		new SaveDisplayname(this, 1).execute(username);
+		String currentpassword_send = CurrentPassword.getText().toString();
+		
+		new SaveDisplayname(this, 1).execute(username, currentpassword_send);
 	}
 
 	public void savePasswordPost(View view) {
 
-		String password = editPassword.getText().toString();
-		new SavePassword(this, 1).execute(password);
+		String newpassword = editPassword.getText().toString();
+		String currentpassword_send = CurrentPassword.getText().toString();
+		
+		new SavePassword(this, 1).execute(newpassword, currentpassword_send);
 	}
 
 }
