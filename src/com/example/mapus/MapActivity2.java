@@ -19,15 +19,26 @@ public class MapActivity2 extends Activity{
 
 	private TileViewEventListenerImplementation listener = new TileViewEventListenerImplementation(){
         public void onTap( int x, int y ) {
-            //Log.d( "DEBUG", "tapped" );
+//            Log.d( "DEBUG", "scale = " + tileView.getScale() );
             
             //create marker
         	if(!markerIsSet){
 	            userMarker = new ImageView(getBaseContext());
 	            userMarker.setImageResource(R.drawable.map_marker_blue);
 	            userMarker.setTag("Test3");
-	            tileView.addMarker(userMarker, x, y);
 	            
+	            //getScale test
+	            if(tileView.getScale() > 0.9){
+	            	tileView.addMarker(userMarker, x - 50, y - 135);
+//	            	Log.d( "DEBUG", "is zoomed IN");
+	            }
+	            
+	            else{
+	            	//tileView.setScale(1.0);
+	            	//tileView.moveToAndCenter(x,y);
+	            	tileView.addMarker(userMarker, x + 250, y + 100);
+//	            	Log.d( "DEBUG", "is zoomed OUT");
+	            }
 	            markerIsSet = true;
         	}
         }
@@ -81,7 +92,6 @@ public class MapActivity2 extends Activity{
         	});
         
         tileView.addTileViewEventListener( listener );
-        	
         
         // use pixel coordinates to roughly center it
         // they are calculated against the "full" size of the mapView 
@@ -90,7 +100,7 @@ public class MapActivity2 extends Activity{
         //tileView.slideToAndCenter(900,500);
 
         // Set the default zoom (zoom out by 4 => 1/4 = 0.25)
-         tileView.setScale( 0.5 );
+        //tileView.setScale( 0.5 );
         
         
         //You can activate the cache if you are using remote pictures with the following code
@@ -126,7 +136,7 @@ public class MapActivity2 extends Activity{
 	}
 	
 	public static void removeUserMarker(){
-		Log.d("DEBUG","gick in i map-funktionen");
+//		Log.d("DEBUG","gick in i map-funktionen");
 		//Log.d("DEBUG","marker tag = " + markerA.getTag());
 		tileView.removeMarker(userMarker);
 	}
