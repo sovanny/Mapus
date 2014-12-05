@@ -32,8 +32,6 @@ public class Settings extends Activity {
 															// action bar
 
 		editDispName = (EditText) findViewById(R.id.edit_disp_name_label);
-		editPassword = (EditText) findViewById(R.id.edit_new_pass_field);
-		editConfirmPassword = (EditText) findViewById(R.id.edit_conf_pass_field);
 		CurrentPassword = (EditText) findViewById(R.id.edit_current_pass_field);
 		
 		check = (TextView) findViewById(R.id.pw_check);
