@@ -3,15 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_weight="1.03" >
-
-    <View
-        android:id="@+id/View01"
-        android:layout_width="wrap_content"
-        android:layout_height="1dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:alpha="0.8"
-        android:background="@color/orange" />
+    
+    
 
     <ImageView
         android:id="@+id/log_out_btn"
@@ -27,6 +20,10 @@
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="30dp" />
+    
+    
+    
+    
 
     <TextView
         android:id="@+id/textView2"
@@ -40,60 +37,59 @@
         android:text="Log Out"
         android:textColor="@color/gray1" />
 
-    <View
-        android:id="@+id/view3"
-        android:layout_width="wrap_content"
-        android:layout_height="1dp"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="18dp"
-        android:alpha="0.8"
-        android:background="@color/orange" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/save_btn"
-        android:layout_alignLeft="@+id/save_btn"
-        android:layout_alignRight="@+id/save_btn"
-        android:layout_alignTop="@+id/save_btn"
-        android:gravity="center_vertical|center_horizontal"
-        android:text="Save"
-        android:textColor="@color/gray1" />
-
-    <TextView
-        android:id="@+id/new_pass_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/edit_disp_name_label"
-        android:layout_below="@+id/edit_disp_name_label"
-        android:layout_marginTop="28dp"
-        android:alpha="0.7"
-        android:paddingLeft="5dp"
-        android:text="@string/new_pass"
-        android:textColor="@color/gray1" />
-
-    <View
-        android:id="@+id/view5"
-        android:layout_width="wrap_content"
-        android:layout_height="1dp"
-        android:layout_alignLeft="@+id/new_pass_label"
-        android:layout_alignRight="@+id/edit_disp_name_label"
-        android:layout_below="@+id/edit_disp_name_label"
-        android:layout_marginTop="14dp"
-        android:alpha="0.5"
-        android:background="@color/orange" />
-
-    <TextView
-        android:id="@+id/pw_check"
-        android:layout_width="30dp"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/edit_current_pass_field"
-        android:layout_below="@+id/current_pass_label"
-        android:gravity="center_vertical|center_horizontal"
-        android:text="-"
-        android:textColor="@color/red"
+    <ImageView
+        android:id="@+id/change_pw_btn"
+        style="@style/AppBaseTheme"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp"
+        android:alpha="0.9"
+        android:background="@drawable/buttonshape"
+        android:gravity="center_horizontal"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
         android:textSize="30dp" />
+    
+    
+        <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/change_pw_btn"
+        android:layout_alignLeft="@+id/change_pw_btn"
+        android:layout_alignRight="@+id/change_pw_btn"
+        android:layout_alignTop="@+id/change_pw_btn"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Change password"
+        android:textColor="@color/gray1" />
+
+            <ImageView
+                android:id="@+id/change_dn_btn"
+                style="@style/AppBaseTheme"
+                android:layout_width="250dp"
+                android:layout_height="30dp"
+                android:layout_above="@+id/textView3"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="15dp"
+                android:alpha="0.9"
+                android:background="@drawable/buttonshape"
+                android:gravity="center_horizontal"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/change_dn_btn"
+                android:layout_alignLeft="@+id/change_dn_btn"
+                android:layout_alignRight="@+id/change_dn_btn"
+                android:layout_alignTop="@+id/change_dn_btn"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="Change display-name"
+                android:textColor="@color/gray1" />
 
 </RelativeLayout>
