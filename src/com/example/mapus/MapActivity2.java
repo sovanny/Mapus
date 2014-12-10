@@ -38,41 +38,25 @@ public class MapActivity2 extends Activity{
 	            //getScale test
 	            if(tileView.getScale() > 0.9){
 	            	tileView.addMarker(userMarker, x - 50, y - 135);
-//	            	Log.d( "DEBUG", "is zoomed IN");
 	            	
 	            	xPos = x - 50;
 	            	yPos = y - 135;
 	            	
-	            	// create a simple callout
-	        		  callout = new MapusCallout( userMarker.getContext() );
-	        		  callout.setCoord(x, y);
-	
-	        		  // add it to the view tree at the same position and offset as the marker that invoked it
-	        		  tileView.addCallout( callout, x, y, -0.5f, -1.0f );
-	        		  // a little sugar
-	        		  callout.transitionIn();
+	            	createCallout(userMarker.getContext(), x - 50, y - 135);
 	            }
 	            
 	            else{
 	            	//tileView.setScale(1.0);
 	            	//tileView.moveToAndCenter(x,y);
 	            	tileView.addMarker(userMarker, x + 250, y + 100);
-//	            	Log.d( "DEBUG", "is zoomed OUT");
 	            	
 	            	xPos = x + 250;
 	            	yPos = y + 100;
 	            	
-	            	// create a simple callout
-	        		  callout = new MapusCallout( userMarker.getContext() );
-	        		  callout.setCoord(x, y);
-
-	        		  // add it to the view tree at the same position and offset as the marker that invoked it
-	        		  tileView.addCallout( callout, x, y, -0.5f, -1.0f );
-	        		  // a little sugar
-	        		  callout.transitionIn();
+	            	createCallout(userMarker.getContext(), x + 250, y + 100);
 	            }
 	            
-	            Log.d("DEBUG", "position set: " + xPos + ":" + yPos);
+//	            Log.d("DEBUG", "position set: " + xPos + ":" + yPos);
 	            markerIsSet = true;
         	}
         }
@@ -135,15 +119,8 @@ public class MapActivity2 extends Activity{
         		  tileView.slideToAndCenter( x, y);
 					
         		  Log.d("Marker Event", "marker tag = " + view.getTag() + ", coordinates (X:Y) = " + x + ":" + y );
-					
-        		  // create a simple callout
-        		  callout = new MapusCallout( view.getContext() );
-        		  callout.setCoord(x, y);
-
-        		  // add it to the view tree at the same position and offset as the marker that invoked it
-        		  tileView.addCallout( callout, x, y, -0.5f, -1.0f );
-        		  // a little sugar
-        		  callout.transitionIn();
+        		  
+        		  createCallout(view.getContext(), x, y);
         	    
         	  }
         	});
@@ -192,9 +169,18 @@ public class MapActivity2 extends Activity{
 		return tileView;
 	}
 	
+	public void createCallout(Context c, int x, int y){
+		  // create a simple callout
+		  callout = new MapusCallout(c);
+		  callout.setCoord(x, y);
+
+		  // add it to the view tree at the same position and offset as the marker that invoked it
+		  tileView.addCallout( callout, x, y, -0.5f, -1.0f);
+		  // a little sugar
+		  callout.transitionIn();
+	}
+	
 	public static void removeUserMarker(){
-//		Log.d("DEBUG","gick in i map-funktionen");
-		//Log.d("DEBUG","marker tag = " + markerA.getTag());
 		tileView.removeMarker(userMarker);
 	}
 	
@@ -207,9 +193,6 @@ public class MapActivity2 extends Activity{
 	}
 	
 	public static void sharePosition(){
-//		Log.d("DEBUG","gick in i map-funktionen");
-		//Log.d("DEBUG","marker tag = " + markerA.getTag());
-//		setContentView(R.layout.shareposition);
 		mContext.startActivity(new Intent("com.example.mapus.SHAREPOSITION"));
 	}
 
