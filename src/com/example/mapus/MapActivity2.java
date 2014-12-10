@@ -53,6 +53,8 @@ public class MapActivity2 extends Activity{
 	            	xPos = x + 250;
 	            	yPos = y + 100;
 	            }
+	            
+	            Log.d("DEBUG", "position set: " + xPos + ":" + yPos);
 	            markerIsSet = true;
         	}
         }
@@ -94,6 +96,19 @@ public class MapActivity2 extends Activity{
 //        tileView.addMarker(markerA, 300, 300);
 //        tileView.addMarker(markerB, 300, 500);
         //tileView.removeMarker(markerB);
+        
+        //if marker set
+//        if(xPos != 0 || yPos != 0){
+//        	ImageView markerPrev = new ImageView(this);
+//            markerPrev.setImageResource(R.drawable.map_marker_blue);
+//            
+//            double xPrev = (double)xPos;
+//            double yPrev = (double)yPos;
+//            
+//        	tileView.addMarker(userMarker, xPos, yPos);
+//        	Log.d("DEBUG", "position retrieved: " + xPrev + ":" + yPrev);
+//        }
+        
         
         //marker listener
         tileView.addMarkerEventListener(new MarkerEventListener(){
