@@ -31,6 +31,18 @@ public class SharePosition extends Activity{
 			}
 	
 		});
+		
+		Button cancel = (Button) findViewById(R.id.Button01);
+		cancel.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+				finish();
+				
+			}
+	
+		});
 	}
 	
 	
