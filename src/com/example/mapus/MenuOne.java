@@ -2,6 +2,7 @@ package com.example.mapus;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.util.Log;
@@ -155,9 +156,14 @@ public class MenuOne extends Activity{
         listDataChild = new HashMap<String, List<String>>();
  
         // Adding child data
-        listDataHeader.add("Täppan");
-        listDataHeader.add("Spetsen");
-        listDataHeader.add("Kåken");
+        Resources res = getResources();
+        String tappanName = res.getString(R.string.tappan);
+        String spetsenName = res.getString(R.string.spetsen);
+        String kakenName = res.getString(R.string.kaken);
+        
+        listDataHeader.add(tappanName);
+        listDataHeader.add(spetsenName);
+        listDataHeader.add(kakenName);
  
         // Adding child data
         List<String> tappan = new ArrayList<String>();
