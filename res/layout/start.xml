@@ -20,7 +20,7 @@
             android:paddingBottom="10dp"
             android:paddingRight="110dp"
             android:paddingTop="10dp"
-            android:src="@drawable/map2"
+            android:src="@drawable/setposition"
             android:textColor="@color/gray1" />
 
         <ImageView
@@ -49,7 +49,7 @@
             android:layout_margin="1dp"
             android:gravity="center_vertical"
             android:paddingLeft="100dp"
-            android:text="|   Maps"
+            android:text="|  Maps"
             android:textColor="@color/gray1"
             android:textSize="18sp" />
 
