@@ -40,8 +40,8 @@
             <ImageView
                 android:id="@+id/change_dn_btn"
                 style="@style/AppBaseTheme"
-                android:layout_width="250dp"
-                android:layout_height="50dp"
+                android:layout_width="240dp"
+                android:layout_height="60dp"
                 android:layout_above="@+id/textView3"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="15dp"
@@ -67,21 +67,22 @@
 
             <ImageView
                 android:id="@+id/imageView1"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_alignBottom="@+id/change_dn_btn"
                 android:layout_alignLeft="@+id/change_pw_btn"
                 android:layout_alignTop="@+id/change_dn_btn"
-                android:src="@drawable/user5" />
+                android:src="@drawable/user5" 
+                android:alpha="@dimen/alpha"/>
 
             <ImageView
                 android:id="@+id/change_pw_btn"
                 style="@style/AppBaseTheme"
-                android:layout_width="250dp"
-                android:layout_height="50dp"
+                android:layout_width="240dp"
+                android:layout_height="60dp"
                 android:layout_above="@+id/log_out_btn"
                 android:layout_alignLeft="@+id/change_dn_btn"
-                android:layout_marginBottom="150dp"
+                android:layout_marginBottom="180dp"
                 android:alpha="0.9"
                 android:background="@drawable/buttonshape"
                 android:gravity="center_horizontal"
@@ -109,6 +110,7 @@
                 android:layout_alignLeft="@+id/change_pw_btn"
                 android:layout_alignRight="@+id/imageView1"
                 android:layout_alignTop="@+id/change_pw_btn"
-                android:src="@drawable/lock5" />
+                android:src="@drawable/lock5"
+                android:alpha="@dimen/alpha" />
 
 </RelativeLayout>
