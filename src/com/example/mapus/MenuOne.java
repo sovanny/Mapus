@@ -131,11 +131,11 @@ public class MenuOne extends Activity{
                 
                 building = listDataHeader.get(groupPosition);
                 map = listDataChild.get(listDataHeader.get(groupPosition)).get(childPosition);
-                
-                Toast.makeText(
-                        getApplicationContext(),
-                         building + ": " + map,Toast.LENGTH_SHORT)
-                        .show();
+               
+//                Toast.makeText(
+//                        getApplicationContext(),
+//                         building + ": " + map,Toast.LENGTH_SHORT)
+//                        .show();
                 
                 if(groupPosition == 0 && childPosition == 2){
                 	startActivity(new Intent("com.example.mapus.MAPACTIVITY2"));
