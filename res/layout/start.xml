@@ -77,7 +77,7 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
-            android:text="Sovanny Huy Nikkilä" 
+            android:text="'Displays name'" 
  			android:gravity="center"
             android:background="@color/gray1"
             android:textColor="@color/white"
