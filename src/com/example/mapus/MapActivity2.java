@@ -42,6 +42,15 @@ public class MapActivity2 extends Activity{
 	            	
 	            	xPos = x - 50;
 	            	yPos = y - 135;
+	            	
+	            	// create a simple callout
+	        		  callout = new MapusCallout( userMarker.getContext() );
+	        		  callout.setCoord(x, y);
+	
+	        		  // add it to the view tree at the same position and offset as the marker that invoked it
+	        		  tileView.addCallout( callout, x, y, -0.5f, -1.0f );
+	        		  // a little sugar
+	        		  callout.transitionIn();
 	            }
 	            
 	            else{
@@ -52,6 +61,15 @@ public class MapActivity2 extends Activity{
 	            	
 	            	xPos = x + 250;
 	            	yPos = y + 100;
+	            	
+	            	// create a simple callout
+	        		  callout = new MapusCallout( userMarker.getContext() );
+	        		  callout.setCoord(x, y);
+
+	        		  // add it to the view tree at the same position and offset as the marker that invoked it
+	        		  tileView.addCallout( callout, x, y, -0.5f, -1.0f );
+	        		  // a little sugar
+	        		  callout.transitionIn();
 	            }
 	            
 	            Log.d("DEBUG", "position set: " + xPos + ":" + yPos);
