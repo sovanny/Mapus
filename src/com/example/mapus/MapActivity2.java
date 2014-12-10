@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.qozix.tileview.TileView;
 import com.qozix.tileview.TileView.TileViewEventListenerImplementation;
@@ -62,7 +63,14 @@ public class MapActivity2 extends Activity{
         super.onCreate(savedInstanceState);
         getActionBar().setDisplayShowHomeEnabled(false);
 
+
         mContext = this;
+
+        //signifier toast
+        Toast.makeText(
+                this, "Tap to set marker!",Toast.LENGTH_SHORT)
+                .show();
+
         
         // Create our TileView
         tileView = new TileView(this);

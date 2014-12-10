@@ -9,8 +9,8 @@
     <string name="cancel">Avbryt</string>
     <string name="register"><u><b><i>Create Account</i></b></u></string>
     <string name="alpha">0.7</string>
-    
-     <!-- activity labels -->
+
+    <!-- activity labels -->
     <string name="Start_activity_title">Mapus</string>
     <string name="MenuOne_activity_title">Maps</string>
     <string name="MapActivity_title">Täppan plan 5</string> <!-- Hur ska vi göra det här? -->
@@ -20,10 +20,16 @@
     <string name="change_dn_activity_title">Display name</string>
     <string name="SharePosition_activity_title">Share position</string>
     
+
     <!-- settings.xml -->
     <string name="change_name">Change display-name:</string>
     <string name="current_pass">Enter current password to save:</string>
     <string name="new_pass">Change password:</string>
     <string name="conf_pass">Confirm new password:</string>
+
+    <!-- MenuOne.java -->
+    <string name="tappan">Täppan</string>
+    <string name="spetsen">Spetsen</string>
+    <string name="kaken">Kåken</string>
 
 </resources>
