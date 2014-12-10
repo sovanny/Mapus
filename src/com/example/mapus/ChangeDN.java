@@ -19,7 +19,7 @@ public class ChangeDN extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.changedn);
 		
-		
+		getActionBar().setDisplayShowHomeEnabled(false);
 		
 		editDispName = (EditText)findViewById(R.id.edit_newDispName);
 		currentPassword = (EditText)findViewById(R.id.edit_current_pass_field2);

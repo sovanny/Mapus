@@ -47,6 +47,7 @@ public class MapActivity2 extends Activity{
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getActionBar().setDisplayShowHomeEnabled(false);
 
         // Create our TileView
         tileView = new TileView(this);

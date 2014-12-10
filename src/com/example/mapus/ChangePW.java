@@ -19,6 +19,8 @@ public class ChangePW extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.changepw);
 		
+		getActionBar().setDisplayShowHomeEnabled(false);
+		
 		newPassword = (EditText)findViewById(R.id.edit_newDispName);
 		currentPassword = (EditText)findViewById(R.id.edit_current_pass_field2);
 		confirmPassword = (EditText)findViewById(R.id.edit_confirmPassword2);
