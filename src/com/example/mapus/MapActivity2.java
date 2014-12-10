@@ -1,6 +1,8 @@
 package com.example.mapus;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,7 +18,12 @@ public class MapActivity2 extends Activity{
 	static ImageView userMarker;
 	static boolean markerIsSet = false;
 	MapusCallout callout;
+	
+	static int xPos;
+	static int yPos;
 
+	static Context mContext;
+	
 	private TileViewEventListenerImplementation listener = new TileViewEventListenerImplementation(){
         public void onTap( int x, int y ) {
 //            Log.d( "DEBUG", "scale = " + tileView.getScale() );
@@ -31,6 +38,9 @@ public class MapActivity2 extends Activity{
 	            if(tileView.getScale() > 0.9){
 	            	tileView.addMarker(userMarker, x - 50, y - 135);
 //	            	Log.d( "DEBUG", "is zoomed IN");
+	            	
+	            	xPos = x - 50;
+	            	yPos = y - 135;
 	            }
 	            
 	            else{
@@ -38,6 +48,9 @@ public class MapActivity2 extends Activity{
 	            	//tileView.moveToAndCenter(x,y);
 	            	tileView.addMarker(userMarker, x + 250, y + 100);
 //	            	Log.d( "DEBUG", "is zoomed OUT");
+	            	
+	            	xPos = x + 250;
+	            	yPos = y + 100;
 	            }
 	            markerIsSet = true;
         	}
@@ -49,6 +62,8 @@ public class MapActivity2 extends Activity{
         super.onCreate(savedInstanceState);
         getActionBar().setDisplayShowHomeEnabled(false);
 
+        mContext = this;
+        
         // Create our TileView
         tileView = new TileView(this);
 
@@ -141,5 +156,20 @@ public class MapActivity2 extends Activity{
 		//Log.d("DEBUG","marker tag = " + markerA.getTag());
 		tileView.removeMarker(userMarker);
 	}
-    
+	
+	public static int getPosX(){
+		return xPos;
+	}
+	
+	public static int getPosY(){
+		return yPos;
+	}
+	
+	public static void sharePosition(){
+//		Log.d("DEBUG","gick in i map-funktionen");
+		//Log.d("DEBUG","marker tag = " + markerA.getTag());
+//		setContentView(R.layout.shareposition);
+		mContext.startActivity(new Intent("com.example.mapus.SHAREPOSITION"));
+	}
+
 }

@@ -1,6 +1,7 @@
 package com.example.mapus;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
@@ -19,6 +20,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * This is just a random View used to show callouts.
@@ -125,13 +127,17 @@ public class MapusCallout extends RelativeLayout implements OnClickListener{
 	    int send = sendBtn.getId();
 	    
 	    if(v.getId() == canc){
-//	    	Log.d("Marker Event","Cancel btn pressed");
+//	    
+	    	Log.d("Marker Event","Cancel btn pressed");
 	    	MapActivity2.removeUserMarker();
 	    	MapActivity2.markerIsSet = false;
 	    	this.setVisibility(View.GONE);
 	    }
 	    else if(v.getId() == send){
 	    	Log.d("Marker Event","Send btn coord: " + coordX + ":" + coordY);
+	    	MapActivity2.sharePosition();
+	    		//setContentView(R.layout.shareposition);
+	    		//startActivity(new Intent("com.example.mapus.SIGNUP"));
 	    }
 	    else
 	    	Log.d("Marker Event","error");

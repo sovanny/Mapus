@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_orange"
+    android:orientation="vertical"
+    android:padding="20dp" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView1"
+        android:background="#4DFFFFFF" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:orientation="vertical" 
+                    
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/TextView01"
+                android:layout_width="184dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="2dp"
+                android:background="@drawable/buttonshape_friend"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:text="Sovanny Huy Nikilää"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/friend4"
+                android:layout_width="184dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/TextView01"
+                android:layout_margin="2dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/buttonshape_friend"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:text="Tantan Grangien"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/friend3"
+                android:layout_width="184dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/friend4"
+                android:layout_margin="2dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/buttonshape_friend"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:text="Simon Hedlund"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/friend2"
+                android:layout_width="184dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/friend3"
+                android:layout_margin="2dp"
+                android:background="@drawable/buttonshape_friend"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:text="Jakob Andersson"
+                android:textSize="20dp" />
+
+            <CheckBox
+                android:id="@+id/checkBox1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignBottom="@+id/TextView01"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/TextView01" 
+                android:checked="true"/>
+
+            <CheckBox
+                android:id="@+id/CheckBox01"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignBottom="@+id/friend4"
+                android:layout_alignRight="@+id/friend4"
+                android:layout_alignTop="@+id/friend4" 
+                android:checked="true"/>
+
+            <CheckBox
+                android:id="@+id/CheckBox02"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignBottom="@+id/friend3"
+                android:layout_alignRight="@+id/friend3"
+                android:layout_alignTop="@+id/friend3"
+                android:checked="true" />
+
+            <CheckBox
+                android:id="@+id/CheckBox03"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignRight="@+id/friend2"
+                android:layout_alignTop="@+id/friend2" 
+                android:checked="true"/>
+
+            <TextView
+                android:id="@+id/TextView02"
+                android:layout_width="184dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/friend2"
+                android:layout_margin="2dp"
+                android:background="@drawable/buttonshape_friend"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:text="Albin Bergström"
+                android:textSize="20dp" />
+
+            <CheckBox
+                android:id="@+id/CheckBox04"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignBottom="@+id/TextView02"
+                android:layout_alignRight="@+id/TextView02"
+                android:layout_alignTop="@+id/TextView02"
+                android:checked="true" />
+            
+            <TextView
+                android:id="@+id/TextView03"
+                android:layout_width="184dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/TextView02"
+                android:layout_margin="2dp"
+                android:background="@drawable/buttonshape_friend"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:text="Berkant Savas"
+                android:textSize="20dp" />
+
+            <CheckBox
+                android:id="@+id/CheckBox05"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignBottom="@+id/TextView03"
+                android:layout_alignRight="@+id/TextView03"
+                android:layout_alignTop="@+id/TextView03"
+                android:checked="true" />
+            
+            <TextView
+                android:id="@+id/TextView04"
+                android:layout_width="184dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/TextView03"
+                android:layout_margin="2dp"
+                android:background="@drawable/buttonshape_friend"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:text="Stegurus Snape"
+                android:textSize="20dp" />
+
+            <CheckBox
+                android:id="@+id/CheckBox06"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignBottom="@+id/TextView04"
+                android:layout_alignRight="@+id/TextView04"
+                android:layout_alignTop="@+id/TextView04"
+                android:checked="true" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/Button01"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/button1"
+        android:background="@drawable/buttonshape"
+        android:text="Cancel"
+        android:textColor="@color/gray1"
+        android:textSize="22dp" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="120dp"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/buttonshape"
+        android:text="Share"
+        android:textColor="@color/gray1"
+        android:textSize="22dp" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/scrollView1"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/scrollView1"
+        android:text="Share position with..." 
+        android:textSize="25dp"
+        android:textColor="@color/white"/>
+
+</RelativeLayout>

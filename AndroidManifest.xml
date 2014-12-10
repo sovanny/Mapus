@@ -179,6 +179,22 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        
+                <activity
+            android:name=".SharePosition"
+            android:hardwareAccelerated="false"
+            android:label="@string/SharePosition_activity_title"
+            android:parentActivityName="com.example.mapus.MapActivity2" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.mapus.MAPACTIVITY2" />
+
+            <intent-filter>
+                <action android:name="com.example.mapus.SHAREPOSITION" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

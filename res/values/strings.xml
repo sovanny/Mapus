@@ -18,6 +18,7 @@
     <string name="settings_activity_title">Settings</string>
     <string name="change_pw_activity_title">Password</string>
     <string name="change_dn_activity_title">Display name</string>
+    <string name="SharePosition_activity_title">Share position</string>
     
     <!-- settings.xml -->
     <string name="change_name">Change display-name:</string>

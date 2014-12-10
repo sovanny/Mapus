@@ -1,5 +1,6 @@
 package com.example.mapus;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.FragmentManager;
@@ -10,6 +11,7 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 
 public class MyDialogFragment extends DialogFragment {
@@ -38,6 +40,9 @@ public class MyDialogFragment extends DialogFragment {
                        // Send button
                 	   setIsSend(true);
                 	   setMode(SEND);
+                	   Toast.makeText(mContext.getApplicationContext(), "hej",
+               				Toast.LENGTH_SHORT).show();
+                	   map.setContentView(R.layout.shareposition);
                    }
                }).setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
                    public void onClick(DialogInterface dialog, int id) {
@@ -45,6 +50,7 @@ public class MyDialogFragment extends DialogFragment {
                 	   setIsSend(false);
                 	   setMode(CANCEL);
                 	   v.setVisibility(View.INVISIBLE);
+                	   
 
                 	   //Intent negativeActivity = new Intent(mContext,com.example.testproject.MainActivity.class);
                        //startActivity(negativeActivity);
