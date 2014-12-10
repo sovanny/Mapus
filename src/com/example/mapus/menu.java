@@ -9,13 +9,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class menu extends Activity{
 
 	private EditText studentIDField,passwordField;
-	private TextView role, register;
+	private TextView register;
+	public static ProgressBar loading_spinner;
 	
 	
 	
@@ -28,7 +30,9 @@ public class menu extends Activity{
 		
 		studentIDField = (EditText)findViewById(R.id.username_edit_login);
         passwordField = (EditText)findViewById(R.id.password_edit_login);
-        role = (TextView)findViewById(R.id.status);
+        loading_spinner = (ProgressBar)findViewById(R.id.loading);
+        
+        loading_spinner.setVisibility(View.INVISIBLE);
         
 		//BUTTON TO LOG IN
 		ImageView signin = (ImageView) findViewById(R.id.sign_in_btn);
@@ -81,8 +85,8 @@ public class menu extends Activity{
 	   public void loginPost(View view){
 	      String studentID = studentIDField.getText().toString();
 	      String password = passwordField.getText().toString();
-	      role.setText("Loading...");
-	      new SigninActivity(this,role,1).execute(studentID,password);
+	      loading_spinner.setVisibility(View.VISIBLE);
+	      new SigninActivity(this,1).execute(studentID,password);
 	   }
 
 	@Override
@@ -90,6 +94,10 @@ public class menu extends Activity{
 		// TODO Auto-generated method stub
 		super.onPause();
 	}
+	
+	public static void stopSpin(){
+		   loading_spinner.setVisibility(View.INVISIBLE);
+	   }
 	
 	
 

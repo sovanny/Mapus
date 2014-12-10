@@ -17,18 +17,20 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class SigninActivity extends AsyncTask<String,Void,String> {
+	
+	public static String Displayname, Password;
 
    private TextView roleField;
    private Context context;
    //flag 0 means get and 1 means post.(By default it is get.)
-   public SigninActivity(Context context,TextView roleField,int flag) {
+   public SigninActivity(Context context, int flag) {
 	   this.context = context;
       //this.statusField = statusField;
-      this.roleField = roleField;
    }
 
    protected void onPreExecute(){
@@ -40,6 +42,7 @@ public class SigninActivity extends AsyncTask<String,Void,String> {
          try{
             String studentID = (String)arg0[0];
             String password = (String)arg0[1];
+            Password = password;
             String link ="http://sermon.se/koma/loginpost.php";
             
             String data  = URLEncoder.encode("studentID", "UTF-8") 
@@ -83,10 +86,15 @@ public class SigninActivity extends AsyncTask<String,Void,String> {
                    "Welcome " + result + "!",Toast.LENGTH_SHORT)
                   .show();
     	  
-    	  this.roleField.setText("");
+    	  
+    	  Displayname = result;
+    	  
+    	  
+    	  
     	  Intent intent = new Intent("com.example.mapus.START");
     	  intent.putExtra("the_result", result);
     	  context.startActivity(intent);
+    	  menu.loading_spinner.setVisibility(View.GONE);
     	  
       }
       else{
@@ -94,8 +102,24 @@ public class SigninActivity extends AsyncTask<String,Void,String> {
                   context.getApplicationContext(),
                    result,Toast.LENGTH_SHORT)
                   .show();
-    	  this.roleField.setText("");  
+    	  menu.stopSpin();
       }
       
    }
+   
+   public static void changeDisplayname(String dn){
+	   Displayname = dn;
+   }
+   
+   public static String getDisplayname(){
+	   return Displayname;
+   }
+   public static void changePassword(String pw){
+	   Password = pw;
+   }
+   
+   public static String getPassword(){
+	   return Password;
+   }
+   
 }

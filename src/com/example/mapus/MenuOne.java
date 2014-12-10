@@ -137,7 +137,7 @@ public class MenuOne extends Activity{
                         .show();
                 
                 if(groupPosition == 0 && childPosition == 2){
-                	startActivity(new Intent("com.example.mapus.MAPACTIVITY"));
+                	startActivity(new Intent("com.example.mapus.MAPACTIVITY2"));
                 }
                 
                 
@@ -155,9 +155,9 @@ public class MenuOne extends Activity{
         listDataChild = new HashMap<String, List<String>>();
  
         // Adding child data
-        listDataHeader.add("Tï¿½ppan");
+        listDataHeader.add("Täppan");
         listDataHeader.add("Spetsen");
-        listDataHeader.add("Kï¿½ken");
+        listDataHeader.add("Kåken");
  
         // Adding child data
         List<String> tappan = new ArrayList<String>();

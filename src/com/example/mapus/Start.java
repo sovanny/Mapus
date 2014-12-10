@@ -25,8 +25,10 @@ public class Start extends Activity {
 		getActionBar().setDisplayShowHomeEnabled(false);
 		
 		String Result = getIntent().getStringExtra("the_result");
+		
+		
 		DispName = (TextView)findViewById(R.id.nameTest);
-		DispName.setText(Result);
+		DispName.setText(SigninActivity.Displayname);
 		
 		//ImageView settingsbtn = (ImageView) findViewById(R.id.settingsbutton);  //gamla knappen i vår hemgjorda actionbar, ska göras i onOptionsItemSelected()
 		ImageView mapsbtn = (ImageView) findViewById(R.id.mapsbutton);
@@ -61,7 +63,7 @@ public class Start extends Activity {
 			public void onClick(View v) {
 				Toast.makeText(
 		                  getApplicationContext(),
-		                   "Your position is not set!",Toast.LENGTH_SHORT)
+		                   "You have left your position!",Toast.LENGTH_SHORT)
 		                  .show();	
 				}
 			});
