@@ -4,20 +4,21 @@
     android:layout_height="match_parent"
     android:background="@color/light_orange"
     android:orientation="vertical"
-    android:padding="20dp" >
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingBottom="20dp" >
 
     <ScrollView
         android:id="@+id/scrollView1"
         android:layout_width="wrap_content"
-        android:layout_height="300dp"
+        android:layout_height="350dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/textView1"
-        android:background="#4DFFFFFF" >
+        android:background="#80FFFFFF" >
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="350dp"
             android:orientation="vertical" 
                     
             android:padding="10dp">
@@ -87,7 +88,7 @@
                 android:layout_alignBottom="@+id/TextView01"
                 android:layout_alignParentRight="true"
                 android:layout_alignTop="@+id/TextView01" 
-                android:checked="true"/>
+                android:checked="@string/checker_false"/>
 
             <CheckBox
                 android:id="@+id/CheckBox01"
@@ -96,7 +97,7 @@
                 android:layout_alignBottom="@+id/friend4"
                 android:layout_alignRight="@+id/friend4"
                 android:layout_alignTop="@+id/friend4" 
-                android:checked="true"/>
+                android:checked="@string/checker_false"/>
 
             <CheckBox
                 android:id="@+id/CheckBox02"
@@ -105,7 +106,7 @@
                 android:layout_alignBottom="@+id/friend3"
                 android:layout_alignRight="@+id/friend3"
                 android:layout_alignTop="@+id/friend3"
-                android:checked="true" />
+                android:checked="@string/checker_false" />
 
             <CheckBox
                 android:id="@+id/CheckBox03"
@@ -113,7 +114,7 @@
                 android:layout_height="50dp"
                 android:layout_alignRight="@+id/friend2"
                 android:layout_alignTop="@+id/friend2" 
-                android:checked="true"/>
+                android:checked="@string/checker_false"/>
 
             <TextView
                 android:id="@+id/TextView02"
@@ -136,7 +137,7 @@
                 android:layout_alignBottom="@+id/TextView02"
                 android:layout_alignRight="@+id/TextView02"
                 android:layout_alignTop="@+id/TextView02"
-                android:checked="true" />
+                android:checked="@string/checker_false" />
             
             <TextView
                 android:id="@+id/TextView03"
@@ -159,7 +160,7 @@
                 android:layout_alignBottom="@+id/TextView03"
                 android:layout_alignRight="@+id/TextView03"
                 android:layout_alignTop="@+id/TextView03"
-                android:checked="true" />
+                android:checked="@string/checker_false" />
             
             <TextView
                 android:id="@+id/TextView04"
@@ -182,7 +183,7 @@
                 android:layout_alignBottom="@+id/TextView04"
                 android:layout_alignRight="@+id/TextView04"
                 android:layout_alignTop="@+id/TextView04"
-                android:checked="true" />
+                android:checked="@string/checker_false" />
 
         </RelativeLayout>
     </ScrollView>
@@ -192,9 +193,9 @@
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignTop="@+id/button1"
-        android:background="@drawable/buttonshape"
+        android:background="@drawable/buttonshape_cancel"
         android:text="Cancel"
         android:textColor="@color/gray1"
         android:textSize="22dp" />
@@ -204,21 +205,10 @@
         android:layout_width="120dp"
         android:layout_height="70dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:background="@drawable/buttonshape"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/buttonshape_share"
         android:text="Share"
         android:textColor="@color/gray1"
         android:textSize="22dp" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/scrollView1"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/scrollView1"
-        android:text="Share position with..." 
-        android:textSize="25dp"
-        android:textColor="@color/white"/>
 
 </RelativeLayout>

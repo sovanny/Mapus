@@ -5,11 +5,14 @@
     <color name="white">#ffffff</color>
     <color name="gray1">#636363</color>
     <color name="gray2">#bcbcbc</color>
+    <color name="gray3">#f2f2f2</color>
     <color name="orange">#fd6624</color>
     <color name="light_orange">#ffd7ad</color>
     <color name="blue">#2591fc</color>
     <color name="green">#0ace00</color>
+    <color name="light_green">#ddffe0</color>
     <color name="red">#e50000</color>
+    <color name="light_red">#ffdfdd</color>
     
 
  
