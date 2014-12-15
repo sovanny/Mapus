@@ -7,7 +7,7 @@ import com.qozix.tileview.TileView;
 
 public class TileViewActivity extends Activity {
 
-	private TileView tileView;
+	private static TileView tileView;
 	
 	@Override
 	public void onCreate( Bundle savedInstanceState ) {
@@ -35,7 +35,7 @@ public class TileViewActivity extends Activity {
 		tileView = null;
 	}
 	
-	public TileView getTileView(){
+	public static TileView getTileView(){
 		return tileView;
 	}
 	

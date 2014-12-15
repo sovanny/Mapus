@@ -2,6 +2,7 @@ package com.example.mapus;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -28,38 +29,44 @@ public class MapActivity2 extends TileViewActivity{
 	private TileViewEventListenerImplementation listener = new TileViewEventListenerImplementation(){
         public void onTap( int x, int y ) {
 //            Log.d( "DEBUG", "scale = " + tileView.getScale() );
+//        	Log.d("DEBUG", "koordinater först: " + x + ":" + y);
+        	
+        	TileView tileView = getTileView();
+        	
+        	//Relative 0-1 positioning
+//            tileView.defineRelativeBounds( 0, 0, 1,  1 );
+        	tileView.undefineRelativeBounds();
             
+         	//.unscale() instead of manual division         
+//            x = (int) ( x / tileView.getScale() );
+//            y = (int) ( y / tileView.getScale() );
+//            Point point = tileView.translate( x, y );
+            
+//            x = (int) tileView.unscale(x);
+//            y = (int) tileView.unscale(y);
+            
+            
+//            Log.d("DEBUG", "koordinater efter unscale: " + x + ":" + y);
+            
+//			ImageView markerB = new ImageView(getBaseContext());
+//			markerB.setImageResource(R.drawable.map_marker_blue);
+//			markerB.setTag("Test2");
+//			tileView.addMarker(markerB, 0.7, 0.7);
+
             //create marker
         	if(!markerIsSet){
 	            userMarker = new ImageView(getBaseContext());
 	            userMarker.setImageResource(R.drawable.map_marker_blue);
 	            userMarker.setTag("Test3");
 	            
-	            //getScale test
-	            if(tileView.getScale() > 0.9){
-	            	tileView.addMarker(userMarker, x - 50, y - 135);
-	            	
-	            	xPos = x - 50;
-	            	yPos = y - 135;
-	            	
-	            	createCallout(userMarker.getContext(), x - 50, y - 135);
-	            }
+	            //with relative coord
+	            tileView.addMarker(userMarker, x - 50, y - 50);
+	            createCallout(userMarker.getContext(), x, y);
 	            
-	            else{
-	            	//tileView.setScale(1.0);
-	            	//tileView.moveToAndCenter(x,y);
-	            	tileView.addMarker(userMarker, x + 250, y + 100);
-	            	
-	            	xPos = x + 250;
-	            	yPos = y + 100;
-	            	
-	            	createCallout(userMarker.getContext(), x + 250, y + 100);
-	            }
-	            
-	            Log.d("DEBUG", "position set: " + xPos + ":" + yPos);
 	            markerIsSet = true;
+	            tileView.defineRelativeBounds( 0, 0, 1,  1 );
         	}
-        }
+    	}
     };
 	
 	@Override
@@ -68,7 +75,7 @@ public class MapActivity2 extends TileViewActivity{
         getActionBar().setDisplayShowHomeEnabled(false);
         
         //reference the TileView multiple times
-     	tileView = getTileView();
+     	TileView tileView = getTileView();
 
         mContext = this;
 
@@ -79,7 +86,7 @@ public class MapActivity2 extends TileViewActivity{
 
         
         // Create our TileView
-        tileView = new TileView(this);
+//        tileView = new TileView(this);
 
         // Set the minimum parameters
         tileView.setSize(2550,1970);
@@ -88,16 +95,19 @@ public class MapActivity2 extends TileViewActivity{
         //tileView.addDetailLevel(0.25f, "tiles/tp5/250/%col%_%row%.png", "samples/tp5-500.png");
         //tileView.addDetailLevel(0.125f, "tiles/tp5/125/%col%_%row%.png", "samples/tp5-500.png");
 
+        //Relative 0-1 positioning
+        tileView.defineRelativeBounds( 0, 0, 1,  1 );
+        
         //marker test
-//        ImageView markerA = new ImageView(this);
-//        markerA.setImageResource(R.drawable.map_marker_blue);
-//        markerA.setTag("Test1");
-//
+        ImageView markerA = new ImageView(this);
+        markerA.setImageResource(R.drawable.map_marker_blue);
+        markerA.setTag("Test1");
+
 //        ImageView markerB = new ImageView(this);
 //        markerB.setImageResource(R.drawable.map_marker_blue);
 //        markerB.setTag("Test2");
-//
-//        tileView.addMarker(markerA, 300, 300);
+
+        tileView.addMarker(markerA, 0.5, 0.5);
 //        tileView.addMarker(markerB, 300, 500);
         //tileView.removeMarker(markerB);
         
@@ -114,13 +124,17 @@ public class MapActivity2 extends TileViewActivity{
 //        }
         
         
+        
+        
         //marker listener
         tileView.addMarkerEventListener(new MarkerEventListener(){
+        	TileView tileView = getTileView();
+        	
         	  @Override
         	  public void onMarkerTap( View view, int x, int y ){
         		  tileView.slideToAndCenter( x, y);
 					
-        		  Log.d("Marker Event", "marker tag = " + view.getTag() + ", coordinates (X:Y) = " + x + ":" + y );
+        		  Log.d("DEBUG", "marker tag = " + view.getTag() + ", coordinates (X:Y) = " + x + ":" + y );
         		  
         		  createCallout(view.getContext(), x, y);
         	    
@@ -136,30 +150,36 @@ public class MapActivity2 extends TileViewActivity{
         //tileView.slideToAndCenter(900,500);
 
         // Set the default zoom (zoom out by 4 => 1/4 = 0.25)
-        //tileView.setScale( 0.5 );
+//        tileView.setScale( 0.5 );
         
         
         //You can activate the cache if you are using remote pictures with the following code
         //tileView.setCacheEnabled(true);
         
         // Add the view to display it
-        frameTo(1398,816);
+        frameTo(0.5,0.5);
         
         setContentView(tileView);
     }
 	
 	public void createCallout(Context c, int x, int y){
+		TileView tileView = getTileView();
+		
+		//x,y pixelCoord
+		
 		  // create a simple callout
 		  callout = new MapusCallout(c);
-		  callout.setCoord(x, y);
+//		  callout.setCoord(x, y);
 
 		  // add it to the view tree at the same position and offset as the marker that invoked it
-		  tileView.addCallout( callout, x, y, -0.5f, -1.0f);
+//		  tileView.addCallout( callout, x, y, -0.5f, -1.0f);
+		  tileView.addCallout( callout, x, y);
 		  // a little sugar
 		  callout.transitionIn();
 	}
 	
 	public static void removeUserMarker(){
+		TileView tileView = getTileView();
 		tileView.removeMarker(userMarker);
 	}
 	
