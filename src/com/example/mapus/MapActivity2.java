@@ -66,7 +66,9 @@ public class MapActivity2 extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getActionBar().setDisplayShowHomeEnabled(false);
-
+        
+        //reference the TileView multiple times
+     	TileView tileView = getTileView();
 
         mContext = this;
 
