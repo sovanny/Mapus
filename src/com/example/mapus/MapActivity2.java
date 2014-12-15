@@ -1,6 +1,5 @@
 package com.example.mapus;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,11 +8,12 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.Mapus.TileViewActivity;
 import com.qozix.tileview.TileView;
 import com.qozix.tileview.TileView.TileViewEventListenerImplementation;
 import com.qozix.tileview.markers.MarkerEventListener;
 
-public class MapActivity2 extends Activity{
+public class MapActivity2 extends TileViewActivity{
 
 	static TileView tileView;
 	static ImageView userMarker;
@@ -56,19 +56,19 @@ public class MapActivity2 extends Activity{
 	            	createCallout(userMarker.getContext(), x + 250, y + 100);
 	            }
 	            
-//	            Log.d("DEBUG", "position set: " + xPos + ":" + yPos);
+	            Log.d("DEBUG", "position set: " + xPos + ":" + yPos);
 	            markerIsSet = true;
         	}
         }
     };
 	
 	@Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getActionBar().setDisplayShowHomeEnabled(false);
         
         //reference the TileView multiple times
-     	TileView tileView = getTileView();
+     	tileView = getTileView();
 
         mContext = this;
 
@@ -143,33 +143,10 @@ public class MapActivity2 extends Activity{
         //tileView.setCacheEnabled(true);
         
         // Add the view to display it
+        frameTo(1398,816);
+        
         setContentView(tileView);
     }
-
-    
-    
-	@Override
-	public void onPause() {
-		super.onPause();
-		tileView.clear();
-	}
-
-	@Override
-	public void onResume() {
-		super.onResume();
-		tileView.resume();
-	}
-
-	@Override
-	public void onDestroy() {
-		super.onDestroy();
-		tileView.destroy();
-		tileView = null;
-	}
-	
-	public TileView getTileView(){
-		return tileView;
-	}
 	
 	public void createCallout(Context c, int x, int y){
 		  // create a simple callout
