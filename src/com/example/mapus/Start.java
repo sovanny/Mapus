@@ -5,6 +5,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -15,6 +17,7 @@ import android.widget.Button;
 
 public class Start extends Activity {
 	private TextView DispName;
+	public static ImageView remove;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,12 +32,18 @@ public class Start extends Activity {
 		
 		DispName = (TextView)findViewById(R.id.nameTest);
 		DispName.setText(SigninActivity.Displayname);
-		
+		remove = (ImageView)findViewById(R.id.checkoutbutton);
 		//ImageView settingsbtn = (ImageView) findViewById(R.id.settingsbutton);  //gamla knappen i vår hemgjorda actionbar, ska göras i onOptionsItemSelected()
 		ImageView mapsbtn = (ImageView) findViewById(R.id.mapsbutton);
 		ImageView contactsbtn = (ImageView) findViewById(R.id.contactsbutton);
 		ImageView checkoutbtn = (ImageView) findViewById(R.id.checkoutbutton);
-		
+
+		if(SigninActivity.MapSet){
+			remove.setBackgroundResource(R.drawable.buttoncircleorange);
+		}
+		else{
+			remove.setBackgroundResource(R.drawable.buttoncircle);
+		}
 		/*
 		settingsbtn.setOnClickListener(new View.OnClickListener() {	
 		@Override
@@ -61,12 +70,26 @@ public class Start extends Activity {
 		checkoutbtn.setOnClickListener(new View.OnClickListener() {	
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(
-		                  getApplicationContext(),
-		                   "You have left your position!",Toast.LENGTH_SHORT)
-		                  .show();	
+				if(SigninActivity.MapSet)
+				{
+					Toast.makeText(
+			                  getApplicationContext(),
+			                   "You have left your position!",Toast.LENGTH_SHORT)
+			                  .show();	
+
+					remove.setBackgroundResource(R.drawable.buttoncircle);
+					SigninActivity.MapSet = false;
+				}
+				else{
+					Toast.makeText(
+			                  getApplicationContext(),
+			                   "Position not set!",Toast.LENGTH_SHORT)
+			                  .show();	
+				}
+				
 				}
 			});
+		
 	}
 	
 	@Override

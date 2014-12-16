@@ -23,7 +23,8 @@ import android.widget.Toast;
 
 public class SigninActivity extends AsyncTask<String,Void,String> {
 	
-	public static String Displayname, Password;
+	public static String Displayname, Password, StudentID;
+	public static boolean MapSet;
 
    private TextView roleField;
    private Context context;
@@ -43,6 +44,7 @@ public class SigninActivity extends AsyncTask<String,Void,String> {
             String studentID = (String)arg0[0];
             String password = (String)arg0[1];
             Password = password;
+            StudentID = studentID;
             String link ="http://sermon.se/koma/loginpost.php";
             
             String data  = URLEncoder.encode("studentID", "UTF-8") 
@@ -86,9 +88,9 @@ public class SigninActivity extends AsyncTask<String,Void,String> {
                    "Welcome " + result + "!",Toast.LENGTH_SHORT)
                   .show();
     	  
-    	  
+
     	  Displayname = result;
-    	  
+    	  MapSet = false;
     	  
     	  
     	  Intent intent = new Intent("com.example.mapus.START");
@@ -120,6 +122,13 @@ public class SigninActivity extends AsyncTask<String,Void,String> {
    
    public static String getPassword(){
 	   return Password;
+   }
+   public static void changeStudentID(String id){
+	   StudentID = id;
+   }
+   
+   public static String getStudentID(){
+	   return StudentID;
    }
    
 }

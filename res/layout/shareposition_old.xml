@@ -195,7 +195,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignTop="@+id/button1"
-        android:background="@drawable/buttonshape"
+        android:background="@drawable/buttonshape_cancel"
         android:text="Cancel"
         android:textColor="@color/gray1"
         android:textSize="22dp" />
@@ -206,22 +206,9 @@
         android:layout_height="70dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:background="@drawable/buttonshape"
+        android:background="@drawable/buttonshape_share"
         android:text="Share"
         android:textColor="@color/gray1"
-        android:textSize="22dp" 
-        android:paddingRight="5dp"/>
-
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/Button01"
-        android:layout_alignLeft="@+id/button1"
-        android:layout_alignRight="@+id/button1"
-        android:layout_alignTop="@+id/Button01"
-        android:src="@drawable/pilsida_thin" 
-        android:paddingLeft="80dp"
-        android:layout_margin="0dp"/>
+        android:textSize="22dp" />
 
 </RelativeLayout>

@@ -15,6 +15,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Settings extends Activity {
+	
+	private TextView studentID_textField, username_textField;
   
 
 	@Override
@@ -22,6 +24,12 @@ public class Settings extends Activity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.settings);
+		
+		//studentID_textField = (TextView)findViewById(R.id.studentid_text);
+		//username_textField = (TextView)findViewById(R.id.username_text);
+		
+		//studentID_textField.setText(SigninActivity.StudentID);
+		//username_textField.setText(SigninActivity.Displayname);
 
 		getActionBar().setDisplayHomeAsUpEnabled(true); // action bar back
 														// button

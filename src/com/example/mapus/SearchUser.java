@@ -20,6 +20,7 @@ import android.widget.Toast;
 public class SearchUser extends Activity{
 
 	private EditText studentIDField;
+	private TextView notfound;
 	
 	
 	@Override
@@ -31,7 +32,9 @@ public class SearchUser extends Activity{
 		getActionBar().setDisplayHomeAsUpEnabled(true);		//action bar back button
         getActionBar().setDisplayShowHomeEnabled(false);	//hide app icon in action bar
 		
-		studentIDField = (EditText)findViewById(R.id.search_field);
+        studentIDField = (EditText)findViewById(R.id.search_field);
+        notfound = (TextView)findViewById(R.id.no_results);
+        notfound.setVisibility(View.GONE);
 	
 		//LINK TO REGISTER
 		ImageView search = (ImageView) findViewById(R.id.search_btn);
@@ -40,7 +43,9 @@ public class SearchUser extends Activity{
 			@Override
 			public void onClick(View v) {
 	
-				searchPost(v);
+				//searchPost(v);
+				notfound.setVisibility(View.VISIBLE);
+				
 			}
 	
 		});

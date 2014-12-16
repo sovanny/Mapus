@@ -22,7 +22,9 @@ public class SharePosition extends Activity{
 			
 			@Override
 			public void onClick(View v) {
-	
+				
+				SigninActivity.MapSet = true;
+				
 				startActivity(new Intent("com.example.mapus.START"));
 				Toast.makeText(
 		                  getApplicationContext(),

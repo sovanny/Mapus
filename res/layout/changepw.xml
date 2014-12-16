@@ -126,16 +126,16 @@
         android:id="@+id/edit_confirmPassword2"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_alignLeft="@+id/TextView01"
+        android:layout_alignLeft="@+id/studentid_text"
         android:layout_alignRight="@+id/edit_newPassword"
-        android:layout_below="@+id/TextView01"
+        android:layout_below="@+id/studentid_text"
         android:background="@drawable/squareshape"
         android:ems="10"
         android:paddingLeft="45dp"
         android:inputType="textPassword" />
 
     <ImageView
-        android:id="@+id/ImageView01"
+        android:id="@+id/studentid_image"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_alignBottom="@+id/edit_confirmPassword2"
@@ -145,7 +145,7 @@
         android:src="@drawable/lock5" />
 
     <TextView
-        android:id="@+id/TextView01"
+        android:id="@+id/studentid_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/edit_newPassword"

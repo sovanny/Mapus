@@ -14,12 +14,7 @@
         android:layout_alignParentTop="true"
         android:layout_toLeftOf="@+id/search_btn"
         android:ems="10" 
-        android:hint="Search..."
-        android:background="@drawable/squareshape"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:paddingLeft="8dp"/>
+        android:hint="Search..."/>
 
     <ImageView
         android:id="@+id/search_btn"
@@ -29,10 +24,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginRight="5dp"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
         android:background="@drawable/btncircleorange"
-        android:padding="8dp"
-
+        android:padding="10dp"
         android:src="@drawable/search" />
 
     <TextView
@@ -45,18 +38,4 @@
         android:layout_below="@+id/editText1"
         android:text=" " />
 
-    <TextView
-        android:id="@+id/no_results"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="Sorry, no results :("
-        android:textColor="@color/gray1"
-        android:textSize="19dp" />
-
 </RelativeLayout>
-
-
-
-
