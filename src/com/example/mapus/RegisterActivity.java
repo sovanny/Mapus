@@ -90,6 +90,10 @@ public class RegisterActivity extends AsyncTask<String,Void,String> {
                context.getApplicationContext(),
                 "Successfully created new account!",Toast.LENGTH_SHORT)
                .show();
+	   Toast.makeText(
+               context.getApplicationContext(),
+                "Welcome " + SigninActivity.Displayname + "!" ,Toast.LENGTH_SHORT)
+               .show();
 	   
 	   
       this.roleField.setText(result);

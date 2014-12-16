@@ -71,6 +71,7 @@ public class SignUp extends Activity{
 			}
 			
 			else{
+				SigninActivity.changeDisplayname(username);
 				new RegisterActivity(this,role,1).execute(id,username,password);
 			}
 	      

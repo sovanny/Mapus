@@ -49,7 +49,7 @@ public class ChangePW extends Activity{
 			if(newpassword.equals(confirmpassword)){
 				if(!newpassword.equals("") && !confirmpassword.equals(""))
 				{
-					new SaveDisplayname(this, 1).execute(newpassword, currentpassword);
+					new SavePassword(this, 1).execute(newpassword, currentpassword);
 				}else{
 					Toast.makeText(
 			                  getApplicationContext(),
