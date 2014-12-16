@@ -2,7 +2,7 @@ package com.example.mapus;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Point;
+//import android.graphics.Point;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -57,6 +57,19 @@ public class MapActivity2 extends TileViewActivity{
         //Relative 0-1 positioning
 //        tileView.defineRelativeBounds( 0, 0, 1.0, 1.0 ); 
         
+        Log.d("DEBUG", "markerIsSet = " + markerIsSet);
+        Log.d("DEBUG", "xPos/yPos = " + xPos + ":" + yPos);
+        
+        //put marker back in if set before
+        if(markerIsSet){        	
+        	tileView.removeMarker(userMarker);
+        	
+        	userMarker = new ImageView(getBaseContext());
+            userMarker.setImageResource(R.drawable.map_marker_blue);
+        	tileView.addMarker(userMarker, xPos, yPos, -0.5f, -1.0f);
+        }
+        
+        //onTap, add marker
     	TileViewEventListenerImplementation listener = new TileViewEventListenerImplementation(){
             public void onTap( int x, int y ) {
 //            	Log.d("DEBUG", "koordinater först: " + x + ":" + y);
@@ -66,6 +79,9 @@ public class MapActivity2 extends TileViewActivity{
             	//Divides x, y by current scale value, making coordinates correct regardless of zoom level
             	x = (int)tileView.unscale(x);
             	y = (int)tileView.unscale(y);
+            	
+            	xPos = x;
+            	yPos = y;
             	
                 Log.d("DEBUG", "koordinater efter unscale: " + x + ":" + y);
 
@@ -90,7 +106,7 @@ public class MapActivity2 extends TileViewActivity{
         	
         	  @Override
         	  public void onMarkerTap( View view, int x, int y ){
-        		  tileView.slideToAndCenter( x, y);
+        		  tileView.slideToAndCenter(x, y);
 					
         		  Log.d("DEBUG", "marker tag = " + view.getTag() + ", coordinates (X:Y) = " + x + ":" + y );
         		  
@@ -101,9 +117,7 @@ public class MapActivity2 extends TileViewActivity{
         
         tileView.addTileViewEventListener( listener );
         
-//        frameTo(1275,985);
-        
-        
+        frameTo(1275,985);
         
         setContentView(tileView);
     }
@@ -136,6 +150,7 @@ public class MapActivity2 extends TileViewActivity{
 	}
 	
 	public static void sharePosition(){
+		Log.d("DEBUG", "sharePos");
 		mContext.startActivity(new Intent("com.example.mapus.SHAREPOSITION"));
 	}
 

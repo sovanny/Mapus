@@ -20,7 +20,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+//import android.widget.Toast;
 
 /**
  * This is just a random View used to show callouts.
@@ -136,8 +136,6 @@ public class MapusCallout extends RelativeLayout implements OnClickListener{
 	    else if(v.getId() == send){
 	    	Log.d("Marker Event","Send btn coord: " + coordX + ":" + coordY);
 	    	MapActivity2.sharePosition();
-	    		//setContentView(R.layout.shareposition);
-	    		//startActivity(new Intent("com.example.mapus.SIGNUP"));
 	    }
 	    else
 	    	Log.d("Marker Event","error");
