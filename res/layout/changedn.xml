@@ -41,7 +41,7 @@
         android:alpha="0.4"
         android:background="@color/orange"
         android:gravity="center_vertical" 
-        android:layout_marginTop="115dp"/>
+        android:layout_marginTop="118dp"/>
     
     <View
         android:id="@+id/view4"
@@ -125,9 +125,9 @@
         android:id="@+id/new_pw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/edit_newPassword"
+        android:layout_alignLeft="@+id/edit_DispName"
         android:layout_below="@+id/View01"
-        android:layout_marginTop="113dp"
+        android:layout_marginTop="111dp"
         android:alpha="0.7"
         android:paddingLeft="5dp"
         android:text="@string/change_name"

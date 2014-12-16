@@ -28,7 +28,9 @@ public class Start extends Activity {
 		getActionBar().setDisplayShowHomeEnabled(false);
 		
 		String Result = getIntent().getStringExtra("the_result");
-		
+
+
+				   
 		
 		DispName = (TextView)findViewById(R.id.nameTest);
 		DispName.setText(SigninActivity.Displayname);
@@ -40,9 +42,11 @@ public class Start extends Activity {
 
 		if(SigninActivity.MapSet){
 			remove.setBackgroundResource(R.drawable.buttoncircleorange);
+			remove.setImageResource(R.drawable.checkout_muchcolor_low);
 		}
 		else{
 			remove.setBackgroundResource(R.drawable.buttoncircle);
+			remove.setImageResource(R.drawable.checkout2_low);
 		}
 		/*
 		settingsbtn.setOnClickListener(new View.OnClickListener() {	
@@ -79,6 +83,7 @@ public class Start extends Activity {
 
 					remove.setBackgroundResource(R.drawable.buttoncircle);
 					SigninActivity.MapSet = false;
+					remove.setImageResource(R.drawable.checkout2_low);
 				}
 				else{
 					Toast.makeText(
