@@ -38,7 +38,7 @@ public class SavePassword extends AsyncTask<String, Void, String> {
 	protected String doInBackground(String... arg0) {
 
 		try {
-			String newpassword = (String) arg0[0];
+			String new_password = (String) arg0[0];
 			String currentpassword = (String) arg0[1];
 
 			String link = "http://sermon.se/koma/savepassword.php";
@@ -47,8 +47,8 @@ public class SavePassword extends AsyncTask<String, Void, String> {
 
 			String data = URLEncoder.encode("currentDispName", "UTF-8") + "="
 					+ URLEncoder.encode(currentDispName, "UTF-8");
-			data += "&" + URLEncoder.encode("newpassword", "UTF-8") + "="
-					+ URLEncoder.encode(newpassword, "UTF-8");
+			data += "&" + URLEncoder.encode("new_password", "UTF-8") + "="
+					+ URLEncoder.encode(new_password, "UTF-8");
 			data += "&" + URLEncoder.encode("currentpassword", "UTF-8") + "="
 					+ URLEncoder.encode(currentpassword, "UTF-8");
 

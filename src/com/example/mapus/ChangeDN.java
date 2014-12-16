@@ -21,8 +21,8 @@ public class ChangeDN extends Activity{
 		
 		getActionBar().setDisplayShowHomeEnabled(false);
 		
-		editDispName = (EditText)findViewById(R.id.edit_newDispName);
-		currentPassword = (EditText)findViewById(R.id.edit_current_pass_field2);
+		editDispName = (EditText)findViewById(R.id.edit_DispName);
+		currentPassword = (EditText)findViewById(R.id.edit_current_pass_field);
 		
 		editDispName.setHint(SigninActivity.Displayname);
 		

@@ -21,7 +21,7 @@ public class ChangePW extends Activity{
 		
 		getActionBar().setDisplayShowHomeEnabled(false);
 		
-		newPassword = (EditText)findViewById(R.id.edit_newDispName);
+		newPassword = (EditText)findViewById(R.id.edit_newPassword);
 		currentPassword = (EditText)findViewById(R.id.edit_current_pass_field2);
 		confirmPassword = (EditText)findViewById(R.id.edit_confirmPassword2);
 		
@@ -40,9 +40,8 @@ public class ChangePW extends Activity{
 		 
  		// SEND VARIABLES
 		String newpassword = newPassword.getText().toString();
-		String confirmpassword = confirmPassword.getText().toString();
 		String currentpassword = currentPassword.getText().toString();
-		
+		String confirmpassword = confirmPassword.getText().toString();
 		
 		if(currentpassword.equals(SigninActivity.Password))
 		{

@@ -5,7 +5,7 @@
     android:layout_weight="1.03" >
 
     <EditText
-        android:id="@+id/edit_newDispName"
+        android:id="@+id/edit_newPassword"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
@@ -16,8 +16,8 @@
         android:background="@drawable/squareshape"
         android:ems="10"
         android:hint=""
-        android:paddingLeft="45dp"
-        android:inputType="textPassword" >
+        android:inputType="textPassword"
+        android:paddingLeft="45dp" >
 
         <requestFocus />
     </EditText>
@@ -26,8 +26,8 @@
         android:id="@+id/imageView_displayName"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_alignBottom="@+id/edit_newDispName"
-        android:layout_alignLeft="@+id/edit_newDispName"
+        android:layout_alignBottom="@+id/edit_newPassword"
+        android:layout_alignLeft="@+id/edit_newPassword"
         android:layout_below="@+id/new_pw"
         android:alpha="@dimen/alpha"
         android:src="@drawable/lock5" />
@@ -127,7 +127,7 @@
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_alignLeft="@+id/TextView01"
-        android:layout_alignRight="@+id/edit_newDispName"
+        android:layout_alignRight="@+id/edit_newPassword"
         android:layout_below="@+id/TextView01"
         android:background="@drawable/squareshape"
         android:ems="10"
@@ -148,8 +148,8 @@
         android:id="@+id/TextView01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/edit_newDispName"
-        android:layout_below="@+id/edit_newDispName"
+        android:layout_alignLeft="@+id/edit_newPassword"
+        android:layout_below="@+id/edit_newPassword"
         android:layout_marginTop="16dp"
         android:alpha="0.7"
         android:paddingLeft="5dp"
@@ -160,7 +160,7 @@
         android:id="@+id/new_pw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/edit_newDispName"
+        android:layout_alignLeft="@+id/edit_newPassword"
         android:layout_below="@+id/View01"
         android:layout_marginTop="76dp"
         android:alpha="0.7"
