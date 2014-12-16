@@ -1,4 +1,4 @@
-package com.example.Mapus;
+package com.example.mapus;
 
 import android.app.Activity;
 import android.os.Bundle;
