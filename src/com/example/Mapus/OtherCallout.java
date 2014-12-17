@@ -85,13 +85,10 @@ public class OtherCallout extends RelativeLayout{
 		titleView.setTextSize( 15 );
 		//titleView.setMaxWidth( 250 );
 		titleView.setTypeface( Typeface.SANS_SERIF, Typeface.BOLD );
-		Log.d("DEBUG", "debug 4");
 		titleView.setText( name );
-		Log.d("DEBUG", "debug 5");
 		titleView.setId(1337);
 		RelativeLayout.LayoutParams titleLayout = new RelativeLayout.LayoutParams( LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT );
 		labels.addView( titleView, titleLayout );
-		Log.d("DEBUG", "debug 6");
 
 //		TextView subTitleView = new TextView( getContext() );
 //		subTitleView.setTextColor( 0xFFFFFFFF );

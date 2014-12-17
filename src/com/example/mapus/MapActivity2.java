@@ -73,10 +73,26 @@ public class MapActivity2 extends TileViewActivity{
         //static Jakob!
         ImageView jakobMarker = new ImageView(getBaseContext());
         jakobMarker.setImageResource(R.drawable.map_marker_blue);
+    	jakobMarker.setTag("jakob");
+    	
+    	//static Sovanny!
+    	ImageView sanniMarker = new ImageView(getBaseContext());
+        sanniMarker.setImageResource(R.drawable.map_marker_blue);
+        sanniMarker.setTag("sanni");
+    	
+    	//static berkis!
+    	ImageView berkisMarker = new ImageView(getBaseContext());
+        berkisMarker.setImageResource(R.drawable.map_marker_blue);
+        berkisMarker.setTag("berkis");
+    	
     	tileView.addMarker(jakobMarker, 1624, 1697, -0.5f, -1.0f);
-    	Log.d("DEBUG", "debug 1");
     	createOtherCallout(jakobMarker.getContext(), 1624, 1697, "Jakob Andersson");
-    	Log.d("DEBUG", "debug 8");
+    	
+    	tileView.addMarker(sanniMarker, 1363, 1663, -0.5f, -1.0f);
+    	createOtherCallout(sanniMarker.getContext(), 1363, 1663, "Sovanny Huy Nikliklä");
+    	
+    	tileView.addMarker(berkisMarker, 1071, 780, -0.5f, -1.0f);
+    	createOtherCallout(berkisMarker.getContext(), 1071, 780, "Berkant Savas");
         
         //onTap, add marker
     	TileViewEventListenerImplementation listener = new TileViewEventListenerImplementation(){
