@@ -83,6 +83,7 @@ public class Start extends Activity {
 
 					remove.setBackgroundResource(R.drawable.buttoncircle);
 					SigninActivity.MapSet = false;
+					MapActivity2.markerIsSet = false;
 					remove.setImageResource(R.drawable.checkout2_low);
 				}
 				else{

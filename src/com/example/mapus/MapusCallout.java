@@ -130,7 +130,8 @@ public class MapusCallout extends RelativeLayout implements OnClickListener{
 //	    
 	    	Log.d("Marker Event","Cancel btn pressed");
 	    	MapActivity2.removeUserMarker();
-	    	MapActivity2.markerIsSet = false;
+	    	MapActivity2.markerIsSet = false; //tantans statiska
+	    	SigninActivity.MapSet = false; //simons statiska 
 	    	this.setVisibility(View.GONE);
 	    }
 	    else if(v.getId() == send){
