@@ -145,7 +145,7 @@ public class MapActivity2 extends TileViewActivity{
         frameTo(1275,985);
         
         tileView.defineRelativeBounds(0,0,1,1);
-        tileView.setScale(0.5);
+        tileView.setScale(0.1);
         
         
         setContentView(tileView);
