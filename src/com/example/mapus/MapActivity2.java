@@ -89,7 +89,7 @@ public class MapActivity2 extends TileViewActivity{
     	createOtherCallout(jakobMarker.getContext(), 1624, 1697, "Jakob Andersson");
     	
     	tileView.addMarker(sanniMarker, 1363, 1663, -0.5f, -1.0f);
-    	createOtherCallout(sanniMarker.getContext(), 1363, 1663, "Sovanny Huy Nikliklä");
+    	createOtherCallout(sanniMarker.getContext(), 1363, 1663, "Sovanny Huy Nikliklï¿½");
     	
     	tileView.addMarker(berkisMarker, 1071, 780, -0.5f, -1.0f);
     	createOtherCallout(berkisMarker.getContext(), 1071, 780, "Berkant Savas");
@@ -97,7 +97,7 @@ public class MapActivity2 extends TileViewActivity{
         //onTap, add marker
     	TileViewEventListenerImplementation listener = new TileViewEventListenerImplementation(){
             public void onTap( int x, int y ) {
-//            	Log.d("DEBUG", "koordinater först: " + x + ":" + y);
+//            	Log.d("DEBUG", "koordinater fï¿½rst: " + x + ":" + y);
             	
             	TileView tileView = getTileView();
     
@@ -144,7 +144,13 @@ public class MapActivity2 extends TileViewActivity{
         
         frameTo(1275,985);
         
+        tileView.defineRelativeBounds(0,0,1,1);
+        tileView.setScale(0.5);
+        
+        
         setContentView(tileView);
+        tileView.undefineRelativeBounds();
+        
     }
 	
 	public void createCallout(Context c, int x, int y){
