@@ -42,7 +42,7 @@
         android:layout_alignLeft="@+id/displayname"
         android:layout_alignRight="@+id/displayname"
         android:alpha="0.7"
-        android:background="@drawable/id6"
+        android:background="@drawable/id6_low"
         android:gravity="center_vertical"
         android:text=""
         android:textColor="@color/gray1"

@@ -43,6 +43,10 @@ public class RegisterActivity extends AsyncTask<String,Void,String> {
         	String username = (String)arg0[1];
         	String password = (String)arg0[2];
         	
+        	SigninActivity.Displayname = username;
+        	SigninActivity.Password = password;
+        	SigninActivity.StudentID = studentID;
+        	
             String link ="http://sermon.se/koma/add2.php";
             
             //DATA FROM USER INPUT

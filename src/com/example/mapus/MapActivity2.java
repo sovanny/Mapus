@@ -66,7 +66,7 @@ public class MapActivity2 extends TileViewActivity{
         	tileView.removeMarker(userMarker);
         	
         	userMarker = new ImageView(getBaseContext());
-            userMarker.setImageResource(R.drawable.map_marker_blue);
+            userMarker.setImageResource(R.drawable.map_marker_blue2);
         	tileView.addMarker(userMarker, xPos, yPos, -0.5f, -1.0f);
         }
         
@@ -113,7 +113,7 @@ public class MapActivity2 extends TileViewActivity{
                 //create marker
             	if(!markerIsSet){
     	            userMarker = new ImageView(getBaseContext());
-    	            userMarker.setImageResource(R.drawable.map_marker_blue);
+    	            userMarker.setImageResource(R.drawable.map_marker_blue2);
     	            userMarker.setTag("Test3");
     	            
     	            //with relative coord

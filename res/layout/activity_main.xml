@@ -34,7 +34,7 @@
         android:layout_alignTop="@+id/username_edit_login"
         android:layout_marginLeft="5dip"
         android:alpha="@dimen/alpha"
-        android:background="@drawable/id6"
+        android:background="@drawable/id6_low"
         android:gravity="center_vertical"
         android:padding="30dp"
         android:text=""
