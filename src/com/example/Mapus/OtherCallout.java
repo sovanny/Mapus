@@ -10,7 +10,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
-import android.view.View.OnClickListener;
+//import android.view.View.OnClickListener;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
@@ -28,7 +28,7 @@ import android.widget.TextView;
  * bad-practice, but was handy and looks decent.
  */
 
-public class MapusCallout extends RelativeLayout implements OnClickListener{
+public class OtherCallout extends RelativeLayout{
 
 	Button cancelBtn;
 	Button sendBtn;
@@ -37,6 +37,8 @@ public class MapusCallout extends RelativeLayout implements OnClickListener{
 	private int coordX;
 	private int coordY;
 	
+	private String name;
+	
 	// they deprecated setBackgroundDrawable just so they could rename it
 	// the new method (setBackground) doesn't work with older SDKs, and the
 	// old method (setBackgroundDrawable) gives a deprecation warning.
@@ -44,9 +46,12 @@ public class MapusCallout extends RelativeLayout implements OnClickListener{
 	// dance while having to fork conditionals in each call to set a
 	// drawable to a View.  Thus the suppresswarnings.  So there.
 	@SuppressWarnings("deprecation")
-	public MapusCallout( Context context ) {
+	public OtherCallout( Context context, String name ) {
 
 		super( context );
+		this.name = name;
+		
+		Log.d("DEBUG", "name : " + name);
 
 		LinearLayout bubble = new LinearLayout( context );
 		bubble.setOrientation( LinearLayout.HORIZONTAL );
@@ -80,66 +85,69 @@ public class MapusCallout extends RelativeLayout implements OnClickListener{
 		titleView.setTextSize( 15 );
 		//titleView.setMaxWidth( 250 );
 		titleView.setTypeface( Typeface.SANS_SERIF, Typeface.BOLD );
-		titleView.setText( "Your position" );
+		Log.d("DEBUG", "debug 4");
+		titleView.setText( name );
+		Log.d("DEBUG", "debug 5");
 		titleView.setId(1337);
 		RelativeLayout.LayoutParams titleLayout = new RelativeLayout.LayoutParams( LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT );
 		labels.addView( titleView, titleLayout );
+		Log.d("DEBUG", "debug 6");
 
-		TextView subTitleView = new TextView( getContext() );
-		subTitleView.setTextColor( 0xFFFFFFFF );
-		subTitleView.setTextSize( 12 );
-		subTitleView.setTypeface( Typeface.SANS_SERIF );
-		subTitleView.setText( "This is where you're studying" );
-		subTitleView.setId(1338);
-		RelativeLayout.LayoutParams subTitleLayout = new RelativeLayout.LayoutParams( LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT );
-		subTitleLayout.addRule(RelativeLayout.BELOW, 1337);
-		labels.addView( subTitleView, subTitleLayout );
+//		TextView subTitleView = new TextView( getContext() );
+//		subTitleView.setTextColor( 0xFFFFFFFF );
+//		subTitleView.setTextSize( 12 );
+//		subTitleView.setTypeface( Typeface.SANS_SERIF );
+//		subTitleView.setText( "This is where you're studying" );
+//		subTitleView.setId(1338);
+//		RelativeLayout.LayoutParams subTitleLayout = new RelativeLayout.LayoutParams( LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT );
+//		subTitleLayout.addRule(RelativeLayout.BELOW, 1337);
+//		labels.addView( subTitleView, subTitleLayout );
 
 		
-		//buttons
-		cancelBtn = new Button(context); 
-	    cancelBtn.setText("Remove"); 
-	    cancelBtn.setOnClickListener(this);
-	    cancelBtn.setId(1339);
-	    
-	    sendBtn = new Button(context); 
-	    sendBtn.setText("Share");
-	    sendBtn.setOnClickListener(this);
-	    
-	    //params: position buttons at bottom
-	    RelativeLayout.LayoutParams cancelBtnParams = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-	    cancelBtnParams.addRule(RelativeLayout.BELOW, 1338);
-	    cancelBtnParams.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
-	    
-	    RelativeLayout.LayoutParams sendBtnParams = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-	    sendBtnParams.addRule(RelativeLayout.BELOW, 1338);
-	    //sendBtnParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
-	    sendBtnParams.addRule(RelativeLayout.RIGHT_OF, 1339);
-	    
-	    labels.addView(cancelBtn, cancelBtnParams);
-	    labels.addView(sendBtn, sendBtnParams);
+//		//buttons
+//		cancelBtn = new Button(context); 
+//	    cancelBtn.setText("Remove"); 
+//	    cancelBtn.setOnClickListener(this);
+//	    cancelBtn.setId(1339);
+//	    
+//	    sendBtn = new Button(context); 
+//	    sendBtn.setText("Share");
+//	    sendBtn.setOnClickListener(this);
+//	    
+//	    //params: position buttons at bottom
+//	    RelativeLayout.LayoutParams cancelBtnParams = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+//	    cancelBtnParams.addRule(RelativeLayout.BELOW, 1338);
+//	    cancelBtnParams.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
+//	    
+//	    RelativeLayout.LayoutParams sendBtnParams = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+//	    sendBtnParams.addRule(RelativeLayout.BELOW, 1338);
+//	    //sendBtnParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+//	    sendBtnParams.addRule(RelativeLayout.RIGHT_OF, 1339);
+//	    
+//	    labels.addView(cancelBtn, cancelBtnParams);
+//	    labels.addView(sendBtn, sendBtnParams);
 		
 	}
 	
-	@Override
-	public void onClick(View v) {
-	    int canc = cancelBtn.getId();
-	    int send = sendBtn.getId();
-	    
-	    if(v.getId() == canc){
+//	@Override
+//	public void onClick(View v) {
+//	    int canc = cancelBtn.getId();
+//	    int send = sendBtn.getId();
 //	    
-	    	Log.d("Marker Event","Cancel btn pressed");
-	    	MapActivity2.removeUserMarker();
-	    	MapActivity2.markerIsSet = false;
-	    	this.setVisibility(View.GONE);
-	    }
-	    else if(v.getId() == send){
-	    	Log.d("Marker Event","Send btn coord: " + coordX + ":" + coordY);
-	    	MapActivity2.sharePosition();
-	    }
-	    else
-	    	Log.d("Marker Event","error");
-	}
+//	    if(v.getId() == canc){
+////	    
+//	    	Log.d("Marker Event","Cancel btn pressed");
+//	    	MapActivity2.removeUserMarker();
+//	    	MapActivity2.markerIsSet = false;
+//	    	this.setVisibility(View.GONE);
+//	    }
+//	    else if(v.getId() == send){
+//	    	Log.d("Marker Event","Send btn coord: " + coordX + ":" + coordY);
+//	    	MapActivity2.sharePosition();
+//	    }
+//	    else
+//	    	Log.d("Marker Event","error");
+//	}
 
 	public void transitionIn() {
 
@@ -203,4 +211,11 @@ public class MapusCallout extends RelativeLayout implements OnClickListener{
 		return coordY;
 	}
 	
+	public void setName(String s){
+		Log.d("DEBUG", "debug 3");
+//		name.equals(s);
+		name = s;
+		Log.d("DEBUG", "name : " + name);
+		
+	}
 }

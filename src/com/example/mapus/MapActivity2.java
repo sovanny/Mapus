@@ -20,6 +20,7 @@ public class MapActivity2 extends TileViewActivity{
 	static ImageView userMarker;
 	static boolean markerIsSet = false;
 	MapusCallout callout;
+//	OtherCallout oCallout;
 	
 	static int xPos;
 	static int yPos;
@@ -68,6 +69,14 @@ public class MapActivity2 extends TileViewActivity{
             userMarker.setImageResource(R.drawable.map_marker_blue);
         	tileView.addMarker(userMarker, xPos, yPos, -0.5f, -1.0f);
         }
+        
+        //static Jakob!
+        ImageView jakobMarker = new ImageView(getBaseContext());
+        jakobMarker.setImageResource(R.drawable.map_marker_blue);
+    	tileView.addMarker(jakobMarker, 1624, 1697, -0.5f, -1.0f);
+    	Log.d("DEBUG", "debug 1");
+    	createOtherCallout(jakobMarker.getContext(), 1624, 1697, "Jakob Andersson");
+    	Log.d("DEBUG", "debug 8");
         
         //onTap, add marker
     	TileViewEventListenerImplementation listener = new TileViewEventListenerImplementation(){
@@ -136,6 +145,25 @@ public class MapActivity2 extends TileViewActivity{
 		callout.transitionIn();
 	}
 	
+	public void createOtherCallout(Context c, int x, int y, String name){
+//		Log.d("DEBUG", "debug 2");
+		TileView tileView = getTileView();
+		
+		// create a simple callout
+		OtherCallout oCallout = new OtherCallout(c, name);
+//		oCallout.setName(name);
+//		Log.d("DEBUG", "debug 3");
+
+//		Log.d("DEBUG", "innan add");
+		// add it to the view tree at the same position and offset as the marker that invoked it
+		tileView.addCallout( oCallout, x, y, -0.5f, -1.8f);
+		
+//		Log.d("DEBUG", "efter add");
+		
+		// a little sugar
+		oCallout.transitionIn();
+//		Log.d("DEBUG", "debug 7");
+	}
 	public static void removeUserMarker(){
 		TileView tileView = getTileView();
 		tileView.removeMarker(userMarker);
